@@ -901,3 +901,6 @@ html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
 .tg-slider .hero-ctas .wipe { display: inline-flex; border-radius: 999px; }
 .tg-slider .hero-ctas .wipe > .btn { flex: 1 1 auto; }
 @media (max-width: 640px) { .tg-slider .hero-ctas .wipe { flex: 1 1 100%; } .tg-slider .hero-ctas .wipe > .btn { width: 100%; } }
+
+/* بدون أيقونة البحث الدائرية: محاذاة اللوجو في المنتصف */
+.logo.has-img { align-items: center; }

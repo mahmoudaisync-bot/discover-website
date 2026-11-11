@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
   //   "compact" = أيقونة دائرية + اسم DISCOVER (الشكل الحالي)
   //   "image"   = صورة اللوجو الكاملة (logoImage / logoImageLight)
   logoStyle: "image",
-  logoBadge: true,                          // أيقونة البحث الدائرية الصغيرة بجانب اللوجو
+  logoBadge: false,                         // أيقونة البحث الدائرية الصغيرة بجانب اللوجو
   logoWord: "DISCOVER",
   logoImage: "assets/img/logo-dbs-word.png",          // لوجو الهيدر (DISCOVER فقط)
   logoImageLight: "assets/img/logo-dbs-word-white.png", // لوجو الفوتر (أبيض)
