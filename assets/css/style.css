@@ -577,3 +577,6 @@ html[lang="en"] .section-head h2 { font-weight: 300; letter-spacing: -.01em; }
 
 /* روابط البطاقات بالأزرق الكهربائي */
 .card-link { color: var(--c-teal); }
+
+/* شريط "جاهز لبدء معاملتك؟": أزرق داكن هادئ بدل التدرج للأزرق الفاتح */
+.cta-inner { background: linear-gradient(135deg, var(--c-primary-700) 0%, var(--c-primary) 55%, var(--c-primary-600) 100%); border-top: 2px solid var(--c-accent); }
