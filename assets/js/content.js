@@ -23,20 +23,41 @@ window.SITE_CONTENT = {
       waGreeting: "مرحبا ديسكفر، أتواصل معكم عبر موقعكم الإلكتروني وأرغب في الاستفسار عن خدماتكم."
     },
     hero: {
-      eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي",
+      eyebrow: "خدمات إدارية وحكومية للشركات في جميع إمارات الدولة",
       title: "ندير عنك، لتتفرغ لنموك",
-      text: "ديسكفر لحلول الأعمال شريكك الإداري في أبوظبي. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.",
+      text: "ديسكفر لحلول الأعمال شريكك الإداري في الإمارات. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.",
       primary: "تواصل عبر واتساب", secondary: "استعرض خدماتنا",
       panelTitle: "من الطلب حتى التسليم",
       panelSteps: ["استلام طلبك ودراسته", "توضيح المتطلبات والمستندات", "متابعة المعاملة لدى الجهات المختصة", "تسليمك النتائج النهائية"],
       panelNote: "تواصل مباشر مع فريقنا في كل مرحلة"
     },
     // جملة عريضة تحت السلايدر
-    statement: { kicker: "ديسكفر لحلول الأعمال", text: "شريك إداري في أبوظبي يتولى تأسيس شركتك وتراخيصها ومعاملاتها الحكومية والمصرفية، لتتفرغ أنت لتنمية أعمالك." },
+    // قسم الاستشارات الإدارية
+    advisory: {
+      kicker: "الاستشارات الإدارية",
+      title: "نرشدك إلى الخيار الأنسب لحالتك",
+      text: "إلى جانب تنفيذ المعاملات، نقدم استشارات إدارية في المجالات التي نعمل بها؛ ندرس وضع شركتك واحتياجها، ونوضح لك الخيارات المتاحة وما يناسب حالتك قبل البدء.",
+      points: [
+        "اختيار الشكل القانوني والنشاط المناسبين عند تأسيس الشركة",
+        "المفاضلة بين خيارات الترخيص المتاحة في الإمارات المختلفة",
+        "تحديد الفئة المناسبة في ملفات تصنيف المقاولات والاستشارات الهندسية",
+        "ترتيب المستندات والإجراءات بالتسلسل الصحيح قبل التقديم"
+      ],
+      cta: "اطلب استشارة",
+      waText: "مرحبا، أرغب في الحصول على استشارة إدارية بخصوص: "
+    },
+    // شريط نطاق العمل في جميع الإمارات
+    coverage: {
+      kicker: "نطاق عملنا",
+      title: "نخدم الشركات في جميع إمارات الدولة",
+      text: "مقرنا في أبوظبي، ونتابع معاملات عملائنا لدى الجهات المختصة في مختلف الإمارات.",
+      emirates: ["أبوظبي", "دبي", "الشارقة", "عجمان", "أم القيوين", "رأس الخيمة", "الفجيرة"]
+    },
+    statement: { kicker: "ديسكفر لحلول الأعمال", text: "شريك إداري مقره أبوظبي، يتولى تأسيس شركتك وتراخيصها ومعاملاتها الحكومية والمصرفية في جميع إمارات الدولة، ويرشدك إلى الخيار الأنسب لحالتك." },
     // شرائح الواجهة الرئيسية (السلايدر): img اسم الصورة في assets/img/photos، و service رقم الخدمة لزر التفاصيل
     slides: [
-      { img: "s1-abudhabi-skyline.jpg", eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي", title: "ندير عنك، لتتفرغ لنموك", text: "ديسكفر لحلول الأعمال شريكك الإداري في أبوظبي. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.", more: "استعرض خدماتنا" },
-      { img: "s2-handshake.jpg", eyebrow: "تأسيس الشركات", title: "أسس شركتك في أبوظبي بخطوات واضحة", text: "نتولى تأسيس الشركات المحلية وفروع الشركات الأجنبية والخليجية، من تجهيز المستندات حتى إصدار الرخصة.", service: "formation", more: "تفاصيل الخدمة" },
+      { img: "s1-abudhabi-skyline.jpg", eyebrow: "خدمات إدارية وحكومية للشركات في جميع إمارات الدولة", title: "ندير عنك، لتتفرغ لنموك", text: "ديسكفر لحلول الأعمال شريكك الإداري في الإمارات. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.", more: "استعرض خدماتنا" },
+      { img: "s2-handshake.jpg", eyebrow: "تأسيس الشركات", title: "أسس شركتك في الإمارات بخطوات واضحة", text: "نتولى تأسيس الشركات المحلية وفروع الشركات الأجنبية والخليجية، من تجهيز المستندات حتى إصدار الرخصة.", service: "formation", more: "تفاصيل الخدمة" },
       { img: "s3-cranes.jpg", eyebrow: "تصنيف المقاولات والاستشارات الهندسية", title: "ملفات التصنيف بجميع الفئات", text: "نجهز ملف التصنيف ونتابعه لدى الجهة المختصة، لتتفرغ فرقكم الفنية لمشاريعها.", service: "classification", more: "تفاصيل الخدمة" },
       { img: "s4-executive-meeting.jpg", eyebrow: "المعاملات الحكومية والبنوك", title: "معاملاتك الحكومية والمصرفية بين أيد أمينة", text: "ننجز معاملات شركتك لدى الجهات الحكومية ونتعامل مع البنوك نيابة عنك، ونطلعك على سير كل معاملة.", service: "government", more: "تفاصيل الخدمة" },
       { img: "s5-advisory-team.jpg", eyebrow: "تمثيل الشركات والعقود", title: "شريكك الإداري عند الحاجة", text: "نمثل شركتك إداريا، ونعد المراسلات والعقود، ونقدم الاستشارات الإدارية.", service: "representation", more: "تفاصيل الخدمة" }
@@ -46,7 +67,7 @@ window.SITE_CONTENT = {
       kicker: "من نحن",
       title: "شريك إداري يختصر عليك الطريق",
       text: [
-        "**ديسكفر لحلول الأعمال - ذ م م - ش ش و** شركة مقرها أبوظبي، تقدم لأصحاب الأعمال والمستثمرين خدمات إدارية متكاملة تبدأ من **تأسيس الشركة** واستخراج تراخيصها، وتمتد إلى إنجاز **معاملاتها الحكومية والمصرفية** وتمثيلها إداريا عند الحاجة.",
+        "**ديسكفر لحلول الأعمال - ذ م م - ش ش و** شركة مقرها أبوظبي وتعمل في جميع إمارات الدولة، تقدم لأصحاب الأعمال والمستثمرين خدمات إدارية متكاملة تبدأ من **تأسيس الشركة** واستخراج تراخيصها، وتمتد إلى إنجاز **معاملاتها الحكومية والمصرفية** وتمثيلها إداريا عند الحاجة.",
         "نخدم عملاءنا من داخل الإمارات ومن دول الخليج وخارجها، ونعمل مع شركات المقاولات والاستشارات الهندسية في ملفات **التصنيف** بمختلف فئاته."
       ],
       values: [
@@ -158,7 +179,7 @@ window.SITE_CONTENT = {
       title: "ما الذي يميز التعامل معنا",
       items: [
         { icon: "layers", title: "جهة واحدة لكل احتياجاتك", text: "من التأسيس والتراخيص إلى المعاملات والمراسلات، دون التنقل بين أكثر من جهة." },
-        { icon: "pin", title: "مقرنا في أبوظبي", text: "نعمل يوميا في بيئة الأعمال المحلية ونتابع معاملاتك عن قرب." },
+        { icon: "pin", title: "من أبوظبي إلى جميع الإمارات", text: "مقرنا في أبوظبي، ونتابع معاملاتك لدى الجهات المختصة في مختلف إمارات الدولة." },
         { icon: "blueprint", title: "اختصاص بقطاع المقاولات", text: "نتولى ملفات تصنيف شركات المقاولات والاستشارات الهندسية بجميع الفئات." },
         { icon: "chat", title: "تواصل مباشر", text: "تتواصل مع فريقنا مباشرة عبر واتساب والهاتف والبريد الإلكتروني." },
         { icon: "globe", title: "عملاء من داخل الدولة وخارجها", text: "نستقبل طلبات المستثمرين من الإمارات ودول الخليج وخارجها." },
@@ -226,18 +247,37 @@ window.SITE_CONTENT = {
       waGreeting: "Hello Discover, I am contacting you through your website and would like to ask about your services."
     },
     hero: {
-      eyebrow: "Corporate administrative and government services in Abu Dhabi",
+      eyebrow: "Corporate administrative and government services across the UAE",
       title: "We handle it, you focus on growth",
-      text: "Discover Business Solutions is your administrative partner in Abu Dhabi. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.",
+      text: "Discover Business Solutions is your administrative partner in the UAE. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.",
       primary: "Chat on WhatsApp", secondary: "Explore our services",
       panelTitle: "From request to delivery",
       panelSteps: ["We receive and review your request", "We clarify requirements and documents", "We follow up with the relevant authorities", "We deliver the final results"],
       panelNote: "Direct contact with our team at every stage"
     },
-    statement: { kicker: "Discover Business Solutions", text: "An administrative partner in Abu Dhabi handling your company formation, licensing, and government and banking transactions, so you can focus on growing your business." },
+    advisory: {
+      kicker: "Management Advisory",
+      title: "We guide you to the option that fits your case",
+      text: "Beyond executing transactions, we offer management advisory in the fields we work in. We study your company's situation and needs, and explain the available options and what suits your case before you start.",
+      points: [
+        "Choosing the right legal form and business activity at formation",
+        "Comparing the licensing options available across the emirates",
+        "Identifying the right grade for contracting and engineering classification files",
+        "Arranging documents and procedures in the right order before submission"
+      ],
+      cta: "Request advice",
+      waText: "Hello, I would like management advice regarding: "
+    },
+    coverage: {
+      kicker: "Where We Work",
+      title: "Serving companies across all seven emirates",
+      text: "Based in Abu Dhabi, we follow up our clients' transactions with the relevant authorities across the UAE.",
+      emirates: ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah", "Fujairah"]
+    },
+    statement: { kicker: "Discover Business Solutions", text: "An Abu Dhabi-based administrative partner handling company formation, licensing, and government and banking transactions across all emirates, and guiding you to the option that best fits your case." },
     slides: [
-      { img: "s1-abudhabi-skyline.jpg", eyebrow: "Corporate administrative and government services in Abu Dhabi", title: "We handle it, you focus on growth", text: "Discover Business Solutions is your administrative partner in Abu Dhabi. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.", more: "Explore our services" },
-      { img: "s2-handshake.jpg", eyebrow: "Company Formation", title: "Set up your company in Abu Dhabi with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },
+      { img: "s1-abudhabi-skyline.jpg", eyebrow: "Corporate administrative and government services across the UAE", title: "We handle it, you focus on growth", text: "Discover Business Solutions is your administrative partner in the UAE. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.", more: "Explore our services" },
+      { img: "s2-handshake.jpg", eyebrow: "Company Formation", title: "Set up your company in the UAE with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },
       { img: "s3-cranes.jpg", eyebrow: "Contracting & Engineering Classification", title: "Classification files across all grades", text: "We prepare your classification file and follow it up with the relevant authority, so your technical teams can stay focused on their projects.", service: "classification", more: "Service details" },
       { img: "s4-executive-meeting.jpg", eyebrow: "Government & Banking Transactions", title: "Your government and banking transactions in safe hands", text: "We complete your company's transactions with government entities and deal with banks on your behalf, keeping you updated on each one.", service: "government", more: "Service details" },
       { img: "s5-advisory-team.jpg", eyebrow: "Representation & Contracts", title: "Your administrative partner when you need one", text: "We represent your company administratively, prepare correspondence and contracts, and provide administrative consulting.", service: "representation", more: "Service details" }
@@ -247,7 +287,7 @@ window.SITE_CONTENT = {
       kicker: "About us",
       title: "An administrative partner that clears the way",
       text: [
-        "**Discover Business Solutions** is an Abu Dhabi-based administrative services company. We support business owners and investors with end-to-end services, starting with **company formation** and licensing, and extending to **government and banking transactions** and administrative representation when needed.",
+        "**Discover Business Solutions** is an Abu Dhabi-based administrative services company working across all emirates. We support business owners and investors with end-to-end services, starting with **company formation** and licensing, and extending to **government and banking transactions** and administrative representation when needed.",
         "We serve clients from the UAE, the wider Gulf and abroad, and we work with contracting and engineering consultancy firms on **classification** files across all grades."
       ],
       values: [
@@ -359,7 +399,7 @@ window.SITE_CONTENT = {
       title: "What sets working with us apart",
       items: [
         { icon: "layers", title: "One partner for everything", text: "Formation, licensing, transactions and correspondence, without moving between providers." },
-        { icon: "pin", title: "Based in Abu Dhabi", text: "We work in the local business environment every day and follow your transactions closely." },
+        { icon: "pin", title: "From Abu Dhabi to every emirate", text: "Based in Abu Dhabi, we follow up your transactions with the relevant authorities across the UAE." },
         { icon: "blueprint", title: "Contracting sector focus", text: "We handle classification files for contracting and engineering consultancy firms across all grades." },
         { icon: "chat", title: "Direct communication", text: "Reach our team directly via WhatsApp, phone and email." },
         { icon: "globe", title: "Local and international clients", text: "We welcome investors from the UAE, the Gulf and abroad." },

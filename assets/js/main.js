@@ -343,6 +343,26 @@
       img(PH.brand, C.brand.full + " - " + C.tagline, "brand-band-img") + "</figure></section>";
   }
 
+  // الاستشارات الإدارية: صورة طولية ونص
+  function advisory() {
+    var A = C.advisory;
+    if (!A) return "";
+    var pts = '<ul class="checks">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
+    var media = PH.advisory ? '<figure class="advisory-media">' + img(PH.advisory, A.title) + "</figure>" : "";
+    return '<section class="section advisory" id="advisory"><div class="container advisory-grid">' + media +
+      '<div class="advisory-copy">' + sectionHead(A.kicker, A.title) + '<p class="prose">' + esc(A.text) + "</p>" + pts +
+      '<a class="btn btn-primary btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div></div></section>";
+  }
+
+  // شريط نطاق العمل: صورة عريضة وأسماء الإمارات
+  function coverage() {
+    var V = C.coverage;
+    if (!V) return "";
+    var chips = V.emirates.map(function (e) { return '<li>' + esc(e) + "</li>"; }).join("");
+    return '<section class="coverage"' + bgStyle(PH.coverage) + '><div class="container coverage-inner">' +
+      '<span class="coverage-kicker">' + esc(V.kicker) + "</span><h2>" + esc(V.title) + "</h2><p>" + esc(V.text) + '</p><ul class="emirates">' + chips + "</ul></div></section>";
+  }
+
   // جملة تعريفية عريضة في المنتصف (بأسلوب صفحات ماكنزي)
   function statement() {
     if (!C.statement) return "";
@@ -356,12 +376,12 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + statement() + about() + servicesSection() + sector() + process() + why() + bento() + brandBand() + faq() + contactSection(false);
+    body = hero() + statement() + about() + servicesSection() + advisory() + sector() + coverage() + process() + why() + bento() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
       C.services.items.map(function (s) { return serviceCard(s, true); }).join("") + "</div></div></section>" +
-      sector() + process() + brandBand() + ctaBand();
+      advisory() + sector() + coverage() + process() + brandBand() + ctaBand();
   } else if (page === "contact") {
     body = pageHero(C.contact.pageTitle, C.contact.pageIntro, PH.pageContact) + contactSection(true);
   } else {
