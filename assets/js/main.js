@@ -122,18 +122,25 @@
     return out + "</ul>";
   }
 
+  // الفوتر بأسلوب ماكنزي: شريط كحلي للتواصل ثم جزء أبيض للروابط والحقوق
   function footer() {
     var homeAnchor = page === "home" ? "" : link("index.html");
-    return '<footer class="site-footer"><div class="container footer-grid">' +
-      '<div class="footer-brand">' + logo("logo-light") + '<p class="footer-tag">' + esc(C.tagline) + "</p><p>" + esc(C.brand.full) + "</p></div>" +
-      '<div><h3>' + esc(C.common.quickLinks) + '</h3><ul class="footer-links">' +
-      '<li><a href="' + homeAnchor + '#about">' + esc(C.nav.about) + "</a></li>" +
-      '<li><a href="' + link("services.html") + '">' + esc(C.nav.services) + "</a></li>" +
-      '<li><a href="' + homeAnchor + '#process">' + esc(C.nav.process) + "</a></li>" +
-      '<li><a href="' + homeAnchor + '#faq">' + esc(C.nav.faq) + "</a></li>" +
-      '<li><a href="' + link("contact.html") + '">' + esc(C.nav.contact) + "</a></li></ul></div>" +
-      '<div><h3>' + esc(C.common.contactUs) + "</h3>" + contactList("contact-list-footer") + "</div>" +
-      '</div><div class="footer-bottom"><div class="container">© <span id="yr"></span> ' + esc(C.brand.full) + ". " + esc(C.common.rights) + ".</div></div></footer>" +
+    var social = '<li><a href="' + waLink() + '" target="_blank" rel="noopener"><span class="fc-ico">' + WA_SVG + "</span>" + esc(C.common.whatsappLabel) + "</a></li>" +
+      CFG.phones.map(function (p) { return '<li><a href="tel:' + p.tel + '"><span class="fc-ico">' + icon("phone") + "</span>" + ltr(p.display) + "</a></li>"; }).join("") +
+      '<li><a href="mailto:' + CFG.email + '"><span class="fc-ico">' + icon("mail") + "</span>" + ltr(CFG.email) + "</a></li>";
+    var links = [[homeAnchor + "#about", C.nav.about], [link("services.html"), C.nav.services], [homeAnchor + "#process", C.nav.process], [homeAnchor + "#faq", C.nav.faq], [link("contact.html"), C.nav.contact]]
+      .map(function (l) { return '<li><a href="' + l[0] + '">' + esc(l[1]) + "</a></li>"; }).join("");
+    return '<footer class="site-footer ft-mck">' +
+      '<div class="ft-connect"><div class="container">' +
+        '<div class="ft-connect-top"><h2>' + esc(C.common.connectTitle) + '</h2><a class="ft-btn-white" href="' + link("contact.html") + '#request">' + icon("mail") + "<span>" + esc(C.common.contactUs) + "</span></a></div>" +
+        '<ul class="ft-social">' + social + "</ul>" +
+      "</div></div>" +
+      '<div class="ft-main"><div class="container">' +
+        '<div class="ft-grid"><div class="ft-brand">' + logo() + '<p class="ft-tag">' + esc(C.tagline) + "</p></div>" +
+          '<ul class="ft-links">' + links + "</ul>" +
+          '<div class="ft-cta"><h3>' + esc(C.common.ftCtaTitle) + "</h3><p>" + esc(C.common.ftCtaText) + '</p><a class="ft-btn-solid" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a></div></div>" +
+        '<div class="ft-bottom"><span>' + icon("pin") + esc(C.common.location) + "</span><span>© <span id=\"yr\"></span> " + esc(C.brand.full) + ". " + esc(C.common.rights) + ".</span></div>" +
+      "</div></div></footer>" +
       '<a class="wa-float" href="' + waLink() + '" target="_blank" rel="noopener" aria-label="' + esc(C.common.floatingWa) + '">' + WA_SVG + '<span class="wa-float-label">' + esc(C.common.floatingWa) + "</span></a>";
   }
 

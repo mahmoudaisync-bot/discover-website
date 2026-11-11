@@ -1106,3 +1106,40 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
 .sector .checks-light .ico { color: var(--c-teal); }
 .sector-main { box-shadow: none; }
 .adv-band { border-top-color: var(--c-bg); }
+
+/* ===== الفوتر بأسلوب ماكنزي ===== */
+.site-footer.ft-mck { background: #fff; color: var(--c-ink); padding: 0; }
+.ft-connect { background: #051c2c; color: #fff; padding: 56px 0 44px; }
+.ft-connect-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,.55); }
+.ft-connect h2 { color: #fff; margin: 0; font-size: clamp(1.4rem, 3vw, 2.1rem); font-weight: 700; }
+html[lang="en"] .ft-connect h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: -.01em; }
+.ft-btn-white { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #051c2c; padding: 14px 40px; border-radius: 0; font-weight: 500; transition: background .2s; }
+.ft-btn-white:hover { background: #e6e6e6; }
+.ft-btn-white .ico { width: 18px; height: 18px; }
+.ft-social { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px 26px; }
+.ft-social a { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: .95rem; }
+.ft-social a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.fc-ico { width: 32px; height: 32px; border-radius: 50%; background: #fff; color: #051c2c; display: inline-grid; place-items: center; flex-shrink: 0; }
+.fc-ico svg { width: 17px; height: 17px; }
+.ft-social bdi { font-weight: 400; color: #fff; }
+
+.ft-main { background: #fff; padding: 52px 0 28px; }
+.ft-grid { display: grid; gap: 34px; padding-bottom: 36px; border-bottom: 1px solid #b3b3b3; }
+.ft-brand .logo-img { height: 54px; }
+.site-footer.ft-mck .logo.has-img .logo-img { height: 54px; }
+.ft-tag { color: var(--c-muted); margin: 14px 0 0; font-size: .95rem; }
+.ft-links { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, max-content); gap: 18px 64px; align-content: start; }
+.ft-links a { color: #051c2c; font-size: 1.08rem; }
+.ft-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ft-cta h3 { color: #051c2c; font-size: 1.15rem; margin: 0 0 8px; }
+.ft-cta p { color: var(--c-muted); margin: 0 0 16px; font-size: .95rem; }
+.ft-btn-solid { display: inline-flex; align-items: center; gap: 10px; background: #051c2c; color: #fff; padding: 13px 26px; border-radius: 0; font-weight: 500; transition: background .2s; }
+.ft-btn-solid:hover { background: #0e2f47; }
+.ft-btn-solid svg { width: 18px; height: 18px; }
+.ft-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding-top: 22px; font-size: .88rem; color: var(--c-ink); }
+.ft-bottom > span:first-child { display: inline-flex; align-items: center; gap: 8px; }
+.ft-bottom .ico { width: 16px; height: 16px; color: var(--c-teal); }
+@media (min-width: 900px) {
+  .ft-grid { grid-template-columns: 1fr 1.1fr 1fr; gap: 48px; align-items: start; }
+}
+@media (max-width: 899px) { .ft-main { padding-bottom: 90px; } }
