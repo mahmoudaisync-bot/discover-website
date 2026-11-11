@@ -382,28 +382,22 @@
       '<div class="pair-body"><span class="kicker">' + esc(A.kicker) + "</span><h2>" + esc(A.title) + "</h2>" +
       '<p class="prose">' + esc(A.text) + "</p>" + pts +
       '<a class="btn btn-accent btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div></article>";
-    var S = C.sector;
-    var sPts = '<ul class="checks">' + S.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
-    var sectorCard = '<article class="pair-card pair-about pair-sector" id="sector">' + (PH.sectorCard ? '<figure class="pair-media">' + img(PH.sectorCard, S.title) + "</figure>" : "") +
-      '<div class="pair-body"><span class="kicker">' + esc(S.kicker) + "</span><h2>" + esc(S.title) + "</h2>" +
-      '<p class="prose">' + rich(S.text) + "</p>" + sPts +
-      '<a class="btn btn-primary btn-lg" href="' + link("contact.html") + '?service=classification#request">' + icon("blueprint") + "<span>" + esc(S.cta) + "</span></a></div></article>";
-    return '<section class="section about-adv" id="about"><div class="container"><div class="pair-grid pair-3">' + aboutCard + advCard + sectorCard + "</div></div></section>";
+    var steps = C.process.steps.map(function (st, i) {
+      return '<li class="mini-step"><span class="step-num">' + (i + 1) + "</span><div><h3>" + esc(st.title) + "</h3><p>" + esc(st.text) + "</p></div></li>";
+    }).join("");
+    var procCard = '<article class="pair-card pair-about pair-proc" id="process">' + (PH.processCard ? '<figure class="pair-media">' + img(PH.processCard, C.process.title) + "</figure>" : "") +
+      '<div class="pair-body"><span class="kicker">' + esc(C.process.kicker) + "</span><h2>" + esc(C.process.title) + '</h2><ol class="mini-steps">' + steps + "</ol></div></article>";
+    return '<section class="section about-adv" id="about"><div class="container"><div class="pair-grid pair-3">' + aboutCard + advCard + procCard + "</div></div></section>";
   }
 
   // كيف نعمل + لماذا ديسكفر: بطاقتان جنبا إلى جنب
   function processWhy() {
-    var steps = C.process.steps.map(function (s, i) {
-      return '<li class="mini-step"><span class="step-num">' + (i + 1) + "</span><div><h3>" + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></div></li>";
-    }).join("");
     var items = C.why.items.map(function (w) {
       return '<div class="mini-why"><span class="why-ico">' + icon(w.icon) + "</span><div><h3>" + esc(w.title) + "</h3><p>" + esc(w.text) + "</p></div></div>";
     }).join("");
-    var pCard = '<article class="pair-card pair-about" id="process">' + (PH.processCard ? '<figure class="pair-media">' + img(PH.processCard, C.process.title) + "</figure>" : "") +
-      '<div class="pair-body"><span class="kicker">' + esc(C.process.kicker) + "</span><h2>" + esc(C.process.title) + '</h2><ol class="mini-steps">' + steps + "</ol></div></article>";
-    var wCard = '<article class="pair-card pair-adv" id="why">' + (PH.why ? '<figure class="pair-media">' + img(PH.why, C.common.location) + "</figure>" : "") +
+    var wCard = '<article class="pair-card pair-adv why-wide" id="why">' + (PH.why ? '<figure class="pair-media">' + img(PH.why, C.common.location) + "</figure>" : "") +
       '<div class="pair-body"><span class="kicker">' + esc(C.why.kicker) + "</span><h2>" + esc(C.why.title) + '</h2><div class="mini-why-grid">' + items + "</div></div></article>";
-    return '<section class="section process-why"><div class="container"><div class="pair-grid">' + pCard + wCard + "</div></div></section>";
+    return '<section class="section process-why"><div class="container">' + wCard + "</div></section>";
   }
 
   // الاستشارات الإدارية: صورة طولية ونص
@@ -439,7 +433,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + servicesSection() + (CFG.mergeAboutAdvisory ? aboutAdvisory() + processWhy() : advisory() + sector() + process() + about() + why()) + faq() + contactSection(false);
+    body = hero() + servicesSection() + (CFG.mergeAboutAdvisory ? aboutAdvisory() + sector() + processWhy() : advisory() + sector() + process() + about() + why()) + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +

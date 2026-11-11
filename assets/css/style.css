@@ -1031,3 +1031,14 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
 @media (min-width: 900px) { .req-form { padding: 24px 26px; } }
 @media (min-width: 560px) { #contact .contact-list:not(.contact-list-footer) > li:nth-child(n+4) { grid-column: 1 / -1; } }
 #contact .contact-list bdi { word-break: normal; overflow-wrap: anywhere; }
+
+/* الصف الأول: من نحن + الاستشارات + خطوات العمل، والمقاولات بعرض الصفحة */
+@media (min-width: 900px) and (max-width: 1099px) { .pair-grid.pair-3 > .pair-proc { grid-column: 1 / -1; } }
+.about-adv { padding-bottom: 64px; }
+.process-why { padding-top: 64px; }
+.why-wide .pair-media { aspect-ratio: 21 / 7; }
+@media (min-width: 900px) {
+  .why-wide { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 2fr); }
+  .why-wide .pair-media { aspect-ratio: auto; height: 100%; }
+}
+@media (min-width: 1100px) { .why-wide .mini-why-grid { grid-template-columns: repeat(3, 1fr); } }
