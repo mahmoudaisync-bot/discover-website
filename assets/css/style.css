@@ -1143,3 +1143,12 @@ html[lang="en"] .ft-connect h2 { font-family: Georgia, "Times New Roman", serif;
   .ft-grid { grid-template-columns: 1fr 1.1fr 1fr; gap: 48px; align-items: start; }
 }
 @media (max-width: 899px) { .ft-main { padding-bottom: 90px; } }
+
+/* نموذج الطلب بعرض الصفحة */
+.contact-wide .section-head { margin-bottom: 22px; }
+.contact-wide > .container > .lead { margin-bottom: 22px; }
+@media (min-width: 900px) {
+  .contact-wide .req-form { display: grid; grid-template-columns: 2fr 1fr; column-gap: 14px; padding: 30px 34px; }
+  .contact-wide .req-form > h3, .contact-wide .req-form > .field:has(textarea), .contact-wide .req-form > .btn, .contact-wide .req-form > .form-note, .contact-wide .req-form > .form-status { grid-column: 1 / -1; }
+  .contact-wide .req-form > .btn { justify-self: start; width: auto; min-width: 320px; }
+}

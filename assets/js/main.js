@@ -340,11 +340,11 @@
       '<p class="form-note">' + icon("lock") + esc(F.note) + '</p><p class="form-status" id="formStatus" role="status" aria-live="polite"></p></form>';
   }
 
+  // التواصل: الجملة التعريفية ثم نموذج الطلب بعرض الصفحة (بيانات التواصل موجودة في الفوتر)
   function contactSection(isPage) {
-    return '<section class="section" id="contact"><div class="container contact-grid"><div>' +
-      (isPage ? "" : sectionHead(C.contact.kicker, C.contact.title, C.contact.intro)) +
-      (isPage ? '<p class="lead">' + esc(C.contact.intro) + "</p>" : "") +
-      contactList() + "</div>" + form() + "</div></section>";
+    return '<section class="section contact-wide" id="contact"><div class="container">' +
+      (isPage ? '<p class="lead">' + esc(C.contact.intro) + "</p>" : sectionHead(C.contact.kicker, C.contact.title, C.contact.intro)) +
+      form() + "</div></section>";
   }
 
   function ctaBand() {
