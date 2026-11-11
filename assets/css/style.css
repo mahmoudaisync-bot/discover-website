@@ -917,3 +917,8 @@ html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
 .about-coverage-label .ico { width: 18px; height: 18px; color: var(--c-teal); }
 .about-coverage .emirates { justify-content: flex-start; gap: 8px; }
 .about-coverage .emirates li { padding: 6px 14px; font-size: .84rem; }
+/* أقواس أصغر مثل المرجع */
+.tg-count { gap: 4px; }
+.tg-br { font-size: 1rem; font-weight: 400; opacity: .75; }
+.tg-cur { font-size: 1.15rem; }
+.tg-sep, .tg-tot { font-size: .72rem; }
