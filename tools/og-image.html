@@ -1,17 +1,23 @@
 <!doctype html>
-<!-- مصدر صورة المشاركة (og-image.png). لإعادة توليدها راجع README -->
+<!-- مصدر صورة المشاركة (og-image-v2.png). المحتوى في المنتصف لأن واتساب يقص الصورة مربعا في المعاينة الصغيرة -->
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600&display=swap" rel="stylesheet">
 <style>
   html,body{margin:0;width:1200px;height:630px;overflow:hidden}
-  body{font-family:"Cairo",sans-serif;color:#fff;position:relative;
-    background:radial-gradient(80% 90% at 100% 0%,rgba(31,95,168,.55),transparent 60%),linear-gradient(160deg,#03256b,#021a4d)}
-  .wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
-  .wrap img{width:860px;height:auto}
-  .bar{display:flex;gap:28px;align-items:center;font-size:30px;font-weight:600;color:#fff;border-top:2px solid rgba(201,162,92,.6);padding-top:20px}
-  .gold{color:#c9a25c}
+  body{position:relative;color:#fff;font-family:"Segoe UI",sans-serif;background:#021a4d}
+  .bg{position:absolute;inset:0;background:url("../assets/img/photos/slide-1-abudhabi.jpg") center 40%/cover;filter:saturate(.6)}
+  .shade{position:absolute;inset:0;background:radial-gradient(60% 75% at 50% 50%,rgba(2,26,77,.78),rgba(2,20,60,.95))}
+  .wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .badge{width:118px;height:118px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.45));margin-bottom:26px}
+  .word{font-weight:800;font-size:76px;letter-spacing:.08em;line-height:1;margin-right:-.08em}
+  .sub{display:flex;align-items:center;gap:16px;margin-top:16px;font-weight:600;font-size:20px;letter-spacing:.32em;color:#c9a25c}
+  .sub i{display:block;width:44px;height:1px;background:rgba(201,162,92,.7)}
+  .ar{margin-top:22px;font-family:"Cairo",sans-serif;font-weight:500;font-size:26px;color:rgba(255,255,255,.82)}
 </style></head><body>
+<div class="bg"></div><div class="shade"></div>
 <div class="wrap">
-  <img src="../assets/img/logo-full-white.png" alt="">
-  <div class="bar"><span>تأسيس الشركات · التراخيص · تصنيف المقاولات · المعاملات الحكومية</span><span class="gold">أبوظبي</span></div>
+  <svg class="badge" viewBox="0 0 48 48"><defs><radialGradient id="g" cx="35%" cy="28%" r="80%"><stop offset="0" stop-color="#3f6fd1"/><stop offset=".55" stop-color="#0b3487"/><stop offset="1" stop-color="#021a4d"/></radialGradient></defs><circle cx="24" cy="24" r="23.4" fill="url(#g)" stroke="rgba(255,255,255,.25)" stroke-width=".6"/><circle cx="21.5" cy="20.5" r="9" fill="none" stroke="#fff" stroke-width="3.2"/><path d="M16.9 20a5.2 5.2 0 0 1 3-4" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/><circle cx="22" cy="15.6" r="1.1" fill="#fff"/><path d="m28.2 27.4 1.3 1.3M31.1 30.3l5.4 5.6" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/></svg>
+  <div class="word" dir="ltr">DISCOVER</div>
+  <div class="sub" dir="ltr"><i></i>BUSINESS SOLUTIONS<i></i></div>
+  <div class="ar">ندير عنك، لتتفرغ لنموك</div>
 </div></body></html>

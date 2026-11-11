@@ -58,7 +58,7 @@ discover-website/
   ```
   ينتج النسخ الشفافة المقصوصة تلقائيا.
 - أيقونة المتصفح: `assets/img/favicon.svg` و`assets/img/apple-touch-icon.png` (180×180، مصدرها `tools/icon.html`).
-- صورة المشاركة في واتساب: `assets/img/og-image.png` (1200×630).
+- صورة المشاركة في واتساب: `assets/img/og-image-v2.jpg` (1200×630).
 
 ## 5) نشر التعديلات
 الموقع منشور على GitHub Pages: https://mahmoudaisync-bot.github.io/discover-website/ (المستودع: https://github.com/mahmoudaisync-bot/discover-website). بعد أي تعديل:
@@ -88,7 +88,7 @@ python -m http.server 8000
 ## 8) إعادة توليد صورة المشاركة
 عدل `tools/og-image.html` ثم شغل (PowerShell):
 ```
-& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless=new --hide-scrollbars --window-size=1200,630 --screenshot="$PWD\assets\img\og-image.png" "file:///$PWD/tools/og-image.html"
+& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless=new --hide-scrollbars --window-size=1200,630 --screenshot="$PWD\assets\img\og-image-v2.jpg" "file:///$PWD/tools/og-image.html"
 ```
 تحتفظ تطبيقات مثل واتساب بالصورة القديمة مؤقتا؛ قد يستغرق ظهور الصورة الجديدة بعض الوقت.
 
