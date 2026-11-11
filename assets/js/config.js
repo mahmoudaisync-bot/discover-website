@@ -29,7 +29,7 @@ window.SITE_CONFIG = {
     about: "about-consultants.jpg",          // قسم من نحن
     sector: "sector-building.jpg",           // قسم المقاولات والاستشارات الهندسية (صفحة الخدمات)
     process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
-    advisory: "advisory-consultation.jpg",
+    advisory: "advisory-business-news.jpg",
     sectorCard: "sector-building.jpg",       // بطاقة المقاولات في الرئيسية
     processCard: "bento-documents.jpg",      // بطاقة كيف نعمل في الرئيسية         // قسم الاستشارات الإدارية
     coverage: "process-skyline-bw.jpg",      // شريط نطاق العمل (جميع الإمارات)

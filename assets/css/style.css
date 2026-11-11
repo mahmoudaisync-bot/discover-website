@@ -1194,3 +1194,5 @@ html[lang="en"] .ft-connect h2 { font-size: clamp(1rem, 1.7vw, 1.25rem); }
 /* زر "استشارة مجانية" في الهيدر: ذهبي بزوايا شبه مستقيمة */
 .btn.nav-consult { background: var(--c-accent); color: var(--c-primary); border: 1px solid var(--c-accent); border-radius: 3px; font-weight: 700; padding: .55em 1.4em; box-shadow: none; }
 .btn.nav-consult:hover { background: #b88f48; border-color: #b88f48; color: var(--c-primary); }
+/* زر "استشارة مجانية" في الهيدر أصغر قليلا */
+.btn.nav-consult { padding: .4em 1em; font-size: .85rem; min-height: 36px; }
