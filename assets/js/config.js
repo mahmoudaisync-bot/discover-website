@@ -46,5 +46,7 @@ window.SITE_CONFIG = {
   heroImage: "s1-abudhabi-skyline.jpg",
 
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
-  slideInterval: 9000
+  slideInterval: 12000,
+  // عدد الشرائح المعروضة (من أول القائمة في content.js)
+  slideCount: 3
 };

@@ -904,3 +904,16 @@ html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
 
 /* بدون أيقونة البحث الدائرية: محاذاة اللوجو في المنتصف */
 .logo.has-img { align-items: center; }
+
+/* العداد بين أقواس [ 01 / 03 ] */
+.tg-count { gap: 7px; align-items: center; }
+.tg-br { font-size: 1.5rem; font-weight: 300; opacity: .7; line-height: 1; }
+.tg-cur { font-size: 1.3rem; font-weight: 700; }
+.tg-sep, .tg-tot { font-size: .78rem; opacity: .6; }
+
+/* الإمارات داخل قسم "من نحن" */
+.about-coverage { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--c-line); }
+.about-coverage-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--c-primary); margin-bottom: 12px; font-size: .95rem; }
+.about-coverage-label .ico { width: 18px; height: 18px; color: var(--c-teal); }
+.about-coverage .emirates { justify-content: flex-start; gap: 8px; }
+.about-coverage .emirates li { padding: 6px 14px; font-size: .84rem; }

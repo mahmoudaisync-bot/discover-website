@@ -172,7 +172,7 @@
 
   // السلايدر بأسلوب Target: صورة كاملة، عنوان يظهر كلمة كلمة، شريط أبيض يكشف العنوان الصغير والأزرار، وعداد
   function heroSlider() {
-    var slides = C.slides || [];
+    var slides = (C.slides || []).slice(0, CFG.slideCount || 99);
     var L = C.sliderLabels;
     var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>';
     function pad(n) { return (n < 10 ? "0" : "") + n; }
@@ -202,7 +202,7 @@
         ? '<button type="button" class="sl-arrow sl-prev" aria-label="' + esc(L.prev) + '">' + chev + "</button>" +
           '<button type="button" class="sl-arrow sl-next" aria-label="' + esc(L.next) + '">' + chev + "</button>" +
           '<div class="tg-dots">' + dots + "</div>" +
-          '<div class="tg-count" dir="ltr" aria-hidden="true"><span class="tg-cur">' + pad(1) + '</span><span class="tg-sep">/</span><span class="tg-tot">' + pad(slides.length) + "</span></div>"
+          '<div class="tg-count" dir="ltr" aria-hidden="true"><span class="tg-br">[</span><span class="tg-cur">' + pad(1) + '</span><span class="tg-sep">/</span><span class="tg-tot">' + pad(slides.length) + '</span><span class="tg-br">]</span></div>'
         : "") +
       "</section>";
   }
@@ -257,14 +257,13 @@
   }
 
   function about() {
-    var vals = C.about.values.map(function (v) {
-      return '<div class="value"><span class="value-ico">' + icon(v.icon) + "</span><div><h3>" + esc(v.title) + "</h3><p>" + esc(v.text) + "</p></div></div>";
-    }).join("");
     var media = PH.about ? '<figure class="about-media">' + img(PH.about, C.about.title, "about-img") + '</figure>' : "";
     return '<section class="section" id="about"><div class="container about-grid">' + media + "<div>" +
       sectionHead(C.about.kicker, C.about.title) +
       C.about.text.map(function (p) { return '<p class="prose">' + rich(p) + "</p>"; }).join("") +
-      '<div class="values">' + vals + "</div></div></div></section>";
+      (C.coverage ? '<div class="about-coverage"><span class="about-coverage-label">' + icon("pin") + esc(C.coverage.title) + '</span><ul class="emirates">' +
+        C.coverage.emirates.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul></div>" : "") +
+      "</div></div></section>";
   }
 
   function serviceCard(s, detailed) {
@@ -402,12 +401,12 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + servicesSection() + advisory() + sector() + coverage() + process() + about() + why() + brandBand() + faq() + contactSection(false);
+    body = hero() + servicesSection() + advisory() + sector() + process() + about() + why() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
       C.services.items.map(function (s) { return serviceCard(s, true); }).join("") + "</div></div></section>" +
-      advisory() + sector() + coverage() + process() + brandBand() + ctaBand();
+      advisory() + sector() + process() + ctaBand();
   } else if (page === "contact") {
     body = pageHero(C.contact.pageTitle, C.contact.pageIntro, PH.pageContact) + contactSection(true);
   } else {
