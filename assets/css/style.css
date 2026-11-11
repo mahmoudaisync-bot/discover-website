@@ -1200,3 +1200,4 @@ html[lang="en"] .ft-connect h2 { font-size: clamp(1rem, 1.7vw, 1.25rem); }
 /* زر الاستشارة بنفس ارتفاع زر اللغة وبنفس الحواف الدائرية */
 .btn.nav-consult { min-height: 42px; height: 42px; padding: 0 1em; border-radius: 10px; line-height: 1; box-sizing: border-box; }
 @media (min-width: 980px) { .btn.nav-consult, .header-actions .lang-switch { height: 44px; min-height: 44px; box-sizing: border-box; } }
+html[lang="ar"] .ft-connect h2 { font-size: clamp(1rem, 1.7vw, 1.2rem); }
