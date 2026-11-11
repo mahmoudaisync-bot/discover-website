@@ -742,3 +742,62 @@ html[lang="en"] .hero-title { font-weight: 600; line-height: 1.25; letter-spacin
   .hero-fixed .hero-ctas .btn { flex: 1 1 100%; }
   .hero-link { margin-inline: auto; }
 }
+
+/* =========================================================
+   Liquid Glass: زجاج شفاف بانعكاس ضوئي على الحواف
+   يظهر فقط فوق الصور والخلفيات الداكنة حتى يكون له أثر
+   ========================================================= */
+/* 1) لوح بطاقات الخدمات فوق الصورة */
+@media (min-width: 640px) {
+  #services .svc-card.has-media .svc-body {
+    background: linear-gradient(135deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.5) 100%);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8); backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(255,255,255,.65);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(255,255,255,.25), inset 0 0 18px rgba(255,255,255,.25), 0 14px 34px -18px rgba(5,28,44,.55);
+    overflow: hidden;
+  }
+  #services .svc-card.has-media .svc-body::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+    background: radial-gradient(120% 60% at 15% 0%, rgba(255,255,255,.55), rgba(255,255,255,0) 55%);
+  }
+  #services .svc-card.has-media .svc-body > * { position: relative; }
+}
+
+/* 2) زر "اتصل بنا" في الواجهة: زجاج داكن */
+.hero-fixed .btn-ghost-light {
+  background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+  -webkit-backdrop-filter: blur(14px) saturate(1.6); backdrop-filter: blur(14px) saturate(1.6);
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 10px 26px -14px rgba(0,0,0,.6);
+}
+.hero-fixed .btn-ghost-light:hover { background: linear-gradient(135deg, rgba(255,255,255,.26), rgba(255,255,255,.1)); color: #fff; border-color: rgba(255,255,255,.6); }
+
+/* 3) الهيدر: زجاج فاتح أثناء التمرير */
+.site-header { background: rgba(240,240,240,.72); -webkit-backdrop-filter: blur(18px) saturate(1.8); backdrop-filter: blur(18px) saturate(1.8); }
+.site-header.scrolled { box-shadow: inset 0 -1px 0 rgba(255,255,255,.6), 0 8px 26px -18px rgba(5,28,44,.5); }
+
+/* 4) قسم المقاولات: قائمة النقاط في لوح زجاجي داكن */
+.sector .checks-light {
+  padding: 6px 18px; border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+}
+.sector .checks-light li:first-child { border-top: 0; }
+
+/* 5) بطاقات التواصل في الفوتر */
+.contact-list-footer a, .contact-list-footer div {
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+.contact-list-footer a:hover { border-color: rgba(201,162,92,.6); }
+
+/* 6) مربعات الإمارات وزر واتساب العائم: لمعة خفيفة */
+.wa-float { box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 24px -12px rgba(23,138,69,.7); }
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  #services .svc-card.has-media .svc-body { background: rgba(255,255,255,.92); }
+  .site-header { background: rgba(240,240,240,.97); }
+}
