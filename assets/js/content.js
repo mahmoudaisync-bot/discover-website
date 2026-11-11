@@ -91,7 +91,7 @@ window.SITE_CONTENT = {
       pageIntro: "ست خدمات رئيسية تغطي احتياجات شركتك الإدارية، من التأسيس والترخيص حتى المراسلات والتمثيل.",
       items: [
         {
-          id: "formation", icon: "building", img: "c-formation.jpg",
+          id: "formation", icon: "building", img: "c-formation-v2.jpg",
           title: "تأسيس الشركات",
           summary: "تأسيس الشركات بجميع أنواعها: الشركات المحلية، وفروع الشركات الأجنبية والخليجية.",
           points: [
@@ -124,7 +124,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "c-government-stamp.jpg",
+          id: "government", icon: "bank", img: "c-government-v2.jpg",
           title: "المعاملات الحكومية والبنوك",
           summary: "إنجاز المعاملات الحكومية والتعامل مع البنوك نيابة عن شركتك.",
           points: [
@@ -317,7 +317,7 @@ window.SITE_CONTENT = {
       pageIntro: "Six core services covering your company's administrative needs, from formation and licensing to correspondence and representation.",
       items: [
         {
-          id: "formation", icon: "building", img: "c-formation.jpg",
+          id: "formation", icon: "building", img: "c-formation-v2.jpg",
           title: "Company Formation",
           summary: "Formation of all company types: local companies, and branches of foreign and GCC companies.",
           points: [
@@ -350,7 +350,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "c-government-stamp.jpg",
+          id: "government", icon: "bank", img: "c-government-v2.jpg",
           title: "Government & Banking Transactions",
           summary: "Completing government transactions and dealing with banks on your company's behalf.",
           points: [
