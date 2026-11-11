@@ -1152,3 +1152,5 @@ html[lang="en"] .ft-connect h2 { font-family: Georgia, "Times New Roman", serif;
   .contact-wide .req-form > h3, .contact-wide .req-form > .field:has(textarea), .contact-wide .req-form > .btn, .contact-wide .req-form > .form-note, .contact-wide .req-form > .form-status { grid-column: 1 / -1; }
   .contact-wide .req-form > .btn { justify-self: start; width: auto; min-width: 320px; }
 }
+html[lang="ar"] .ft-connect h2 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
+html[lang="en"] .ft-connect h2 { font-size: clamp(1.25rem, 2.4vw, 1.7rem); }
