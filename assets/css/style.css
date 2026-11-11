@@ -1196,3 +1196,4 @@ html[lang="en"] .ft-connect h2 { font-size: clamp(1rem, 1.7vw, 1.25rem); }
 .btn.nav-consult:hover { background: #b88f48; border-color: #b88f48; color: var(--c-primary); }
 /* زر "استشارة مجانية" في الهيدر أصغر قليلا */
 .btn.nav-consult { padding: .4em 1em; font-size: .85rem; min-height: 36px; }
+.btn.nav-consult { padding: .3em .8em; font-size: .76rem; min-height: 30px; }
