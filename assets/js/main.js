@@ -25,7 +25,9 @@
   function waLink(text) {
     return "https://wa.me/" + CFG.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
   }
-  function link(p) { return base + p; } // same-language page links
+  // same-language page links: pages of one language share a folder;
+  // only the 404 page (served from any URL depth) needs the absolute base
+  function link(p) { return page === "notfound" ? base + p : p; }
   var pageFile = { home: "index.html", services: "services.html", contact: "contact.html", notfound: "index.html" };
 
   /* ---------- icons (inline SVG, stroke = currentColor) ---------- */
