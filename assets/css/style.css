@@ -805,3 +805,13 @@ html[lang="en"] .hero-title { font-weight: 600; line-height: 1.25; letter-spacin
 /* صور "من نحن" و"الاستشارات" بدون برواز ذهبي */
 .about-frame { display: none; }
 .advisory-media::after { display: none; }
+
+/* =========================================================
+   اللوجو الجديد (صورة) صغير، مع أيقونة بحث أصغر
+   ========================================================= */
+.logo.has-img { gap: 8px; }
+.logo.has-img .logo-badge { width: 26px; height: 26px; filter: drop-shadow(0 2px 4px rgba(5,28,44,.2)); }
+.logo.has-img .logo-img { height: 34px; width: auto; }
+@media (min-width: 980px) { .logo.has-img .logo-img { height: 38px; } .logo.has-img .logo-badge { width: 28px; height: 28px; } }
+.site-footer .logo.has-img .logo-img { height: 62px; }
+.site-footer .logo.has-img .logo-badge { width: 30px; height: 30px; }

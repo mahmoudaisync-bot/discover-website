@@ -17,10 +17,11 @@ window.SITE_CONFIG = {
   // شكل اللوجو في الهيدر والفوتر:
   //   "compact" = أيقونة دائرية + اسم DISCOVER (الشكل الحالي)
   //   "image"   = صورة اللوجو الكاملة (logoImage / logoImageLight)
-  logoStyle: "compact",
+  logoStyle: "image",
+  logoBadge: true,                          // أيقونة البحث الدائرية الصغيرة بجانب اللوجو
   logoWord: "DISCOVER",
-  logoImage: "assets/img/logo.png",
-  logoImageLight: "assets/img/logo-white.png",
+  logoImage: "assets/img/logo-dbs.png",               // لوجو الهيدر
+  logoImageLight: "assets/img/logo-dbs-slogan-white.png", // لوجو الفوتر (أبيض مع الشعار)
 
   // صور الأقسام (داخل assets/img/photos). لتغيير صورة: ضع الصورة الجديدة في نفس الفولدر واكتب اسمها هنا
   // صور السلايدر في content.js (slides)، وصور الخدمات في content.js داخل كل خدمة (img)
