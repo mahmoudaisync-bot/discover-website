@@ -1093,3 +1093,16 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
 }
 /* الفاصل بين المقاولات والاستشارات: شريط رمادي فاتح بلون خلفية الصفحة */
 .adv-band { border-top: 46px solid var(--c-bg); }
+
+/* المقاولات والاستشارات بدون الكحلي: خلفية فاتحة ونص داكن */
+.sector, .adv-band { background: var(--c-surface); color: var(--c-ink); }
+.sector h2 { color: var(--c-primary); }
+.sector .kicker { color: var(--c-teal); }
+.sector .prose { color: var(--c-muted); }
+.sector .prose strong { color: var(--c-teal); }
+.sector .checks-light { background: #fff; border-color: var(--c-line); box-shadow: 0 14px 30px -24px rgba(5,28,44,.35); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.sector .checks-light li { border-top-color: var(--c-line); color: var(--c-ink); }
+.sector .checks-light li:first-child { border-top: 0; }
+.sector .checks-light .ico { color: var(--c-teal); }
+.sector-main { box-shadow: none; }
+.adv-band { border-top-color: var(--c-bg); }
