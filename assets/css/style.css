@@ -681,3 +681,26 @@ html[lang="en"] .coverage h2 { font-weight: 300; }
 .emirates { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .emirates li { padding: 8px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); font-size: .9rem; font-weight: 600; }
 .emirates li:first-child { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-primary); }
+
+/* =========================================================
+   خلفية بيج دافئة بدل الأبيض في كل الموقع
+   ========================================================= */
+.site-header { background: rgba(241,238,234,.96); }
+.nav-toggle { background: var(--c-surface); }
+@media (max-width: 979px) { .main-nav { background: var(--c-bg); } }
+.statement, .advisory { background: var(--c-bg); }
+.value, .svc-card, .faq-item, .contact-list a, .contact-list div, .req-form, .why-item,
+.field input, .field select, .field textarea { background: var(--c-surface); }
+.faq-item, .faq-item[open] { background: transparent; }
+
+/* شريط نطاق العمل: سادة */
+.coverage { background: var(--c-bg); color: var(--c-ink); padding-block: clamp(64px, 9vw, 110px); border-top: 1px solid var(--c-line); }
+.coverage::before { display: none; }
+.coverage h2 { color: var(--c-primary); }
+.coverage p { color: var(--c-muted); }
+.emirates li { color: var(--c-primary); border-color: rgba(5,28,44,.22); background: var(--c-surface); -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* كيف نعمل: سادة */
+.process-plain .step { background: var(--c-surface); border: 1px solid var(--c-line); }
+.process-plain .step p { color: var(--c-muted); }
+.process-plain .step h3 { color: var(--c-primary); }

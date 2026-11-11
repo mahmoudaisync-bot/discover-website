@@ -273,7 +273,7 @@
     var steps = C.process.steps.map(function (s, i) {
       return '<li class="step"><span class="step-num">' + (i + 1) + "</span><h3>" + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></li>";
     }).join("");
-    return '<section class="section section-dark has-photo" id="process"' + bgStyle(PH.process) + '><div class="container">' +
+    return '<section class="section section-alt process-plain" id="process"><div class="container">' +
       sectionHead(C.process.kicker, C.process.title, "", true) + '<ol class="steps">' + steps + "</ol></div></section>";
   }
 
@@ -359,7 +359,7 @@
     var V = C.coverage;
     if (!V) return "";
     var chips = V.emirates.map(function (e) { return '<li>' + esc(e) + "</li>"; }).join("");
-    return '<section class="coverage"' + bgStyle(PH.coverage) + '><div class="container coverage-inner">' +
+    return '<section class="coverage"><div class="container coverage-inner">' +
       '<span class="coverage-kicker">' + esc(V.kicker) + "</span><h2>" + esc(V.title) + "</h2><p>" + esc(V.text) + '</p><ul class="emirates">' + chips + "</ul></div></section>";
   }
 

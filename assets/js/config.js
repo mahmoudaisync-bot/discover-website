@@ -28,7 +28,7 @@ window.SITE_CONFIG = {
     about: "about-consultants.jpg",          // قسم من نحن
     sector: "sector-site-aerial.jpg",        // قسم المقاولات والاستشارات الهندسية
     process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
-    advisory: "advisory-facade.jpg",         // قسم الاستشارات الإدارية
+    advisory: "advisory-consultation.jpg",         // قسم الاستشارات الإدارية
     coverage: "process-skyline-bw.jpg",      // شريط نطاق العمل (جميع الإمارات)
     why: "why-abudhabi-aerial.jpg",         // قسم لماذا ديسكفر
     brand: "brand-wall.jpg",                 // شريط اللوجو العريض (بين الأقسام)
