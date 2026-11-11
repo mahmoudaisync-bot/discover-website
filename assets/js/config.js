@@ -48,5 +48,8 @@ window.SITE_CONFIG = {
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
   slideInterval: 12000,
   // عدد الشرائح المعروضة (من أول القائمة في content.js)
-  slideCount: 3
+  slideCount: 3,
+
+  // دمج "من نحن" و"الاستشارات الإدارية" في قسم واحد بالرئيسية (false يرجع القسمين منفصلين)
+  mergeAboutAdvisory: true
 };

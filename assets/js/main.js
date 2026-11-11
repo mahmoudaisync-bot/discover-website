@@ -368,6 +368,21 @@
       img(PH.brand, C.brand.full + " - " + C.tagline, "brand-band-img") + "</figure></section>";
   }
 
+  // قسم مدموج: من نحن + الاستشارات الإدارية (mergeAboutAdvisory في config.js)
+  function aboutAdvisory() {
+    var A = C.advisory;
+    var media = PH.advisory ? '<figure class="about-media">' + img(PH.advisory, C.about.title, "about-img") + "</figure>" : "";
+    var cov = C.coverage ? '<div class="about-coverage"><span class="about-coverage-label">' + icon("pin") + esc(C.coverage.title) + '</span><ul class="emirates">' +
+      C.coverage.emirates.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul></div>" : "";
+    var pts = '<ul class="checks checks-light adv-points">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
+    return '<section class="section about-adv" id="about"><div class="container">' +
+      '<div class="about-grid">' + media + "<div>" + sectionHead(C.about.kicker, C.about.title) +
+      '<p class="prose">' + rich(C.about.text[0]) + "</p>" + cov + "</div></div>" +
+      '<div class="adv-card" id="advisory"><div class="adv-head"><span class="kicker">' + esc(A.kicker) + "</span><h3>" + esc(A.title) + "</h3><p>" + esc(A.text) + "</p>" +
+      '<a class="btn btn-accent btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div>" + pts + "</div>" +
+      "</div></section>";
+  }
+
   // الاستشارات الإدارية: صورة طولية ونص
   function advisory() {
     var A = C.advisory;
@@ -401,7 +416,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + servicesSection() + advisory() + sector() + process() + about() + why() + faq() + contactSection(false);
+    body = hero() + servicesSection() + (CFG.mergeAboutAdvisory ? aboutAdvisory() + sector() + process() : advisory() + sector() + process() + about()) + why() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
