@@ -685,7 +685,7 @@ html[lang="en"] .coverage h2 { font-weight: 300; }
 /* =========================================================
    خلفية بيج دافئة بدل الأبيض في كل الموقع
    ========================================================= */
-.site-header { background: rgba(241,238,234,.96); }
+.site-header { background: rgba(240,240,240,.96); }
 .nav-toggle { background: var(--c-surface); }
 @media (max-width: 979px) { .main-nav { background: var(--c-bg); } }
 .statement, .advisory { background: var(--c-bg); }
