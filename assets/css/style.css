@@ -1052,3 +1052,16 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
   .why-wide { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
   .why-wide .pair-media { order: 2; min-height: 360px; }
 }
+
+/* لماذا ديسكفر: مناصفة مثل قسم المقاولات (نص نصف وصورة نصف) */
+@media (min-width: 900px) {
+  .why-wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+  .why-wide .pair-media { min-height: 0; }
+  .why-wide .pair-body { padding: clamp(40px, 6vw, 88px) clamp(20px, 6vw, 88px); justify-content: center; }
+  .why-wide .pair-body > * { max-width: 620px; }
+}
+@media (min-width: 1100px) { .why-wide .mini-why-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) {
+  .why-wide .pair-media { position: relative; height: auto; }
+  .why-wide .pair-media img { position: absolute; inset: 0; }
+}
