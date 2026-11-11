@@ -31,6 +31,8 @@ window.SITE_CONTENT = {
       panelSteps: ["استلام طلبك ودراسته", "توضيح المتطلبات والمستندات", "متابعة المعاملة لدى الجهات المختصة", "تسليمك النتائج النهائية"],
       panelNote: "تواصل مباشر مع فريقنا في كل مرحلة"
     },
+    // جملة عريضة تحت السلايدر
+    statement: { kicker: "ديسكفر لحلول الأعمال", text: "شريك إداري في أبوظبي يتولى تأسيس شركتك وتراخيصها ومعاملاتها الحكومية والمصرفية، لتتفرغ أنت لتنمية أعمالك." },
     // شرائح الواجهة الرئيسية (السلايدر): img اسم الصورة في assets/img/photos، و service رقم الخدمة لزر التفاصيل
     slides: [
       { img: "slide-1-abudhabi.jpg", eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي", title: "ندير عنك، لتتفرغ لنموك", text: "ديسكفر لحلول الأعمال شريكك الإداري في أبوظبي. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.", more: "استعرض خدماتنا" },
@@ -232,6 +234,7 @@ window.SITE_CONTENT = {
       panelSteps: ["We receive and review your request", "We clarify requirements and documents", "We follow up with the relevant authorities", "We deliver the final results"],
       panelNote: "Direct contact with our team at every stage"
     },
+    statement: { kicker: "Discover Business Solutions", text: "An administrative partner in Abu Dhabi handling your company formation, licensing, and government and banking transactions, so you can focus on growing your business." },
     slides: [
       { img: "slide-1-abudhabi.jpg", eyebrow: "Corporate administrative and government services in Abu Dhabi", title: "We handle it, you focus on growth", text: "Discover Business Solutions is your administrative partner in Abu Dhabi. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.", more: "Explore our services" },
       { img: "slide-2-formation.jpg", eyebrow: "Company Formation", title: "Set up your company in Abu Dhabi with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },

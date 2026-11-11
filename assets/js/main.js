@@ -327,6 +327,12 @@
       img(PH.brand, C.brand.full + " - " + C.tagline, "brand-band-img") + "</figure></section>";
   }
 
+  // جملة تعريفية عريضة في المنتصف (بأسلوب صفحات ماكنزي)
+  function statement() {
+    if (!C.statement) return "";
+    return '<section class="statement"><div class="container"><span class="statement-kicker">' + esc(C.statement.kicker) + "</span><p>" + esc(C.statement.text) + "</p></div></section>";
+  }
+
   function pageHero(title, intro, bg) {
     return '<section class="page-hero' + (bg ? " has-photo" : "") + '" id="top"' + bgStyle(bg) + '><div class="container"><h1>' + esc(title) + "</h1><p>" + esc(intro) + "</p></div></section>";
   }
@@ -334,7 +340,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + about() + servicesSection() + sector() + process() + why() + brandBand() + faq() + contactSection(false);
+    body = hero() + statement() + about() + servicesSection() + sector() + process() + why() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
