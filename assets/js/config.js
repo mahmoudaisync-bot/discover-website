@@ -35,5 +35,5 @@ window.SITE_CONFIG = {
   },
 
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
-  slideInterval: 6500
+  slideInterval: 4000
 };

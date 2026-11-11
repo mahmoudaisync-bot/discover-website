@@ -153,7 +153,7 @@
   function hero() {
     var slides = C.slides || [];
     var L = C.sliderLabels;
-    var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+    var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>';
     var items = slides.map(function (s, i) {
       var more = s.service ? link("services.html") + "#" + s.service : link("services.html");
       var Tag = i === 0 ? "h1" : "h2";
@@ -210,11 +210,8 @@
     root.querySelector(".sl-next").addEventListener("click", function () { go(cur + 1); });
     root.querySelector(".sl-prev").addEventListener("click", function () { go(cur - 1); });
     dots.forEach(function (d) { d.addEventListener("click", function () { go(+d.getAttribute("data-go")); }); });
+    // تتقلب الشرائح لوحدها دائما؛ تتوقف فقط إذا كانت الصفحة في الخلفية
     function pause(v) { paused = v; restart(); }
-    root.addEventListener("mouseenter", function () { pause(true); });
-    root.addEventListener("mouseleave", function () { pause(false); });
-    root.addEventListener("focusin", function () { pause(true); });
-    root.addEventListener("focusout", function (e) { if (!root.contains(e.relatedTarget)) pause(false); });
     document.addEventListener("visibilitychange", function () { pause(document.hidden); });
     root.addEventListener("keydown", function (e) {
       var fwd = lang === "ar" ? "ArrowLeft" : "ArrowRight", back = lang === "ar" ? "ArrowRight" : "ArrowLeft";
