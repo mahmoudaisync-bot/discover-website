@@ -1186,3 +1186,5 @@ html .sector .kicker, html[lang] .sector .kicker { font-size: 1rem; font-weight:
   #services .svc-card.has-media .card-link { color: #5c4520; }
   #services .svc-card.has-media .card-link:hover { color: var(--c-primary); }
 }
+/* عنوان شريط التواصل بالإنجليزي بنفس خط الموقع */
+html[lang="en"] .ft-connect h2 { font-family: inherit; font-weight: 400; letter-spacing: -.01em; }
