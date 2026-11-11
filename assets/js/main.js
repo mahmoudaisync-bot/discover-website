@@ -387,7 +387,7 @@
     }).join("");
     var procCard = '<article class="pair-card pair-about pair-proc" id="process">' + (PH.processCard ? '<figure class="pair-media">' + img(PH.processCard, C.process.title) + "</figure>" : "") +
       '<div class="pair-body"><span class="kicker">' + esc(C.process.kicker) + "</span><h2>" + esc(C.process.title) + '</h2><ol class="mini-steps">' + steps + "</ol></div></article>";
-    return '<section class="section about-adv" id="about"><div class="container"><div class="pair-grid pair-3">' + aboutCard + advCard + procCard + "</div></div></section>";
+    return '<section class="section about-adv" id="about"><div class="container"><div class="pair-grid">' + aboutCard + procCard + "</div></div></section>";
   }
 
   // كيف نعمل + لماذا ديسكفر: بطاقتان جنبا إلى جنب
@@ -398,6 +398,17 @@
     var wCard = '<article class="pair-card pair-adv why-wide" id="why">' +
       '<div class="pair-body"><span class="kicker">' + esc(C.why.kicker) + "</span><h2>" + esc(C.why.title) + '</h2><div class="mini-why-grid">' + items + "</div></div></article>";
     return '<section class="section process-why"><div class="container">' + wCard + "</div></section>";
+  }
+
+  // الاستشارات الإدارية: شريط مناصفة مثل قسم المقاولات، والصورة في الجهة المقابلة
+  function advisoryBand() {
+    var A = C.advisory;
+    if (!A) return "";
+    var pts = '<ul class="checks checks-light">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
+    var media = '<div class="sector-media">' + (PH.advisory ? img(PH.advisory, A.title, "sector-main") : "") + "</div>";
+    return '<section class="section sector adv-band" id="advisory"><div class="container sector-grid">' + media +
+      '<div class="sector-copy">' + sectionHead(A.kicker, A.title) + '<p class="prose">' + esc(A.text) + "</p>" + pts +
+      '<a class="btn btn-accent btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div></div></section>";
   }
 
   // الاستشارات الإدارية: صورة طولية ونص
@@ -433,7 +444,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + servicesSection() + (CFG.mergeAboutAdvisory ? aboutAdvisory() + sector() + processWhy() : advisory() + sector() + process() + about() + why()) + faq() + contactSection(false);
+    body = hero() + servicesSection() + (CFG.mergeAboutAdvisory ? aboutAdvisory() + sector() + advisoryBand() : advisory() + sector() + process() + about() + why()) + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
