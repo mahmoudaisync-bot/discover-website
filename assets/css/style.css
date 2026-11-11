@@ -953,3 +953,26 @@ html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
   border: 1px solid rgba(255,255,255,.14); box-shadow: inset 0 1px 0 rgba(255,255,255,.18); }
 .adv-points li:first-child { border-top: 0; }
 @media (min-width: 900px) { .adv-card { grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; } }
+
+/* =========================================================
+   من نحن + الاستشارات: بطاقتان جنبا إلى جنب بنفس الارتفاع
+   ========================================================= */
+.pair-grid { display: grid; gap: 22px; }
+@media (min-width: 900px) { .pair-grid { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+.pair-card { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; scroll-margin-top: 90px; }
+.pair-media { margin: 0; aspect-ratio: 16 / 9; overflow: hidden; }
+.pair-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; }
+.pair-card:hover .pair-media img { transform: scale(1.04); }
+.pair-body { display: flex; flex-direction: column; flex: 1; padding: clamp(22px, 3vw, 34px); }
+.pair-body h2 { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 4px 0 12px; }
+html[lang="ar"] .pair-body h2 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+html[lang="en"] .pair-body h2 { font-weight: 400; }
+.pair-body .prose { margin-bottom: 0; }
+.pair-about { background: var(--c-surface); border: 1px solid var(--c-line); }
+.pair-about .about-coverage { margin-top: auto; padding-top: 20px; }
+.pair-adv { color: #fff; background: radial-gradient(120% 140% at 0% 0%, var(--c-primary-600) 0%, var(--c-primary) 55%, var(--c-primary-700) 100%); box-shadow: 0 30px 60px -40px rgba(5,28,44,.8); }
+.pair-adv h2 { color: #fff; }
+.pair-adv .kicker { color: var(--c-accent); }
+.pair-adv .prose { color: rgba(255,255,255,.82); }
+.pair-adv .checks { margin: 16px 0 22px; }
+.pair-adv .btn { align-self: flex-start; margin-top: auto; }

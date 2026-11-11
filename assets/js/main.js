@@ -371,16 +371,17 @@
   // قسم مدموج: من نحن + الاستشارات الإدارية (mergeAboutAdvisory في config.js)
   function aboutAdvisory() {
     var A = C.advisory;
-    var media = PH.advisory ? '<figure class="about-media">' + img(PH.advisory, C.about.title, "about-img") + "</figure>" : "";
     var cov = C.coverage ? '<div class="about-coverage"><span class="about-coverage-label">' + icon("pin") + esc(C.coverage.title) + '</span><ul class="emirates">' +
       C.coverage.emirates.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul></div>" : "";
-    var pts = '<ul class="checks checks-light adv-points">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
-    return '<section class="section about-adv" id="about"><div class="container">' +
-      '<div class="about-grid">' + media + "<div>" + sectionHead(C.about.kicker, C.about.title) +
-      '<p class="prose">' + rich(C.about.text[0]) + "</p>" + cov + "</div></div>" +
-      '<div class="adv-card" id="advisory"><div class="adv-head"><span class="kicker">' + esc(A.kicker) + "</span><h3>" + esc(A.title) + "</h3><p>" + esc(A.text) + "</p>" +
-      '<a class="btn btn-accent btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div>" + pts + "</div>" +
-      "</div></section>";
+    var pts = '<ul class="checks checks-light">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
+    var aboutCard = '<article class="pair-card pair-about">' + (PH.about ? '<figure class="pair-media">' + img(PH.about, C.about.title) + "</figure>" : "") +
+      '<div class="pair-body"><span class="kicker">' + esc(C.about.kicker) + "</span><h2>" + esc(C.about.title) + "</h2>" +
+      '<p class="prose">' + rich(C.about.text[0]) + "</p>" + cov + "</div></article>";
+    var advCard = '<article class="pair-card pair-adv" id="advisory">' + (PH.advisory ? '<figure class="pair-media">' + img(PH.advisory, A.title) + "</figure>" : "") +
+      '<div class="pair-body"><span class="kicker">' + esc(A.kicker) + "</span><h2>" + esc(A.title) + "</h2>" +
+      '<p class="prose">' + esc(A.text) + "</p>" + pts +
+      '<a class="btn btn-accent btn-lg" href="' + waLink(A.waText) + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(A.cta) + "</span></a></div></article>";
+    return '<section class="section about-adv" id="about"><div class="container"><div class="pair-grid">' + aboutCard + advCard + "</div></div></section>";
   }
 
   // الاستشارات الإدارية: صورة طولية ونص
