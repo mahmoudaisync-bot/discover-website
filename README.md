@@ -49,6 +49,7 @@ discover-website/
 الخطوط في نفس الملف: العربي **Cairo**، والإنجليزي **Segoe UI** (يظهر على ويندوز، وعلى آيفون وأندرويد يظهر خط النظام المشابه لأن Segoe UI غير متاح للتضمين في المواقع).
 
 ## 4) اللوجو
+- الشكل الحالي في الهيدر والفوتر **مختصر**: أيقونة دائرية (العدسة) + كلمة DISCOVER. للرجوع إلى صورة اللوجو الكاملة اكتب في `config.js`: `logoStyle: "image"`.
 - اللوجو المستخدم: `assets/img/logo.png` (كحلي للهيدر) و`assets/img/logo-white.png` (أبيض للفوتر)، ومحددان في `assets/js/config.js`.
 - الملف الأصلي محفوظ في `tools/brand-source/logo-original.png`.
 - لتحديث اللوجو: ضع الملف الجديد مكان `tools/brand-source/logo-original.png` (خلفية بيضاء ولون واحد)، ثم شغل من فولدر المشروع:
@@ -91,25 +92,28 @@ python -m http.server 8000
 ```
 تحتفظ تطبيقات مثل واتساب بالصورة القديمة مؤقتا؛ قد يستغرق ظهور الصورة الجديدة بعض الوقت.
 
-## 9) الصور
-- كل صور الموقع في `assets/img/photos/`، من موقع Unsplash برخصة Unsplash (مجانية للاستخدام التجاري، ولا تشترط ذكر المصور).
-- صور الأقسام محددة في `assets/js/config.js` داخل `photos`، وصور الخدمات في `assets/js/content.js` (الحقل `img` لكل خدمة).
-- لتغيير صورة: ضع الصورة الجديدة (JPG، عرض 1200-1920 بكسل، حجم أقل من 400 كيلوبايت) في نفس الفولدر واكتب اسمها مكان القديم.
-- مصادر الصور (رقم الصورة على Unsplash):
+## 9) الصور والسلايدر
+- كل صور الموقع في `assets/img/photos/`. أغلبها من **Pexels** وصورتان من **Unsplash**، وكلاهما برخصة مجانية للاستخدام التجاري ولا تشترط ذكر المصور.
+- **السلايدر** في أعلى الصفحة الرئيسية: شرائحه في `assets/js/content.js` داخل `slides` (لكل لغة). كل شريحة لها صورة وعنوان صغير وعنوان رئيسي ونص وزر تفاصيل. لإضافة شريحة انسخ سطرا كاملا وعدله. مدة عرض كل شريحة في `config.js` (`slideInterval`).
+- صور الأقسام في `assets/js/config.js` داخل `photos`، وصور بطاقات الخدمات في `content.js` (الحقل `img` لكل خدمة).
+- لتغيير صورة: ضع الصورة الجديدة (JPG، عرض 1600-1920 بكسل للسلايدر، وحجم أقل من 400 كيلوبايت) في نفس الفولدر واكتب اسمها مكان القديم.
 
 | الملف | المصدر |
 |---|---|
-| hero-abudhabi.jpg | images.unsplash.com/photo-1579686939780-64a2684e0cd1 |
-| about-signing.jpg | images.unsplash.com/photo-1681505504714-4ded1bc247e7 |
-| svc-formation.jpg | images.unsplash.com/photo-1681505526188-b05e68c77582 |
-| svc-licensing.jpg | images.unsplash.com/photo-1631651693480-97f1132e333d |
-| svc-classification.jpg | images.unsplash.com/photo-1503387762-592deb58ef4e |
-| svc-government.jpg | images.unsplash.com/photo-1783685157645-9fc1cf4ced47 |
-| svc-representation.jpg | images.unsplash.com/photo-1681505546695-682d6c1e2c3a |
-| svc-documents.jpg | images.unsplash.com/photo-1763729805496-b5dbf7f00c79 |
-| sector-site.jpg | images.unsplash.com/photo-1541888946425-d81bb19240f5 |
-| sector-engineers.jpg | images.unsplash.com/photo-1742112125567-3e8967bad60f |
-| process-cranes.jpg | images.unsplash.com/photo-1575230167650-dce335edc7f4 |
-| why-etihad.jpg | images.unsplash.com/photo-1734009775179-07f428483783 |
-| page-services.jpg | images.unsplash.com/photo-1636142466028-8c6c7cd616b7 |
-| page-contact.jpg | images.unsplash.com/photo-1624317937315-0ced8736c9e9 |
+| slide-1-abudhabi.jpg | pexels.com/photo/19965889 |
+| slide-2-formation.jpg | pexels.com/photo/5816300 |
+| slide-3-classification.jpg | pexels.com/photo/8961146 |
+| slide-4-government.jpg | pexels.com/photo/7580766 |
+| slide-5-representation.jpg | pexels.com/photo/7433847 |
+| about-team.jpg | pexels.com/photo/7693692 |
+| card-formation.jpg | pexels.com/photo/8837510 |
+| card-licensing.jpg | pexels.com/photo/7841410 |
+| card-classification.jpg | pexels.com/photo/7937367 |
+| card-government.jpg | pexels.com/photo/28448972 |
+| card-representation.jpg | pexels.com/photo/13111211 |
+| card-documents.jpg | pexels.com/photo/8815843 |
+| sector-engineers-site.jpg | pexels.com/photo/8961065 |
+| process-site-aerial.jpg | pexels.com/photo/4170184 |
+| page-services-boardroom.jpg | pexels.com/photo/6949865 |
+| why-etihad.jpg | unsplash.com (photo-1734009775179-07f428483783) |
+| page-contact.jpg | unsplash.com (photo-1624317937315-0ced8736c9e9) |

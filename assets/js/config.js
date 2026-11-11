@@ -14,21 +14,25 @@ window.SITE_CONFIG = {
 
   email: "info.discoveruae@gmail.com",
 
-  // اللوجو: النسخة الكحلية للخلفيات الفاتحة، والبيضاء للخلفيات الداكنة (الفوتر)
-  // اتركهما فارغين "" لاستخدام الشعار النصي
+  // شكل اللوجو في الهيدر والفوتر:
+  //   "compact" = أيقونة دائرية + اسم DISCOVER (الشكل الحالي)
+  //   "image"   = صورة اللوجو الكاملة (logoImage / logoImageLight)
+  logoStyle: "compact",
+  logoWord: "DISCOVER",
   logoImage: "assets/img/logo.png",
   logoImageLight: "assets/img/logo-white.png",
 
   // صور الأقسام (داخل assets/img/photos). لتغيير صورة: ضع الصورة الجديدة في نفس الفولدر واكتب اسمها هنا
-  // صور الخدمات محددة في content.js داخل كل خدمة (img)
+  // صور السلايدر في content.js (slides)، وصور الخدمات في content.js داخل كل خدمة (img)
   photos: {
-    hero: "hero-abudhabi.jpg",          // خلفية الواجهة الرئيسية
-    about: "about-signing.jpg",         // قسم من نحن
-    sector: "sector-site.jpg",          // قسم المقاولات (الصورة الكبيرة)
-    sectorInset: "sector-engineers.jpg",// قسم المقاولات (الصورة الصغيرة)
-    process: "process-cranes.jpg",      // خلفية قسم كيف نعمل
-    why: "why-etihad.jpg",              // قسم لماذا ديسكفر
-    pageServices: "page-services.jpg",  // رأس صفحة الخدمات
-    pageContact: "page-contact.jpg"     // رأس صفحة التواصل
-  }
+    about: "about-team.jpg",                 // قسم من نحن
+    sector: "sector-engineers-site.jpg",     // قسم المقاولات والاستشارات الهندسية
+    process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
+    why: "why-etihad.jpg",                   // قسم لماذا ديسكفر
+    pageServices: "page-services-boardroom.jpg", // رأس صفحة الخدمات
+    pageContact: "page-contact.jpg"          // رأس صفحة التواصل
+  },
+
+  // السلايدر: مدة عرض كل شريحة بالملي ثانية
+  slideInterval: 6500
 };

@@ -64,9 +64,18 @@
     // رمز العدسة المكبرة المأخوذ من لوجو ديسكفر
     return '<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff"/><circle cx="21" cy="20" r="10.5" fill="none" stroke="var(--c-primary)" stroke-width="3.6"/><path d="M15.6 19.4a6 6 0 0 1 3.4-4.6" fill="none" stroke="var(--c-primary)" stroke-width="2.2" stroke-linecap="round"/><circle cx="21.6" cy="14.2" r="1.3" fill="var(--c-primary)"/><path d="m29.2 28.6 1.6 1.6M32.6 32 39 38.6" stroke="var(--c-primary)" stroke-width="4" stroke-linecap="round"/></svg>';
   }
+  // أيقونة دائرية بتدرج كحلي وعدسة بيضاء (مستوحاة من حرف O في لوجو ديسكفر)
+  function logoBadge() {
+    return '<svg class="logo-badge" viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="lgB" cx="35%" cy="28%" r="80%"><stop offset="0" stop-color="#3f6fd1"/><stop offset=".55" stop-color="#0b3487"/><stop offset="1" stop-color="#021a4d"/></radialGradient></defs>' +
+      '<circle cx="24" cy="24" r="24" fill="url(#lgB)"/><circle cx="21.5" cy="20.5" r="9" fill="none" stroke="#fff" stroke-width="3.2"/><path d="M16.9 20a5.2 5.2 0 0 1 3-4" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/><circle cx="22" cy="15.6" r="1.1" fill="#fff"/><path d="m28.2 27.4 1.3 1.3M31.1 30.3l5.4 5.6" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/></svg>';
+  }
   function logo(extraCls) {
     var href = link("index.html");
     var light = extraCls === "logo-light";
+    if (CFG.logoStyle !== "image") {
+      return '<a class="logo logo-compact ' + (extraCls || "") + '" href="' + href + '" aria-label="' + esc(C.brand.full) + '">' + logoBadge() +
+        '<span class="logo-word" dir="ltr">' + esc(CFG.logoWord || "DISCOVER") + "</span></a>";
+    }
     var src = light ? (CFG.logoImageLight || CFG.logoImage) : CFG.logoImage;
     if (src) {
       return '<a class="logo has-img ' + (extraCls || "") + '" href="' + href + '"><img src="' + base + src + '" alt="' + esc(C.brand.full) + '" class="logo-img" width="900" height="303"></a>';
@@ -140,20 +149,88 @@
     return '<div class="section-head' + (center ? " center" : "") + '"><span class="kicker">' + esc(kicker) + "</span><h2>" + esc(title) + "</h2>" + (intro ? '<p class="lead">' + esc(intro) + "</p>" : "") + "</div>";
   }
 
+  // السلايدر الرئيسي: صورة كبيرة بعرض الشاشة لكل خدمة
   function hero() {
-    var steps = C.hero.panelSteps.map(function (s, i) {
-      return '<li><span class="hp-num">' + (i + 1) + "</span><span>" + esc(s) + "</span></li>";
+    var slides = C.slides || [];
+    var L = C.sliderLabels;
+    var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>';
+    var items = slides.map(function (s, i) {
+      var more = s.service ? link("services.html") + "#" + s.service : link("services.html");
+      var Tag = i === 0 ? "h1" : "h2";
+      return '<div class="slide' + (i === 0 ? " is-active" : "") + '" role="group" aria-roledescription="slide" aria-label="' + (i + 1) + " / " + slides.length + '"' + (i === 0 ? "" : " inert") + ">" +
+        '<img class="slide-img" src="' + photo(s.img) + '" alt=""' + (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">' +
+        '<div class="slide-shade"></div>' +
+        '<div class="container slide-inner"><div class="slide-copy">' +
+        '<span class="eyebrow">' + esc(s.eyebrow) + "</span><" + Tag + ' class="slide-title">' + esc(s.title) + "</" + Tag + ">" +
+        '<p class="slide-text">' + esc(s.text) + "</p>" +
+        '<div class="hero-ctas"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a>" +
+        '<a class="btn btn-ghost-light btn-lg" href="' + more + '"><span>' + esc(s.more) + "</span>" + icon("arrow", "flip") + "</a></div>" +
+        "</div></div></div>";
     }).join("");
-    return '<section class="hero has-photo" id="top"' + bgStyle(PH.hero) + '><div class="container hero-grid">' +
-      '<div class="hero-copy"><span class="eyebrow">' + esc(C.hero.eyebrow) + "</span>" +
-      "<h1>" + esc(C.hero.title) + "</h1><p>" + esc(C.hero.text) + "</p>" +
-      '<div class="hero-ctas"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a>" +
-      '<a class="btn btn-ghost-light btn-lg" href="' + link("services.html") + '"><span>' + esc(C.hero.secondary) + "</span>" + icon("arrow", "flip") + "</a></div>" +
-      '<ul class="hero-phones"><li><a href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + ltr(CFG.phones[0].display) + "</a></li>" +
-      '<li><a href="mailto:' + CFG.email + '">' + icon("mail") + ltr(CFG.email) + "</a></li></ul></div>" +
-      '<aside class="hero-panel"><div class="hp-head">' + logoMark() + "<strong>" + esc(C.hero.panelTitle) + "</strong></div><ol class=\"hp-steps\">" + steps + "</ol>" +
-      '<p class="hp-note">' + icon("chat") + esc(C.hero.panelNote) + "</p></aside>" +
-      "</div></section>";
+    var dots = slides.map(function (s, i) {
+      return '<button type="button" class="dot' + (i === 0 ? " is-active" : "") + '" data-go="' + i + '" aria-label="' + esc(L.goto) + " " + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : "") + "></button>";
+    }).join("");
+    return '<section class="hero-slider" id="top" aria-roledescription="carousel" aria-label="' + esc(L.label) + '">' +
+      '<div class="slides">' + items + "</div>" +
+      (slides.length > 1
+        ? '<button type="button" class="sl-arrow sl-prev" aria-label="' + esc(L.prev) + '">' + chev + "</button>" +
+          '<button type="button" class="sl-arrow sl-next" aria-label="' + esc(L.next) + '">' + chev + "</button>" +
+          '<div class="sl-dots">' + dots + "</div><div class=\"sl-progress\"><span></span></div>"
+        : "") +
+      "</section>";
+  }
+
+  function initSlider() {
+    var root = document.querySelector(".hero-slider");
+    if (!root) return;
+    var slides = [].slice.call(root.querySelectorAll(".slide"));
+    var dots = [].slice.call(root.querySelectorAll(".dot"));
+    if (slides.length < 2) return;
+    var cur = 0, timer = null, paused = false;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var ms = CFG.slideInterval || 6500;
+    var bar = root.querySelector(".sl-progress span");
+    function go(n) {
+      n = (n + slides.length) % slides.length;
+      if (n === cur) return;
+      slides[cur].classList.remove("is-active"); slides[cur].setAttribute("inert", "");
+      dots[cur].classList.remove("is-active"); dots[cur].removeAttribute("aria-current");
+      cur = n;
+      slides[cur].classList.add("is-active"); slides[cur].removeAttribute("inert");
+      dots[cur].classList.add("is-active"); dots[cur].setAttribute("aria-current", "true");
+      restart();
+    }
+    function restart() {
+      clearTimeout(timer);
+      if (bar) { bar.style.transition = "none"; bar.style.width = "0"; }
+      if (reduce || paused) return;
+      if (bar) { void bar.offsetWidth; bar.style.transition = "width " + ms + "ms linear"; bar.style.width = "100%"; }
+      timer = setTimeout(function () { go(cur + 1); }, ms);
+    }
+    root.querySelector(".sl-next").addEventListener("click", function () { go(cur + 1); });
+    root.querySelector(".sl-prev").addEventListener("click", function () { go(cur - 1); });
+    dots.forEach(function (d) { d.addEventListener("click", function () { go(+d.getAttribute("data-go")); }); });
+    function pause(v) { paused = v; restart(); }
+    root.addEventListener("mouseenter", function () { pause(true); });
+    root.addEventListener("mouseleave", function () { pause(false); });
+    root.addEventListener("focusin", function () { pause(true); });
+    root.addEventListener("focusout", function (e) { if (!root.contains(e.relatedTarget)) pause(false); });
+    document.addEventListener("visibilitychange", function () { pause(document.hidden); });
+    root.addEventListener("keydown", function (e) {
+      var fwd = lang === "ar" ? "ArrowLeft" : "ArrowRight", back = lang === "ar" ? "ArrowRight" : "ArrowLeft";
+      if (e.key === fwd) go(cur + 1); else if (e.key === back) go(cur - 1);
+    });
+    // swipe on touch screens
+    var x0 = null;
+    root.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) < 45) return;
+      var forward = lang === "ar" ? dx > 0 : dx < 0;
+      go(cur + (forward ? 1 : -1));
+    }, { passive: true });
+    restart();
   }
 
   function about() {
@@ -182,8 +259,7 @@
     var S = C.sector;
     if (!S) return "";
     var pts = '<ul class="checks checks-light">' + S.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
-    var media = '<div class="sector-media">' + (PH.sector ? img(PH.sector, S.title, "sector-main") : "") +
-      (PH.sectorInset ? img(PH.sectorInset, S.kicker, "sector-inset") : "") + "</div>";
+    var media = '<div class="sector-media">' + (PH.sector ? img(PH.sector, S.title, "sector-main") : "") + "</div>";
     return '<section class="section sector" id="sector"><div class="container sector-grid">' + media +
       '<div class="sector-copy">' + sectionHead(S.kicker, S.title) + '<p class="prose">' + rich(S.text) + "</p>" + pts +
       '<a class="btn btn-accent btn-lg" href="' + link("contact.html") + '?service=classification#request">' + icon("blueprint") + "<span>" + esc(S.cta) + "</span></a></div></div></section>";
@@ -270,6 +346,7 @@
   document.getElementById("app").innerHTML =
     '<a class="skip" href="#main">' + esc(C.common.skip) + "</a>" + header() + '<main id="main">' + body + "</main>" + footer();
   document.getElementById("yr").textContent = new Date().getFullYear();
+  initSlider();
 
   /* ---------- behaviour ---------- */
   var hdr = document.getElementById("siteHeader");
