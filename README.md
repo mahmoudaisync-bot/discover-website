@@ -90,3 +90,26 @@ python -m http.server 8000
 & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless=new --hide-scrollbars --window-size=1200,630 --screenshot="$PWD\assets\img\og-image.png" "file:///$PWD/tools/og-image.html"
 ```
 تحتفظ تطبيقات مثل واتساب بالصورة القديمة مؤقتا؛ قد يستغرق ظهور الصورة الجديدة بعض الوقت.
+
+## 9) الصور
+- كل صور الموقع في `assets/img/photos/`، من موقع Unsplash برخصة Unsplash (مجانية للاستخدام التجاري، ولا تشترط ذكر المصور).
+- صور الأقسام محددة في `assets/js/config.js` داخل `photos`، وصور الخدمات في `assets/js/content.js` (الحقل `img` لكل خدمة).
+- لتغيير صورة: ضع الصورة الجديدة (JPG، عرض 1200-1920 بكسل، حجم أقل من 400 كيلوبايت) في نفس الفولدر واكتب اسمها مكان القديم.
+- مصادر الصور (رقم الصورة على Unsplash):
+
+| الملف | المصدر |
+|---|---|
+| hero-abudhabi.jpg | images.unsplash.com/photo-1579686939780-64a2684e0cd1 |
+| about-signing.jpg | images.unsplash.com/photo-1681505504714-4ded1bc247e7 |
+| svc-formation.jpg | images.unsplash.com/photo-1681505526188-b05e68c77582 |
+| svc-licensing.jpg | images.unsplash.com/photo-1631651693480-97f1132e333d |
+| svc-classification.jpg | images.unsplash.com/photo-1503387762-592deb58ef4e |
+| svc-government.jpg | images.unsplash.com/photo-1783685157645-9fc1cf4ced47 |
+| svc-representation.jpg | images.unsplash.com/photo-1681505546695-682d6c1e2c3a |
+| svc-documents.jpg | images.unsplash.com/photo-1763729805496-b5dbf7f00c79 |
+| sector-site.jpg | images.unsplash.com/photo-1541888946425-d81bb19240f5 |
+| sector-engineers.jpg | images.unsplash.com/photo-1742112125567-3e8967bad60f |
+| process-cranes.jpg | images.unsplash.com/photo-1575230167650-dce335edc7f4 |
+| why-etihad.jpg | images.unsplash.com/photo-1734009775179-07f428483783 |
+| page-services.jpg | images.unsplash.com/photo-1636142466028-8c6c7cd616b7 |
+| page-contact.jpg | images.unsplash.com/photo-1624317937315-0ced8736c9e9 |

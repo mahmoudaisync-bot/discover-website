@@ -17,5 +17,18 @@ window.SITE_CONFIG = {
   // اللوجو: النسخة الكحلية للخلفيات الفاتحة، والبيضاء للخلفيات الداكنة (الفوتر)
   // اتركهما فارغين "" لاستخدام الشعار النصي
   logoImage: "assets/img/logo.png",
-  logoImageLight: "assets/img/logo-white.png"
+  logoImageLight: "assets/img/logo-white.png",
+
+  // صور الأقسام (داخل assets/img/photos). لتغيير صورة: ضع الصورة الجديدة في نفس الفولدر واكتب اسمها هنا
+  // صور الخدمات محددة في content.js داخل كل خدمة (img)
+  photos: {
+    hero: "hero-abudhabi.jpg",          // خلفية الواجهة الرئيسية
+    about: "about-signing.jpg",         // قسم من نحن
+    sector: "sector-site.jpg",          // قسم المقاولات (الصورة الكبيرة)
+    sectorInset: "sector-engineers.jpg",// قسم المقاولات (الصورة الصغيرة)
+    process: "process-cranes.jpg",      // خلفية قسم كيف نعمل
+    why: "why-etihad.jpg",              // قسم لماذا ديسكفر
+    pageServices: "page-services.jpg",  // رأس صفحة الخدمات
+    pageContact: "page-contact.jpg"     // رأس صفحة التواصل
+  }
 };

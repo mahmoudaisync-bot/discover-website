@@ -52,7 +52,7 @@ window.SITE_CONTENT = {
       pageIntro: "ست خدمات رئيسية تغطي احتياجات شركتك الإدارية، من التأسيس والترخيص حتى المراسلات والتمثيل.",
       items: [
         {
-          id: "formation", icon: "building",
+          id: "formation", icon: "building", img: "svc-formation.jpg",
           title: "تأسيس الشركات",
           summary: "تأسيس الشركات بجميع أنواعها: الشركات المحلية، وفروع الشركات الأجنبية والخليجية.",
           points: [
@@ -63,7 +63,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "licensing", icon: "license",
+          id: "licensing", icon: "license", img: "svc-licensing.jpg",
           title: "الفروع والتراخيص",
           summary: "فتح الفروع للشركات القائمة، واستخراج التراخيص وتجديدها.",
           points: [
@@ -74,7 +74,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "classification", icon: "blueprint",
+          id: "classification", icon: "blueprint", img: "svc-classification.jpg",
           title: "تصنيف المقاولات والاستشارات الهندسية",
           summary: "تصنيف شركات المقاولات والاستشارات الهندسية بجميع الفئات.",
           points: [
@@ -85,7 +85,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank",
+          id: "government", icon: "bank", img: "svc-government.jpg",
           title: "المعاملات الحكومية والبنوك",
           summary: "إنجاز المعاملات الحكومية والتعامل مع البنوك نيابة عن شركتك.",
           points: [
@@ -96,7 +96,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "representation", icon: "handshake",
+          id: "representation", icon: "handshake", img: "svc-representation.jpg",
           title: "تمثيل الشركات والعمل الإداري",
           summary: "تمثيل الشركات وأداء العمل الإداري نيابة عنها عند الحاجة.",
           points: [
@@ -107,7 +107,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "documents", icon: "pen",
+          id: "documents", icon: "pen", img: "svc-documents.jpg",
           title: "المراسلات والعقود والاستشارات الإدارية",
           summary: "إعداد المراسلات والعقود وتقديم الاستشارات الإدارية.",
           points: [
@@ -118,6 +118,18 @@ window.SITE_CONTENT = {
           ]
         }
       ]
+    },
+    sector: {
+      kicker: "قطاع المقاولات والاستشارات الهندسية",
+      title: "ملفات التصنيف والتراخيص بيد متخصصة",
+      text: "نتولى لشركات المقاولات والاستشارات الهندسية ملفات **التصنيف** بجميع الفئات، إلى جانب تأسيس الشركات وفتح الفروع واستخراج التراخيص وتجديدها، لتتفرغ فرقكم الفنية لمشاريعها.",
+      points: [
+        "تجهيز ملف التصنيف ومستنداته",
+        "تقديم طلبات التصنيف في مختلف الفئات ومتابعتها",
+        "تأسيس شركات المقاولات والاستشارات وفروعها",
+        "تجديد التراخيص والتصنيف عند الحاجة"
+      ],
+      cta: "اطلب خدمة التصنيف"
     },
     process: {
       kicker: "كيف نعمل",
@@ -232,7 +244,7 @@ window.SITE_CONTENT = {
       pageIntro: "Six core services covering your company's administrative needs, from formation and licensing to correspondence and representation.",
       items: [
         {
-          id: "formation", icon: "building",
+          id: "formation", icon: "building", img: "svc-formation.jpg",
           title: "Company Formation",
           summary: "Formation of all company types: local companies, and branches of foreign and GCC companies.",
           points: [
@@ -243,7 +255,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "licensing", icon: "license",
+          id: "licensing", icon: "license", img: "svc-licensing.jpg",
           title: "Branches & Licensing",
           summary: "Opening branches for existing companies, and issuing and renewing licences.",
           points: [
@@ -254,7 +266,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "classification", icon: "blueprint",
+          id: "classification", icon: "blueprint", img: "svc-classification.jpg",
           title: "Contracting & Engineering Classification",
           summary: "Classification of contracting and engineering consultancy firms across all grades.",
           points: [
@@ -265,7 +277,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank",
+          id: "government", icon: "bank", img: "svc-government.jpg",
           title: "Government & Banking Transactions",
           summary: "Completing government transactions and dealing with banks on your company's behalf.",
           points: [
@@ -276,7 +288,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "representation", icon: "handshake",
+          id: "representation", icon: "handshake", img: "svc-representation.jpg",
           title: "Company Representation & Admin Work",
           summary: "Representing companies and handling administrative work on their behalf when needed.",
           points: [
@@ -287,7 +299,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "documents", icon: "pen",
+          id: "documents", icon: "pen", img: "svc-documents.jpg",
           title: "Correspondence, Contracts & Admin Consulting",
           summary: "Preparing correspondence and contracts, and providing administrative consulting.",
           points: [
@@ -298,6 +310,18 @@ window.SITE_CONTENT = {
           ]
         }
       ]
+    },
+    sector: {
+      kicker: "Contracting & Engineering Consultancy",
+      title: "Classification and licensing files in specialist hands",
+      text: "We handle **classification** files for contracting and engineering consultancy firms across all grades, along with company formation, branch setup, and licence issuance and renewal, so your technical teams can stay focused on their projects.",
+      points: [
+        "Preparing the classification file and its documents",
+        "Submitting and following up classification applications for all grades",
+        "Setting up contracting and consultancy companies and their branches",
+        "Renewing licences and classification when required"
+      ],
+      cta: "Request classification service"
     },
     process: {
       kicker: "How we work",

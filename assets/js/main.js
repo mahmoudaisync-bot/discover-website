@@ -128,6 +128,14 @@
   }
 
   /* ---------- sections ---------- */
+  var PH = CFG.photos || {};
+  function photo(name) { return base + "assets/img/photos/" + name; }
+  // absolute URL: a url() inside a CSS variable resolves against the stylesheet, not the page
+  function bgStyle(name) { return name ? ' style="--bg:url(\'' + new URL(photo(name), location.href).href + '\')"' : ""; }
+  function img(name, alt, cls, eager) {
+    return '<img class="' + (cls || "") + '" src="' + photo(name) + '" alt="' + esc(alt || "") + '"' + (eager ? "" : ' loading="lazy"') + ' decoding="async">';
+  }
+
   function sectionHead(kicker, title, intro, center) {
     return '<div class="section-head' + (center ? " center" : "") + '"><span class="kicker">' + esc(kicker) + "</span><h2>" + esc(title) + "</h2>" + (intro ? '<p class="lead">' + esc(intro) + "</p>" : "") + "</div>";
   }
@@ -136,7 +144,7 @@
     var steps = C.hero.panelSteps.map(function (s, i) {
       return '<li><span class="hp-num">' + (i + 1) + "</span><span>" + esc(s) + "</span></li>";
     }).join("");
-    return '<section class="hero" id="top"><div class="container hero-grid">' +
+    return '<section class="hero has-photo" id="top"' + bgStyle(PH.hero) + '><div class="container hero-grid">' +
       '<div class="hero-copy"><span class="eyebrow">' + esc(C.hero.eyebrow) + "</span>" +
       "<h1>" + esc(C.hero.title) + "</h1><p>" + esc(C.hero.text) + "</p>" +
       '<div class="hero-ctas"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a>" +
@@ -152,10 +160,11 @@
     var vals = C.about.values.map(function (v) {
       return '<div class="value"><span class="value-ico">' + icon(v.icon) + "</span><div><h3>" + esc(v.title) + "</h3><p>" + esc(v.text) + "</p></div></div>";
     }).join("");
-    return '<section class="section" id="about"><div class="container about-grid"><div>' +
+    var media = PH.about ? '<figure class="about-media">' + img(PH.about, C.about.title, "about-img") + '<span class="about-frame" aria-hidden="true"></span></figure>' : "";
+    return '<section class="section" id="about"><div class="container about-grid">' + media + "<div>" +
       sectionHead(C.about.kicker, C.about.title) +
       C.about.text.map(function (p) { return '<p class="prose">' + rich(p) + "</p>"; }).join("") +
-      '</div><div class="values">' + vals + "</div></div></section>";
+      '<div class="values">' + vals + "</div></div></div></section>";
   }
 
   function serviceCard(s, detailed) {
@@ -163,8 +172,21 @@
     var act = detailed
       ? '<a class="btn btn-primary" href="' + link("contact.html") + "?service=" + s.id + '#request">' + esc(C.common.requestService) + "</a>"
       : '<a class="card-link" href="' + link("services.html") + "#" + s.id + '">' + esc(C.common.details) + icon("arrow", "flip") + "</a>";
-    return '<article class="svc-card' + (detailed ? " detailed" : "") + '" id="' + (detailed ? s.id : "") + '"><span class="svc-ico">' + icon(s.icon) + "</span>" +
-      "<h3>" + esc(s.title) + "</h3><p>" + esc(s.summary) + "</p>" + pts + '<div class="svc-act">' + act + "</div></article>";
+    var media = s.img ? '<div class="svc-media">' + img(s.img, s.title) + "</div>" : "";
+    return '<article class="svc-card' + (detailed ? " detailed" : "") + (s.img ? " has-media" : "") + '"' + (detailed ? ' id="' + s.id + '"' : "") + ">" + media +
+      '<div class="svc-body"><span class="svc-ico">' + icon(s.icon) + "</span>" +
+      "<h3>" + esc(s.title) + "</h3><p>" + esc(s.summary) + "</p>" + pts + '<div class="svc-act">' + act + "</div></div></article>";
+  }
+
+  function sector() {
+    var S = C.sector;
+    if (!S) return "";
+    var pts = '<ul class="checks checks-light">' + S.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
+    var media = '<div class="sector-media">' + (PH.sector ? img(PH.sector, S.title, "sector-main") : "") +
+      (PH.sectorInset ? img(PH.sectorInset, S.kicker, "sector-inset") : "") + "</div>";
+    return '<section class="section sector" id="sector"><div class="container sector-grid">' + media +
+      '<div class="sector-copy">' + sectionHead(S.kicker, S.title) + '<p class="prose">' + rich(S.text) + "</p>" + pts +
+      '<a class="btn btn-accent btn-lg" href="' + link("contact.html") + '?service=classification#request">' + icon("blueprint") + "<span>" + esc(S.cta) + "</span></a></div></div></section>";
   }
 
   function servicesSection() {
@@ -178,7 +200,7 @@
     var steps = C.process.steps.map(function (s, i) {
       return '<li class="step"><span class="step-num">' + (i + 1) + "</span><h3>" + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></li>";
     }).join("");
-    return '<section class="section section-dark" id="process"><div class="container">' +
+    return '<section class="section section-dark has-photo" id="process"' + bgStyle(PH.process) + '><div class="container">' +
       sectionHead(C.process.kicker, C.process.title, "", true) + '<ol class="steps">' + steps + "</ol></div></section>";
   }
 
@@ -186,8 +208,9 @@
     var items = C.why.items.map(function (w) {
       return '<div class="why-item"><span class="why-ico">' + icon(w.icon) + "</span><h3>" + esc(w.title) + "</h3><p>" + esc(w.text) + "</p></div>";
     }).join("");
+    var media = PH.why ? '<figure class="why-media">' + img(PH.why, C.common.location) + '<figcaption>' + icon("pin") + esc(C.common.location) + "</figcaption></figure>" : "";
     return '<section class="section" id="why"><div class="container">' + sectionHead(C.why.kicker, C.why.title, "", true) +
-      '<div class="why-grid">' + items + "</div></div></section>";
+      '<div class="why-layout">' + media + '<div class="why-grid">' + items + "</div></div></div></section>";
   }
 
   function faq() {
@@ -224,21 +247,21 @@
       '<a class="btn btn-ghost-light btn-lg" href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + "<span>" + esc(C.common.call) + "</span></a></div></div></section>";
   }
 
-  function pageHero(title, intro) {
-    return '<section class="page-hero" id="top"><div class="container"><h1>' + esc(title) + "</h1><p>" + esc(intro) + "</p></div></section>";
+  function pageHero(title, intro, bg) {
+    return '<section class="page-hero' + (bg ? " has-photo" : "") + '" id="top"' + bgStyle(bg) + '><div class="container"><h1>' + esc(title) + "</h1><p>" + esc(intro) + "</p></div></section>";
   }
 
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + about() + servicesSection() + process() + why() + faq() + contactSection(false);
+    body = hero() + about() + servicesSection() + sector() + process() + why() + faq() + contactSection(false);
   } else if (page === "services") {
-    body = pageHero(C.services.pageTitle, C.services.pageIntro) +
+    body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
       C.services.items.map(function (s) { return serviceCard(s, true); }).join("") + "</div></div></section>" +
-      process() + ctaBand();
+      sector() + process() + ctaBand();
   } else if (page === "contact") {
-    body = pageHero(C.contact.pageTitle, C.contact.pageIntro) + contactSection(true);
+    body = pageHero(C.contact.pageTitle, C.contact.pageIntro, PH.pageContact) + contactSection(true);
   } else {
     body = pageHero(C.notFound.title, C.notFound.text) +
       '<section class="section"><div class="container center-row"><a class="btn btn-primary btn-lg" href="' + link("index.html") + '">' + esc(C.notFound.back) + "</a></div></section>";
