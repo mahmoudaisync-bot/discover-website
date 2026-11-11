@@ -63,7 +63,7 @@ window.SITE_CONTENT = {
     statement: { kicker: "ديسكفر لحلول الأعمال", text: "شريك إداري مقره أبوظبي، يتولى تأسيس شركتك وتراخيصها ومعاملاتها الحكومية والمصرفية في جميع إمارات الدولة، ويرشدك إلى الخيار الأنسب لحالتك." },
     // شرائح الواجهة الرئيسية (السلايدر): img اسم الصورة في assets/img/photos، و service رقم الخدمة لزر التفاصيل
     slides: [
-      { img: "s1-abudhabi-skyline.jpg", eyebrow: "ديسكفر لحلول الأعمال", title: "تأسيس الشركات والخدمات الحكومية في الإمارات", text: "ندير عنك، لتتفرغ لنموك. نتولى تأسيس شركتك واستخراج تراخيصها وتجديدها، وملفات تصنيف المقاولات، ومعاملاتها الحكومية والمصرفية في جميع إمارات الدولة.", more: "استعرض خدماتنا" },
+      { img: "s1-uae-fort.jpg", eyebrow: "ديسكفر لحلول الأعمال", title: "تأسيس الشركات والخدمات الحكومية في الإمارات", text: "ندير عنك، لتتفرغ لنموك. نتولى تأسيس شركتك واستخراج تراخيصها وتجديدها، وملفات تصنيف المقاولات، ومعاملاتها الحكومية والمصرفية في جميع إمارات الدولة.", more: "استعرض خدماتنا" },
       { img: "s2-handshake.jpg", eyebrow: "تأسيس الشركات", title: "أسس شركتك في الإمارات بخطوات واضحة", text: "نتولى تأسيس الشركات المحلية وفروع الشركات الأجنبية والخليجية، من تجهيز المستندات حتى إصدار الرخصة.", service: "formation", more: "تفاصيل الخدمة" },
       { img: "s3-cranes.jpg", eyebrow: "تصنيف المقاولات والاستشارات الهندسية", title: "ملفات التصنيف بجميع الفئات", text: "نجهز ملف التصنيف ونتابعه لدى الجهة المختصة، لتتفرغ فرقكم الفنية لمشاريعها.", service: "classification", more: "تفاصيل الخدمة" },
       { img: "s4-executive-meeting.jpg", eyebrow: "المعاملات الحكومية والبنوك", title: "معاملاتك الحكومية والمصرفية بين أيد أمينة", text: "ننجز معاملات شركتك لدى الجهات الحكومية ونتعامل مع البنوك نيابة عنك، ونطلعك على سير كل معاملة.", service: "government", more: "تفاصيل الخدمة" },
@@ -124,7 +124,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "c-government-v2.jpg",
+          id: "government", icon: "bank", img: "c-government-v3.jpg",
           title: "المعاملات الحكومية والبنوك",
           summary: "إنجاز المعاملات الحكومية والتعامل مع البنوك نيابة عن شركتك.",
           points: [
@@ -289,7 +289,7 @@ window.SITE_CONTENT = {
     },
     statement: { kicker: "Discover Business Solutions", text: "An Abu Dhabi-based administrative partner handling company formation, licensing, and government and banking transactions across all emirates, and guiding you to the option that best fits your case." },
     slides: [
-      { img: "s1-abudhabi-skyline.jpg", eyebrow: "Discover Business Solutions", title: "Company Formation & Government Services in the UAE", text: "We handle it, you focus on growth. Company formation, licensing and renewals, contracting classification files, and government and banking transactions across all emirates.", more: "Explore our services" },
+      { img: "s1-uae-fort.jpg", eyebrow: "Discover Business Solutions", title: "Company Formation & Government Services in the UAE", text: "We handle it, you focus on growth. Company formation, licensing and renewals, contracting classification files, and government and banking transactions across all emirates.", more: "Explore our services" },
       { img: "s2-handshake.jpg", eyebrow: "Company Formation", title: "Set up your company in the UAE with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },
       { img: "s3-cranes.jpg", eyebrow: "Contracting & Engineering Classification", title: "Classification files across all grades", text: "We prepare your classification file and follow it up with the relevant authority, so your technical teams can stay focused on their projects.", service: "classification", more: "Service details" },
       { img: "s4-executive-meeting.jpg", eyebrow: "Government & Banking Transactions", title: "Your government and banking transactions in safe hands", text: "We complete your company's transactions with government entities and deal with banks on your behalf, keeping you updated on each one.", service: "government", more: "Service details" },
@@ -350,7 +350,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "c-government-v2.jpg",
+          id: "government", icon: "bank", img: "c-government-v3.jpg",
           title: "Government & Banking Transactions",
           summary: "Completing government transactions and dealing with banks on your company's behalf.",
           points: [

@@ -43,7 +43,7 @@ window.SITE_CONFIG = {
 
   // شكل الواجهة: "fixed" واجهة ثابتة بصورة واحدة، أو "slider" للسلايدر
   heroStyle: "slider",
-  heroImage: "s1-abudhabi-skyline.jpg",
+  heroImage: "s1-uae-fort.jpg",
 
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
   slideInterval: 12000,

@@ -922,3 +922,11 @@ html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
 .tg-br { font-size: 1rem; font-weight: 400; opacity: .75; }
 .tg-cur { font-size: 1.15rem; }
 .tg-sep, .tg-tot { font-size: .72rem; }
+
+/* الشريحة الأولى (القلعة): الصورة أعرض من الشاشة، فتظهر القلعة في الجهة الفارغة بعيدا عن الكلام */
+@media (min-width: 900px) {
+  .tg-slider .slide:first-child .slide-img { object-position: 0% 50%; }
+  html[dir="rtl"] .tg-slider .slide:first-child .slide-img { object-position: 100% 50%; }
+}
+/* إظهار ألوان السماء في شريحة القلعة أكثر قليلا */
+@media (min-width: 900px) { .tg-slider .slide:first-child .slide-shade { opacity: .82; } }
