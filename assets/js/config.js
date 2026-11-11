@@ -42,9 +42,9 @@ window.SITE_CONFIG = {
   },
 
   // شكل الواجهة: "fixed" واجهة ثابتة بصورة واحدة، أو "slider" للسلايدر
-  heroStyle: "fixed",
+  heroStyle: "slider",
   heroImage: "s1-abudhabi-skyline.jpg",
 
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
-  slideInterval: 4000
+  slideInterval: 9000
 };

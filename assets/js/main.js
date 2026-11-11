@@ -170,10 +170,15 @@
       "</div></div></section>";
   }
 
+  // السلايدر بأسلوب Target: صورة كاملة، عنوان يظهر كلمة كلمة، شريط أبيض يكشف العنوان الصغير والأزرار، وعداد
   function heroSlider() {
     var slides = C.slides || [];
     var L = C.sliderLabels;
     var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>';
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function words(t) {
+      return t.split(" ").map(function (w, i) { return '<span class="w" style="--i:' + i + '">' + esc(w) + "</span>"; }).join(" ");
+    }
     var items = slides.map(function (s, i) {
       var more = s.service ? link("services.html") + "#" + s.service : link("services.html");
       var Tag = i === 0 ? "h1" : "h2";
@@ -181,21 +186,23 @@
         '<img class="slide-img" src="' + photo(s.img) + '" alt="' + esc(s.eyebrow) + '"' + (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">' +
         '<div class="slide-shade"></div>' +
         '<div class="container slide-inner"><div class="slide-copy">' +
-        '<span class="eyebrow">' + esc(s.eyebrow) + "</span><" + Tag + ' class="slide-title">' + esc(s.title) + "</" + Tag + ">" +
+        '<span class="eyebrow wipe"><span>' + esc(s.eyebrow) + "</span></span>" +
+        "<" + Tag + ' class="slide-title" aria-label="' + esc(s.title) + '">' + words(s.title) + "</" + Tag + ">" +
         '<p class="slide-text">' + esc(s.text) + "</p>" +
-        '<div class="hero-ctas"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a>" +
-        '<a class="btn btn-ghost-light btn-lg" href="' + more + '"><span>' + esc(s.more) + "</span>" + icon("arrow", "flip") + "</a></div>" +
+        '<div class="hero-ctas"><span class="wipe"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a></span>" +
+        '<span class="wipe"><a class="btn btn-ghost-light btn-lg" href="' + more + '"><span>' + esc(s.more) + "</span>" + icon("arrow", "flip") + "</a></span></div>" +
         "</div></div></div>";
     }).join("");
     var dots = slides.map(function (s, i) {
       return '<button type="button" class="dot' + (i === 0 ? " is-active" : "") + '" data-go="' + i + '" aria-label="' + esc(L.goto) + " " + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : "") + "></button>";
     }).join("");
-    return '<section class="hero-slider" id="top" aria-roledescription="carousel" aria-label="' + esc(L.label) + '">' +
+    return '<section class="hero-slider tg-slider" id="top" aria-roledescription="carousel" aria-label="' + esc(L.label) + '">' +
       '<div class="slides">' + items + "</div>" +
       (slides.length > 1
         ? '<button type="button" class="sl-arrow sl-prev" aria-label="' + esc(L.prev) + '">' + chev + "</button>" +
           '<button type="button" class="sl-arrow sl-next" aria-label="' + esc(L.next) + '">' + chev + "</button>" +
-          '<div class="sl-dots">' + dots + "</div><div class=\"sl-progress\"><span></span></div>"
+          '<div class="tg-dots">' + dots + "</div>" +
+          '<div class="tg-count" dir="ltr" aria-hidden="true"><span class="tg-cur">' + pad(1) + '</span><span class="tg-sep">/</span><span class="tg-tot">' + pad(slides.length) + "</span></div>"
         : "") +
       "</section>";
   }
@@ -208,23 +215,22 @@
     if (slides.length < 2) return;
     var cur = 0, timer = null, paused = false;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var ms = CFG.slideInterval || 6500;
-    var bar = root.querySelector(".sl-progress span");
+    var ms = CFG.slideInterval || 9000;
+    var count = root.querySelector(".tg-cur");
     function go(n) {
       n = (n + slides.length) % slides.length;
       if (n === cur) return;
       slides[cur].classList.remove("is-active"); slides[cur].setAttribute("inert", "");
-      dots[cur].classList.remove("is-active"); dots[cur].removeAttribute("aria-current");
+      if (dots[cur]) { dots[cur].classList.remove("is-active"); dots[cur].removeAttribute("aria-current"); }
       cur = n;
       slides[cur].classList.add("is-active"); slides[cur].removeAttribute("inert");
-      dots[cur].classList.add("is-active"); dots[cur].setAttribute("aria-current", "true");
+      if (dots[cur]) { dots[cur].classList.add("is-active"); dots[cur].setAttribute("aria-current", "true"); }
+      if (count) count.textContent = (cur + 1 < 10 ? "0" : "") + (cur + 1);
       restart();
     }
     function restart() {
       clearTimeout(timer);
-      if (bar) { bar.style.transition = "none"; bar.style.width = "0"; }
       if (reduce || paused) return;
-      if (bar) { void bar.offsetWidth; bar.style.transition = "width " + ms + "ms linear"; bar.style.width = "100%"; }
       timer = setTimeout(function () { go(cur + 1); }, ms);
     }
     root.querySelector(".sl-next").addEventListener("click", function () { go(cur + 1); });

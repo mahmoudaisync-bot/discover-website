@@ -824,3 +824,80 @@ html[lang="en"] .hero-title { font-weight: 600; line-height: 1.25; letter-spacin
 @media (min-width: 980px) { .logo.has-img .logo-img { height: 40px; } .logo.has-img .logo-badge { width: 28px; height: 28px; margin-top: 0; } }
 .site-footer .logo.has-img .logo-img { height: 52px; }
 .site-footer .logo.has-img .logo-badge { width: 32px; height: 32px; margin-top: 2px; }
+
+/* =========================================================
+   علامة الخط الصغيرة بجانب العنوان الصغير (eyebrow): أصغر وأنحف
+   ========================================================= */
+.eyebrow { gap: 7px; }
+.eyebrow::before { width: 14px; height: 1px; opacity: .9; }
+
+/* =========================================================
+   السلايدر بأسلوب Target Engineering
+   9 ثوان لكل شريحة، تلاشي للصورة، العنوان يظهر كلمة كلمة بغباش،
+   وشريط أبيض يكشف العنوان الصغير والأزرار، وعداد في الأسفل
+   ========================================================= */
+.tg-slider { height: clamp(560px, calc(100svh - 68px), 900px); }
+.tg-slider .slide { transition: opacity 1.2s ease, visibility 0s linear 1.2s; }
+.tg-slider .slide.is-active { transition: opacity 1.2s ease; }
+.tg-slider .slide-img { transform: scale(1.06); transition: transform 10s ease-out; }
+.tg-slider .slide.is-active .slide-img { transform: scale(1); }
+.tg-slider .slide-copy { max-width: 980px; }
+
+/* إلغاء حركات السلايدر القديم داخل هذا السلايدر */
+.tg-slider .slide .eyebrow, .tg-slider .slide-title, .tg-slider .slide-text, .tg-slider .slide .hero-ctas { opacity: 1; transform: none; transition: none; }
+
+/* العنوان: كلمة كلمة */
+.tg-slider .slide-title { font-size: clamp(1.6rem, 6vw, 2.6rem); line-height: 1.35; margin-bottom: .45em; }
+html[lang="en"] .tg-slider .slide-title { font-size: clamp(1.55rem, 5.6vw, 2.5rem); line-height: 1.2; }
+@media (min-width: 900px) {
+  .tg-slider .slide-title { white-space: nowrap; font-size: min(2.6rem, 3.1vw); }
+  html[lang="en"] .tg-slider .slide-title { font-size: min(2.5rem, 2.85vw); }
+}
+.tg-slider .slide-title .w { display: inline-block; opacity: 0; }
+.tg-slider .slide.is-active .slide-title .w { animation: tgWord 1s cubic-bezier(.16,1,.3,1) both; animation-delay: calc(.45s + var(--i) * .09s); }
+@keyframes tgWord { from { opacity: 0; transform: translateX(var(--tg-dx, 50px)); filter: blur(10px); } to { opacity: 1; transform: none; filter: blur(0); } }
+html[dir="rtl"] .tg-slider { --tg-dx: -50px; }
+
+/* النص: يظهر بهدوء بعد العنوان */
+.tg-slider .slide-text { opacity: 0; }
+.tg-slider .slide.is-active .slide-text { animation: tgFade .8s ease both; animation-delay: 1.05s; }
+@keyframes tgFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* الشريط الأبيض الكاشف (العنوان الصغير والأزرار) */
+.tg-slider .wipe { position: relative; overflow: hidden; }
+.tg-slider .wipe > * { opacity: 0; }
+.tg-slider .wipe::after { content: ""; position: absolute; inset: 0; background: #fff; transform: scaleX(0); transform-origin: left center; pointer-events: none; border-radius: inherit; }
+.tg-slider .slide.is-active .wipe::after { animation: tgWipe .9s cubic-bezier(.77,0,.18,1) both; }
+.tg-slider .slide.is-active .wipe > * { animation: tgShow .01s linear both; }
+.tg-slider .slide.is-active .eyebrow.wipe::after { animation-delay: .15s; }
+.tg-slider .slide.is-active .eyebrow.wipe > * { animation-delay: .6s; }
+.tg-slider .slide.is-active .hero-ctas .wipe:nth-child(1)::after { animation-delay: 1.15s; }
+.tg-slider .slide.is-active .hero-ctas .wipe:nth-child(1) > * { animation-delay: 1.6s; }
+.tg-slider .slide.is-active .hero-ctas .wipe:nth-child(2)::after { animation-delay: 1.3s; }
+.tg-slider .slide.is-active .hero-ctas .wipe:nth-child(2) > * { animation-delay: 1.75s; }
+@keyframes tgWipe { 0% { transform: scaleX(0); transform-origin: left center; } 50% { transform: scaleX(1); transform-origin: left center; } 50.1% { transform: scaleX(1); transform-origin: right center; } 100% { transform: scaleX(0); transform-origin: right center; } }
+@keyframes tgShow { to { opacity: 1; } }
+.tg-slider .eyebrow.wipe { display: inline-flex; padding-block: 2px; }
+.tg-slider .eyebrow.wipe::before { display: none; }
+.tg-slider .eyebrow.wipe > span { display: inline-flex; align-items: center; gap: 7px; }
+.tg-slider .eyebrow.wipe > span::before { content: ""; width: 14px; height: 1px; background: var(--c-accent); }
+/* الزر الشفاف بدون زجاج حتى يظهر الكشف الأبيض بوضوح */
+.tg-slider .hero-ctas .btn > * { position: relative; }
+
+/* العداد والنقاط في الأسفل */
+.tg-count { position: absolute; z-index: 3; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; align-items: baseline; gap: 6px; color: #fff; font-family: var(--font-en); font-weight: 600; letter-spacing: .04em; }
+.tg-cur { font-size: 1.35rem; }
+.tg-sep, .tg-tot { font-size: .8rem; opacity: .65; }
+.tg-dots { position: absolute; z-index: 3; bottom: 38px; inset-inline-start: max(16px, calc((100% - 1200px) / 2 + 20px)); display: flex; gap: 8px; }
+.tg-dots .dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.7); background: transparent; cursor: pointer; transition: background .3s, transform .3s; }
+.tg-dots .dot.is-active { background: #fff; transform: scale(1.15); }
+@media (max-width: 640px) { .tg-dots { display: none; } .tg-count { bottom: 22px; } .tg-slider { height: auto; min-height: 620px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-slider .slide-title .w, .tg-slider .slide-text, .tg-slider .wipe > * { opacity: 1 !important; animation: none !important; }
+  .tg-slider .wipe::after { display: none; }
+  .tg-slider .slide-img { transform: none; transition: none; }
+}
+.tg-slider .hero-ctas .wipe { display: inline-flex; border-radius: 999px; }
+.tg-slider .hero-ctas .wipe > .btn { flex: 1 1 auto; }
+@media (max-width: 640px) { .tg-slider .hero-ctas .wipe { flex: 1 1 100%; } .tg-slider .hero-ctas .wipe > .btn { width: 100%; } }
