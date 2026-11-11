@@ -20,8 +20,8 @@ window.SITE_CONFIG = {
   logoStyle: "image",
   logoBadge: true,                          // أيقونة البحث الدائرية الصغيرة بجانب اللوجو
   logoWord: "DISCOVER",
-  logoImage: "assets/img/logo-dbs.png",               // لوجو الهيدر
-  logoImageLight: "assets/img/logo-dbs-slogan-white.png", // لوجو الفوتر (أبيض مع الشعار)
+  logoImage: "assets/img/logo-dbs-word.png",          // لوجو الهيدر (DISCOVER فقط)
+  logoImageLight: "assets/img/logo-dbs-word-white.png", // لوجو الفوتر (أبيض)
 
   // صور الأقسام (داخل assets/img/photos). لتغيير صورة: ضع الصورة الجديدة في نفس الفولدر واكتب اسمها هنا
   // صور السلايدر في content.js (slides)، وصور الخدمات في content.js داخل كل خدمة (img)

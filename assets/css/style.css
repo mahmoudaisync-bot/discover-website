@@ -815,3 +815,12 @@ html[lang="en"] .hero-title { font-weight: 600; line-height: 1.25; letter-spacin
 @media (min-width: 980px) { .logo.has-img .logo-img { height: 38px; } .logo.has-img .logo-badge { width: 28px; height: 28px; } }
 .site-footer .logo.has-img .logo-img { height: 62px; }
 .site-footer .logo.has-img .logo-badge { width: 30px; height: 30px; }
+
+/* اللوجو بكلمة DISCOVER فقط: الحروف على نفس مستوى أيقونة البحث
+   (يد العدسة تنزل تحت الحروف، فالمحاذاة من الأعلى) */
+.logo.has-img { align-items: flex-start; }
+.logo.has-img .logo-img { height: 36px; }
+.logo.has-img .logo-badge { width: 26px; height: 26px; margin-top: -1px; }
+@media (min-width: 980px) { .logo.has-img .logo-img { height: 40px; } .logo.has-img .logo-badge { width: 28px; height: 28px; margin-top: 0; } }
+.site-footer .logo.has-img .logo-img { height: 52px; }
+.site-footer .logo.has-img .logo-badge { width: 32px; height: 32px; margin-top: 2px; }

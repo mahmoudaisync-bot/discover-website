@@ -79,7 +79,7 @@
     var src = light ? (CFG.logoImageLight || CFG.logoImage) : CFG.logoImage;
     if (src) {
       return '<a class="logo has-img ' + (extraCls || "") + '" href="' + href + '">' + (CFG.logoBadge ? logoBadge() : "") +
-        '<img src="' + base + src + '" alt="' + esc(C.brand.full) + '" class="logo-img" width="' + (light ? 614 : 453) + '" height="' + (light ? 240 : 150) + '"></a>';
+        '<img src="' + base + src + '" alt="' + esc(C.brand.full) + '" class="logo-img" width="518" height="140"></a>';
     }
     return '<a class="logo ' + (extraCls || "") + '" href="' + href + '" aria-label="' + esc(C.brand.full) + '">' + logoMark() +
       '<span class="logo-text"><span class="logo-name">' + esc(C.brand.name) + '</span><span class="logo-sub">' + esc(C.brand.sub) + "</span></span></a>";
