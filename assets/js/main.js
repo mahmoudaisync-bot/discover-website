@@ -138,7 +138,7 @@
       '<div class="ft-main"><div class="container">' +
         '<div class="ft-grid"><div class="ft-brand">' + logo() + '<p class="ft-tag">' + esc(C.tagline) + "</p></div>" +
           '<ul class="ft-links">' + links + "</ul>" +
-          '<div class="ft-cta"><h3>' + esc(C.common.ftCtaTitle) + "</h3><p>" + esc(C.common.ftCtaText) + '</p><a class="ft-btn-solid" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a></div></div>" +
+          "</div>" +
         '<div class="ft-bottom"><span>' + icon("pin") + esc(C.common.location) + "</span><span>© <span id=\"yr\"></span> " + esc(C.brand.full) + ". " + esc(C.common.rights) + ".</span></div>" +
       "</div></div></footer>" +
       '<a class="wa-float" href="' + waLink() + '" target="_blank" rel="noopener" aria-label="' + esc(C.common.floatingWa) + '">' + WA_SVG + '<span class="wa-float-label">' + esc(C.common.floatingWa) + "</span></a>";
@@ -379,12 +379,11 @@
   // قسم مدموج: من نحن + الاستشارات الإدارية (mergeAboutAdvisory في config.js)
   function aboutAdvisory() {
     var A = C.advisory;
-    var cov = C.coverage ? '<div class="about-coverage"><span class="about-coverage-label">' + icon("pin") + esc(C.coverage.title) + '</span><ul class="emirates">' +
-      C.coverage.emirates.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul></div>" : "";
+    var cov = C.about.coverageLine ? '<p class="about-scope">' + icon("pin") + "<span>" + esc(C.about.coverageLine) + "</span></p>" : "";
     var pts = '<ul class="checks checks-light">' + A.points.map(function (p) { return "<li>" + icon("check") + "<span>" + esc(p) + "</span></li>"; }).join("") + "</ul>";
     var aboutCard = '<article class="pair-card pair-about">' + (PH.about ? '<figure class="pair-media">' + img(PH.about, C.about.title) + "</figure>" : "") +
       '<div class="pair-body"><span class="kicker">' + esc(C.about.kicker) + "</span><h2>" + esc(C.about.title) + "</h2>" +
-      '<p class="prose">' + rich(C.about.text[0]) + "</p>" + cov + "</div></article>";
+      '<p class="prose">' + rich(C.about.cardText || C.about.text[0]) + "</p>" + cov + "</div></article>";
     var advCard = '<article class="pair-card pair-adv" id="advisory">' + (PH.advisory ? '<figure class="pair-media">' + img(PH.advisory, A.title) + "</figure>" : "") +
       '<div class="pair-body"><span class="kicker">' + esc(A.kicker) + "</span><h2>" + esc(A.title) + "</h2>" +
       '<p class="prose">' + esc(A.text) + "</p>" + pts +

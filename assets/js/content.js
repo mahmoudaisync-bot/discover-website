@@ -74,6 +74,8 @@ window.SITE_CONTENT = {
     about: {
       kicker: "من نحن",
       title: "شريك إداري يختصر عليك الطريق",
+      cardText: "**ديسكفر لحلول الأعمال - ذ م م - ش ش و** تقدم لأصحاب الأعمال والمستثمرين خدمات إدارية متكاملة تبدأ من **تأسيس الشركة** واستخراج تراخيصها، وتمتد إلى إنجاز **معاملاتها الحكومية والمصرفية** وتمثيلها إداريا عند الحاجة.",
+      coverageLine: "مقرنا أبوظبي، ونخدم عملاءنا في جميع إمارات الدولة ومن خارج الإمارات.",
       text: [
         "**ديسكفر لحلول الأعمال - ذ م م - ش ش و** شركة مقرها أبوظبي وتعمل في جميع إمارات الدولة، تقدم لأصحاب الأعمال والمستثمرين خدمات إدارية متكاملة تبدأ من **تأسيس الشركة** واستخراج تراخيصها، وتمتد إلى إنجاز **معاملاتها الحكومية والمصرفية** وتمثيلها إداريا عند الحاجة.",
         "نخدم عملاءنا من داخل الإمارات ومن دول الخليج وخارجها، ونعمل مع شركات المقاولات والاستشارات الهندسية في ملفات **التصنيف** بمختلف فئاته."
@@ -301,6 +303,8 @@ window.SITE_CONTENT = {
     about: {
       kicker: "About us",
       title: "An administrative partner that clears the way",
+      cardText: "**Discover Business Solutions** is an administrative services company. We support business owners and investors with end-to-end services, starting with **company formation** and licensing, and extending to **government and banking transactions** and administrative representation when needed.",
+      coverageLine: "Based in Abu Dhabi, we serve clients across all UAE emirates and from outside the UAE.",
       text: [
         "**Discover Business Solutions** is an Abu Dhabi-based administrative services company working across all emirates. We support business owners and investors with end-to-end services, starting with **company formation** and licensing, and extending to **government and banking transactions** and administrative representation when needed.",
         "We serve clients from the UAE, the wider Gulf and abroad, and we work with contracting and engineering consultancy firms on **classification** files across all grades."

@@ -1159,3 +1159,30 @@ html .sector .kicker, html[lang] .sector .kicker { font-size: 1rem; font-weight:
 /* المقاولات والاستشارات بنفس رمادي الأسئلة الشائعة، مع فاصل فاتح قبل الأسئلة */
 .sector, .adv-band { background: var(--c-bg-alt); }
 .adv-band { border-bottom: 46px solid var(--c-bg); }
+
+/* ===== اللمسات الأخيرة (2026-11-12) ===== */
+/* 1) فاصل فحمي رفيع بين المقاولات والاستشارات */
+.adv-band { border-top: 3px solid #333333; }
+/* 2) ارتفاع أقل لقسم الاستشارات، والصورة تتبع ارتفاع المحتوى دون تشويه */
+@media (min-width: 900px) {
+  .adv-band .sector-copy { padding-block: clamp(24px, 2.8vw, 38px); }
+  .adv-band .sector-main { object-fit: cover; }
+}
+/* 3) كارت من نحن: سطر نطاق العمل */
+.about-scope { display: flex; align-items: flex-start; gap: 8px; margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--c-line); color: var(--c-primary); font-weight: 600; font-size: .95rem; }
+.about-scope .ico { width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px; color: var(--c-teal); }
+@media (min-width: 900px) {
+  /* الصورة تأخذ الارتفاع الزائد بدل ترك فراغ داخل الكارت */
+  .about-adv .pair-grid > .pair-about:not(.pair-proc) .pair-media { flex: 1 1 auto; aspect-ratio: auto; min-height: 220px; }
+}
+/* 4) الفوتر بعد حذف بلوك الطلب: الشعار في جهة والروابط في الجهة الأخرى */
+@media (min-width: 900px) {
+  .ft-grid { grid-template-columns: 1fr auto; align-items: center; }
+  .ft-links { grid-template-columns: repeat(3, max-content); gap: 16px 56px; }
+}
+/* 5) كروت الخدمات: نص وروابط أغمق فوق الزجاج */
+@media (min-width: 640px) {
+  #services .svc-card.has-media p { color: #26303b; }
+  #services .svc-card.has-media .card-link { color: #5c4520; }
+  #services .svc-card.has-media .card-link:hover { color: var(--c-primary); }
+}
