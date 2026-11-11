@@ -999,3 +999,35 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
 .mini-why .why-ico .ico { width: 18px; height: 18px; }
 .mini-why h3 { color: #fff; font-size: .92rem; margin: 0 0 3px; }
 .mini-why p { margin: 0; color: rgba(255,255,255,.75); font-size: .84rem; line-height: 1.7; }
+
+/* ===== تنظيم الجزء السفلي من الرئيسية: صفوف أقصر ===== */
+.about-adv { padding-bottom: 22px; }
+.process-why { padding-top: 0; }
+.pair-3 .pair-media { aspect-ratio: 16 / 8; }
+.process-why .pair-media { aspect-ratio: 3 / 1; }
+.pair-body { padding: clamp(20px, 2.4vw, 28px); }
+.mini-step { padding: 9px 0; }
+.mini-why-grid { gap: 10px; }
+
+/* الأسئلة الشائعة: العنوان جانبا والقائمة بجواره */
+.faq-sec, #contact { padding-block: 52px; }
+.faq-head .section-head { margin-bottom: 18px; text-align: start; }
+.faq-head .btn { margin-bottom: 18px; }
+@media (min-width: 900px) {
+  .faq-split { display: grid; grid-template-columns: 1fr 1.9fr; gap: 56px; align-items: start; }
+  .faq-head { position: sticky; top: 100px; }
+  .faq-head .btn { margin-bottom: 0; }
+}
+
+/* التواصل: بطاقات في عمودين ونموذج أقصر */
+@media (min-width: 560px) {
+  #contact .contact-list:not(.contact-list-footer) { grid-template-columns: 1fr 1fr; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+}
+#contact .contact-list a, #contact .contact-list div { padding: 11px 12px; gap: 10px; }
+#contact .contact-list bdi { font-size: .9rem; }
+.field textarea { min-height: 84px; }
+.req-form .field { margin-bottom: 12px; }
+@media (min-width: 900px) { .req-form { padding: 24px 26px; } }
+@media (min-width: 560px) { #contact .contact-list:not(.contact-list-footer) > li:nth-child(n+4) { grid-column: 1 / -1; } }
+#contact .contact-list bdi { word-break: normal; overflow-wrap: anywhere; }

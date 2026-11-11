@@ -315,7 +315,8 @@
     var items = C.faq.items.map(function (f, i) {
       return '<details class="faq-item"' + (i === 0 ? " open" : "") + "><summary><span>" + esc(f.q) + "</span>" + icon("plus") + "</summary><div class=\"faq-a\"><p>" + esc(f.a) + "</p></div></details>";
     }).join("");
-    return '<section class="section section-alt" id="faq"><div class="container narrow">' + sectionHead(C.faq.kicker, C.faq.title, "", true) +
+    return '<section class="section section-alt faq-sec" id="faq"><div class="container faq-split"><div class="faq-head">' + sectionHead(C.faq.kicker, C.faq.title) +
+      '<a class="btn btn-wa" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a></div>" +
       '<div class="faq-list">' + items + "</div></div></section>";
   }
 
@@ -324,10 +325,10 @@
     var opts = C.services.items.map(function (s) { return '<option value="' + s.id + '">' + esc(s.title) + "</option>"; }).join("") +
       '<option value="other">' + esc(F.other) + "</option>";
     return '<form class="req-form" id="request" novalidate><h3>' + esc(F.title) + "</h3>" +
-      '<div class="field"><label for="f-name">' + esc(F.name) + ' <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="' + esc(F.namePh) + '" required><small class="err" id="e-name"></small></div>' +
-      '<div class="field"><label for="f-phone">' + esc(F.phone) + ' <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" dir="ltr" inputmode="tel" autocomplete="tel" placeholder="' + esc(F.phonePh) + '" required><small class="err" id="e-phone"></small></div>' +
+      '<div class="field-row"><div class="field"><label for="f-name">' + esc(F.name) + ' <span class="req">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="' + esc(F.namePh) + '" required><small class="err" id="e-name"></small></div>' +
+      '<div class="field"><label for="f-phone">' + esc(F.phone) + ' <span class="req">*</span></label><input id="f-phone" name="phone" type="tel" dir="ltr" inputmode="tel" autocomplete="tel" placeholder="' + esc(F.phonePh) + '" required><small class="err" id="e-phone"></small></div></div>' +
       '<div class="field"><label for="f-service">' + esc(F.service) + ' <span class="req">*</span></label><select id="f-service" name="service" required><option value="">' + esc(F.servicePh) + "</option>" + opts + '</select><small class="err" id="e-service"></small></div>' +
-      '<div class="field"><label for="f-details">' + esc(F.details) + '</label><textarea id="f-details" name="details" rows="4" maxlength="800" placeholder="' + esc(F.detailsPh) + '"></textarea></div>' +
+      '<div class="field"><label for="f-details">' + esc(F.details) + '</label><textarea id="f-details" name="details" rows="3" maxlength="800" placeholder="' + esc(F.detailsPh) + '"></textarea></div>' +
       '<button class="btn btn-wa btn-lg btn-block" type="submit">' + WA_SVG + "<span>" + esc(F.submit) + "</span></button>" +
       '<p class="form-note">' + icon("lock") + esc(F.note) + '</p><p class="form-status" id="formStatus" role="status" aria-live="polite"></p></form>';
   }
@@ -402,7 +403,7 @@
       '<div class="pair-body"><span class="kicker">' + esc(C.process.kicker) + "</span><h2>" + esc(C.process.title) + '</h2><ol class="mini-steps">' + steps + "</ol></div></article>";
     var wCard = '<article class="pair-card pair-adv" id="why">' + (PH.why ? '<figure class="pair-media">' + img(PH.why, C.common.location) + "</figure>" : "") +
       '<div class="pair-body"><span class="kicker">' + esc(C.why.kicker) + "</span><h2>" + esc(C.why.title) + '</h2><div class="mini-why-grid">' + items + "</div></div></article>";
-    return '<section class="section section-alt process-why"><div class="container"><div class="pair-grid">' + pCard + wCard + "</div></div></section>";
+    return '<section class="section process-why"><div class="container"><div class="pair-grid">' + pCard + wCard + "</div></div></section>";
   }
 
   // الاستشارات الإدارية: صورة طولية ونص
