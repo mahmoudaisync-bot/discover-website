@@ -1188,3 +1188,4 @@ html .sector .kicker, html[lang] .sector .kicker { font-size: 1rem; font-weight:
 }
 /* عنوان شريط التواصل بالإنجليزي بنفس خط الموقع */
 html[lang="en"] .ft-connect h2 { font-family: inherit; font-weight: 400; letter-spacing: -.01em; }
+html[lang="en"] .ft-connect h2 { font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
