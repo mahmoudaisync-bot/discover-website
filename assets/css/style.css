@@ -1042,3 +1042,13 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
   .why-wide .pair-media { aspect-ratio: auto; height: 100%; }
 }
 @media (min-width: 1100px) { .why-wide .mini-why-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* لماذا ديسكفر بعرض الصفحة كاملا، والصورة في الجهة المقابلة لصورة المقاولات */
+.process-why { padding: 0; }
+.process-why > .container { max-width: none; padding: 0; }
+.why-wide { border-radius: 0; box-shadow: none; border-top: 1px solid rgba(255,255,255,.08); }
+.why-wide .pair-body { padding: clamp(36px, 5vw, 72px) clamp(20px, 5vw, 80px); }
+@media (min-width: 900px) {
+  .why-wide { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+  .why-wide .pair-media { order: 2; min-height: 360px; }
+}
