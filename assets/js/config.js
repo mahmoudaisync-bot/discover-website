@@ -27,9 +27,11 @@ window.SITE_CONFIG = {
   // صور السلايدر في content.js (slides)، وصور الخدمات في content.js داخل كل خدمة (img)
   photos: {
     about: "about-consultants.jpg",          // قسم من نحن
-    sector: "sector-site-aerial.jpg",        // قسم المقاولات والاستشارات الهندسية
+    sector: "sector-building.jpg",           // قسم المقاولات والاستشارات الهندسية (صفحة الخدمات)
     process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
-    advisory: "advisory-consultation.jpg",         // قسم الاستشارات الإدارية
+    advisory: "advisory-consultation.jpg",
+    sectorCard: "sector-building.jpg",       // بطاقة المقاولات في الرئيسية
+    processCard: "bento-documents.jpg",      // بطاقة كيف نعمل في الرئيسية         // قسم الاستشارات الإدارية
     coverage: "process-skyline-bw.jpg",      // شريط نطاق العمل (جميع الإمارات)
     why: "why-abudhabi-aerial.jpg",         // قسم لماذا ديسكفر
     brand: "brand-wall.jpg",                 // شريط اللوجو العريض (بين الأقسام)
