@@ -1155,4 +1155,4 @@ html[lang="en"] .ft-connect h2 { font-family: Georgia, "Times New Roman", serif;
 html[lang="ar"] .ft-connect h2 { font-size: clamp(1.15rem, 2.2vw, 1.5rem); }
 html[lang="en"] .ft-connect h2 { font-size: clamp(1.25rem, 2.4vw, 1.7rem); }
 /* عناوين صغيرة أوضح في قسمي المقاولات والاستشارات */
-.sector .kicker { font-size: 1rem; font-weight: 600; }
+html .sector .kicker, html[lang] .sector .kicker { font-size: 1rem; font-weight: 600; }
