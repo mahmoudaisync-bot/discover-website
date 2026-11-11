@@ -1,0 +1,32 @@
+/* =========================================================
+   الهوية اللونية والخطوط — عدل الألوان من هنا فقط
+   Brand colours & fonts — change colours here only
+   ========================================================= */
+:root {
+  /* اللون الأساسي: كحلي خليجي  | Primary: Gulf navy */
+  --c-primary: #0b2e4f;
+  --c-primary-700: #082239;
+  --c-primary-600: #123c64;
+
+  /* لون التمييز: ذهبي رملي | Accent: desert gold */
+  --c-accent: #c9a25c;
+  --c-accent-soft: #f3e7cf;
+
+  /* لون مساعد: أزرق مخضر هادئ | Secondary: calm teal */
+  --c-teal: #1f6f78;
+
+  /* الخلفيات والنصوص | Backgrounds & text */
+  --c-bg: #ffffff;
+  --c-bg-alt: #f7f3ec;     /* رملي فاتح */
+  --c-ink: #13202e;        /* لون النص الأساسي */
+  --c-muted: #546273;      /* لون النص الثانوي */
+  --c-line: #e3ddd2;       /* لون الحدود */
+
+  /* واتساب | WhatsApp */
+  --c-wa: #1fa855;
+  --c-wa-dark: #178a45;
+
+  /* الخطوط | Fonts */
+  --font-ar: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+  --font-en: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
