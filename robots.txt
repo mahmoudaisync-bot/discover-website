@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mahmoudaisync-bot.github.io/discover-website/sitemap.xml
+Sitemap: https://discoverbusinessuae.com/sitemap.xml

@@ -61,7 +61,7 @@ discover-website/
 - صورة المشاركة في واتساب: `assets/img/og-image-v2.jpg` (1200×630).
 
 ## 5) نشر التعديلات
-الموقع منشور على GitHub Pages: https://mahmoudaisync-bot.github.io/discover-website/ (المستودع: https://github.com/mahmoudaisync-bot/discover-website). بعد أي تعديل:
+الموقع منشور على GitHub Pages بالنطاق https://discoverbusinessuae.com/ (المستودع: https://github.com/mahmoudaisync-bot/discover-website). بعد أي تعديل:
 - الطريقة الأسهل: افتح المستودع على github.com، ثم افتح الملف واضغط أيقونة القلم ✏️، عدل، ثم **Commit changes**. يتحدث الموقع خلال دقيقة أو اثنتين.
 - أو من الجهاز داخل فولدر المشروع:
   ```
@@ -70,13 +70,14 @@ discover-website/
   git push
   ```
 
-## 6) ربط نطاق خاص (مثل discoveruae.com)
-1. اشتر النطاق من أي مسجل (مثل GoDaddy أو Namecheap أو مسجل إماراتي معتمد لنطاقات .ae).
-2. في المستودع على GitHub: **Settings ← Pages ← Custom domain**، اكتب `www.discoveruae.com` واحفظ، ثم فعل **Enforce HTTPS** بعد التحقق.
-3. في لوحة إعدادات DNS لدى المسجل أضف:
-   - سجل `CNAME`: الاسم `www` ويشير إلى `mahmoudaisync-bot.github.io`
-   - أربعة سجلات `A` للاسم `@`: `185.199.108.153` و`185.199.109.153` و`185.199.110.153` و`185.199.111.153`
-4. بعد الربط استبدل الرابط القديم بالجديد في كل ملفات `.html` و`sitemap.xml` و`robots.txt` (ابحث واستبدل في VS Code: Ctrl+Shift+H).
+## 6) النطاق الخاص discoverbusinessuae.com
+- النطاق مسجل لدى **Namecheap** من 11 نوفمبر 2026 حتى 11 نوفمبر 2028، والتجديد التلقائي مفعل.
+- العنوان الأساسي بدون www: `https://discoverbusinessuae.com/`، و`www` يتحول إليه تلقائيا.
+- الربط يتم عبر ملف `CNAME` في جذر المشروع (يحتوي اسم النطاق فقط). لا تحذفه.
+- سجلات DNS في Namecheap (Advanced DNS):
+  - أربعة سجلات `A` للاسم `@`: `185.199.108.153` و`185.199.109.153` و`185.199.110.153` و`185.199.111.153`
+  - سجل `CNAME` للاسم `www` يشير إلى `mahmoudaisync-bot.github.io`
+- شهادة HTTPS من GitHub: **Settings ← Pages ← Enforce HTTPS**.
 
 ## 7) معاينة الموقع على جهازك
 داخل فولدر المشروع:
