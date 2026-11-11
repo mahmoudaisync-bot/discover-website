@@ -150,7 +150,26 @@
   }
 
   // السلايدر الرئيسي: صورة كبيرة بعرض الشاشة لكل خدمة
+  // الواجهة الثابتة (heroStyle: "fixed" في config.js)، والسلايدر محفوظ كخيار بديل
   function hero() {
+    if (CFG.heroStyle === "slider" || !C.heroFixed) return heroSlider();
+    var H = C.heroFixed;
+    var bg = CFG.heroImage || (C.slides && C.slides[0] && C.slides[0].img);
+    return '<section class="hero-fixed" id="top">' +
+      (bg ? '<img class="hero-img" src="' + photo(bg) + '" alt="' + esc(H.title) + '" fetchpriority="high" decoding="async">' : "") +
+      '<div class="slide-shade" aria-hidden="true"></div>' +
+      '<div class="container hero-fixed-inner"><div class="hero-copy">' +
+      '<span class="eyebrow">' + esc(H.eyebrow) + "</span>" +
+      '<h1 class="hero-title">' + esc(H.title) + "</h1>" +
+      '<p class="hero-slogan">' + esc(H.slogan) + "</p>" +
+      '<p class="hero-text">' + esc(H.text) + "</p>" +
+      '<div class="hero-ctas"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.hero.primary) + "</span></a>" +
+      '<a class="btn btn-ghost-light btn-lg" href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + "<span>" + esc(C.common.call) + "</span></a>" +
+      '<a class="hero-link" href="' + link("services.html") + '">' + esc(C.hero.secondary) + icon("arrow", "flip") + "</a></div>" +
+      "</div></div></section>";
+  }
+
+  function heroSlider() {
     var slides = C.slides || [];
     var L = C.sliderLabels;
     var chev = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>';
@@ -376,7 +395,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + statement() + servicesSection() + advisory() + sector() + coverage() + process() + about() + why() + brandBand() + faq() + contactSection(false);
+    body = hero() + servicesSection() + advisory() + sector() + coverage() + process() + about() + why() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +

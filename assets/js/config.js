@@ -40,6 +40,10 @@ window.SITE_CONFIG = {
     cta: "cta-analysis.jpg"                  // صورة شريط "جاهز لبدء معاملتك؟"
   },
 
+  // شكل الواجهة: "fixed" واجهة ثابتة بصورة واحدة، أو "slider" للسلايدر
+  heroStyle: "fixed",
+  heroImage: "s1-abudhabi-skyline.jpg",
+
   // السلايدر: مدة عرض كل شريحة بالملي ثانية
   slideInterval: 4000
 };

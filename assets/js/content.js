@@ -22,6 +22,13 @@ window.SITE_CONTENT = {
       waTag: "[رسالة من الموقع الإلكتروني]",
       waGreeting: "مرحبا ديسكفر، أتواصل معكم عبر موقعكم الإلكتروني وأرغب في الاستفسار عن خدماتكم."
     },
+    // الواجهة الثابتة في أعلى الرئيسية
+    heroFixed: {
+      eyebrow: "ديسكفر لحلول الأعمال",
+      title: "تأسيس الشركات والخدمات الحكومية في الإمارات",
+      slogan: "ندير عنك، لتتفرغ لنموك",
+      text: "نتولى تأسيس شركتك واستخراج تراخيصها وتجديدها، وملفات تصنيف المقاولات والاستشارات الهندسية، ومعاملاتها الحكومية والمصرفية في جميع إمارات الدولة."
+    },
     hero: {
       eyebrow: "خدمات إدارية وحكومية للشركات في جميع إمارات الدولة",
       title: "ندير عنك، لتتفرغ لنموك",
@@ -245,6 +252,12 @@ window.SITE_CONTENT = {
       // Tag shown at the top of every WhatsApp message sent from the website
       waTag: "[Website Message]",
       waGreeting: "Hello Discover, I am contacting you through your website and would like to ask about your services."
+    },
+    heroFixed: {
+      eyebrow: "Discover Business Solutions",
+      title: "Company Formation & Government Services in the UAE",
+      slogan: "We handle it, you focus on growth",
+      text: "We handle company formation, licensing and renewals, contracting and engineering classification files, and government and banking transactions across all emirates."
     },
     hero: {
       eyebrow: "Corporate administrative and government services across the UAE",
