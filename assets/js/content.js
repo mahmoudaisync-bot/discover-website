@@ -17,7 +17,10 @@ window.SITE_CONTENT = {
       location: "أبوظبي، الإمارات العربية المتحدة", locationLabel: "الموقع",
       phoneLabel: "الهاتف", whatsappLabel: "واتساب", emailLabel: "البريد الإلكتروني",
       floatingWa: "تواصل معنا عبر واتساب", rights: "جميع الحقوق محفوظة",
-      quickLinks: "روابط سريعة", contactUs: "تواصل معنا", skip: "انتقل إلى المحتوى"
+      quickLinks: "روابط سريعة", contactUs: "تواصل معنا", skip: "انتقل إلى المحتوى",
+      // وسم يظهر في أول كل رسالة واتساب قادمة من الموقع
+      waTag: "[رسالة من الموقع الإلكتروني]",
+      waGreeting: "مرحبا ديسكفر، أتواصل معكم عبر موقعكم الإلكتروني وأرغب في الاستفسار عن خدماتكم."
     },
     hero: {
       eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي",
@@ -194,7 +197,10 @@ window.SITE_CONTENT = {
       location: "Abu Dhabi, United Arab Emirates", locationLabel: "Location",
       phoneLabel: "Phone", whatsappLabel: "WhatsApp", emailLabel: "Email",
       floatingWa: "Contact us on WhatsApp", rights: "All rights reserved",
-      quickLinks: "Quick links", contactUs: "Contact us", skip: "Skip to content"
+      quickLinks: "Quick links", contactUs: "Contact us", skip: "Skip to content",
+      // Tag shown at the top of every WhatsApp message sent from the website
+      waTag: "[Website Message]",
+      waGreeting: "Hello Discover, I am contacting you through your website and would like to ask about your services."
     },
     hero: {
       eyebrow: "Corporate administrative and government services in Abu Dhabi",

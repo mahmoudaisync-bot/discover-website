@@ -22,8 +22,10 @@
   // **نص** => <strong>نص</strong>
   function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
   function ltr(s) { return '<bdi dir="ltr">' + esc(s) + "</bdi>"; }
+  // كل روابط واتساب تحمل رسالة جاهزة تبدأ بوسم الموقع لتعرف أن العميل قادم من الموقع
   function waLink(text) {
-    return "https://wa.me/" + CFG.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
+    var msg = C.common.waTag + "\n" + (text || C.common.waGreeting);
+    return "https://wa.me/" + CFG.whatsapp + "?text=" + encodeURIComponent(msg);
   }
   // same-language page links: pages of one language share a folder;
   // only the 404 page (served from any URL depth) needs the absolute base
