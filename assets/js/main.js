@@ -158,7 +158,7 @@
       var more = s.service ? link("services.html") + "#" + s.service : link("services.html");
       var Tag = i === 0 ? "h1" : "h2";
       return '<div class="slide' + (i === 0 ? " is-active" : "") + '" role="group" aria-roledescription="slide" aria-label="' + (i + 1) + " / " + slides.length + '"' + (i === 0 ? "" : " inert") + ">" +
-        '<img class="slide-img" src="' + photo(s.img) + '" alt=""' + (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">' +
+        '<img class="slide-img" src="' + photo(s.img) + '" alt="' + esc(s.eyebrow) + '"' + (i === 0 ? ' fetchpriority="high"' : ' loading="lazy"') + ' decoding="async">' +
         '<div class="slide-shade"></div>' +
         '<div class="container slide-inner"><div class="slide-copy">' +
         '<span class="eyebrow">' + esc(s.eyebrow) + "</span><" + Tag + ' class="slide-title">' + esc(s.title) + "</" + Tag + ">" +
@@ -376,7 +376,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + statement() + about() + servicesSection() + advisory() + sector() + coverage() + process() + why() + bento() + brandBand() + faq() + contactSection(false);
+    body = hero() + statement() + servicesSection() + advisory() + sector() + coverage() + process() + about() + why() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +

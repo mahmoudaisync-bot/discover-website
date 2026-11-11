@@ -129,3 +129,10 @@ python -m http.server 8000
   - رؤوس الصفحات: `page-services-meeting.jpg` و`page-contact-consult.jpg`
   - مربعات الاستكشاف: `bento-team.jpg` و`bento-building.jpg` و`bento-documents.jpg`، وصورة شريط التواصل `cta-analysis.jpg`
 - أسماء صور الأقسام في `config.js` (photos)، وصور السلايدر والخدمات في `content.js`.
+
+## 10) HTML مولد مسبقا (مهم قبل كل نشر)
+كل صفحة HTML تحتوي نسخة كاملة من محتواها داخل `<div id="app">`، حتى يقرأها جوجل وأدوات الذكاء الاصطناعي دون تشغيل JavaScript. بعد أي تعديل في `content.js` أو `main.js` أو `config.js`:
+1. شغل الخادم المحلي: `python -m http.server 8765`
+2. شغل: `powershell -ExecutionPolicy Bypass -File tools\prerender.ps1`
+3. انشر (`git add -A` ثم `git commit` ثم `git push`).
+إذا نسيت الخطوة 2، يعمل الموقع للزوار بشكل طبيعي، لكن محركات البحث تقرأ النسخة القديمة.

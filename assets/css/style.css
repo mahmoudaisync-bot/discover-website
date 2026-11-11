@@ -704,3 +704,11 @@ html[lang="en"] .coverage h2 { font-weight: 300; }
 .process-plain .step { background: var(--c-surface); border: 1px solid var(--c-line); }
 .process-plain .step p { color: var(--c-muted); }
 .process-plain .step h3 { color: var(--c-primary); }
+
+/* =========================================================
+   إصلاحات المراجعة
+   ========================================================= */
+/* بطاقات التواصل في الفوتر: خلفية شفافة ونص فاتح (كانت فاتحة على فاتح) */
+.contact-list-footer a, .contact-list-footer div { background: transparent; }
+/* لون التمييز للعناوين الصغيرة والروابط: ذهبي داكن مقروء على البيج */
+.field input:focus, .field select:focus, .field textarea:focus { box-shadow: 0 0 0 3px rgba(122,95,46,.18); }
