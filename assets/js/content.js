@@ -208,7 +208,7 @@ window.SITE_CONTENT = {
   },
 
   en: {
-    brand: { name: "Discover", sub: "Business Solutions", full: "Discover Business Solutions" },
+    brand: { name: "Discover", sub: "Business Solutions", full: "Discover Business Solutions - L.L.C - S.P.C" },
     tagline: "We handle it, you focus on growth",
     nav: {
       home: "Home", about: "About", services: "Services", process: "How We Work",
