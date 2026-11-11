@@ -1091,3 +1091,5 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
   .adv-band .checks { margin: 10px 0 16px; }
   .adv-band .checks li { padding-block: 6px; }
 }
+/* الفاصل بين المقاولات والاستشارات: شريط رمادي فاتح بلون خلفية الصفحة */
+.adv-band { border-top: 46px solid var(--c-bg); }
