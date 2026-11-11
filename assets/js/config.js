@@ -14,8 +14,8 @@ window.SITE_CONFIG = {
 
   email: "info.discoveruae@gmail.com",
 
-  // لاستخدام لوجو حقيقي: ضع الملف في assets/img ثم اكتب اسمه هنا
-  // مثال: logoImage: "assets/img/logo.png"
-  // اتركه فارغا "" لاستخدام الشعار النصي الحالي
-  logoImage: ""
+  // اللوجو: النسخة الكحلية للخلفيات الفاتحة، والبيضاء للخلفيات الداكنة (الفوتر)
+  // اتركهما فارغين "" لاستخدام الشعار النصي
+  logoImage: "assets/img/logo.png",
+  logoImageLight: "assets/img/logo-white.png"
 };

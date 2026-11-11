@@ -39,15 +39,22 @@ discover-website/
 
 ## 3) تعديل الألوان
 افتح `assets/css/theme.css` وغير القيم، مثل:
-- `--c-primary` اللون الكحلي الأساسي
+- `--c-primary` اللون الكحلي الأساسي (مأخوذ من اللوجو: `#03256b`)
 - `--c-accent` اللون الذهبي
 - `--c-teal` اللون المساعد
 
-## 4) وضع اللوجو الحقيقي
-1. ضع ملف اللوجو (يفضل PNG بخلفية شفافة أو SVG) في `assets/img/`، مثلا `logo.png`.
-2. في `assets/js/config.js` اكتب: `logoImage: "assets/img/logo.png"`.
-3. لاستبدال أيقونة المتصفح: استبدل `assets/img/favicon.svg` و`assets/img/apple-touch-icon.png` (180×180).
-4. صورة المشاركة في واتساب: `assets/img/og-image.png` (1200×630). يمكن استبدالها بأي صورة بنفس المقاس والاسم.
+الخطوط في نفس الملف: العربي **Cairo**، والإنجليزي **Segoe UI** (يظهر على ويندوز، وعلى آيفون وأندرويد يظهر خط النظام المشابه لأن Segoe UI غير متاح للتضمين في المواقع).
+
+## 4) اللوجو
+- اللوجو المستخدم: `assets/img/logo.png` (كحلي للهيدر) و`assets/img/logo-white.png` (أبيض للفوتر)، ومحددان في `assets/js/config.js`.
+- الملف الأصلي محفوظ في `tools/brand-source/logo-original.png`.
+- لتحديث اللوجو: ضع الملف الجديد مكان `tools/brand-source/logo-original.png` (خلفية بيضاء ولون واحد)، ثم شغل من فولدر المشروع:
+  ```
+  powershell -ExecutionPolicy Bypass -File tools\process-logo.ps1
+  ```
+  ينتج النسخ الشفافة المقصوصة تلقائيا.
+- أيقونة المتصفح: `assets/img/favicon.svg` و`assets/img/apple-touch-icon.png` (180×180، مصدرها `tools/icon.html`).
+- صورة المشاركة في واتساب: `assets/img/og-image.png` (1200×630).
 
 ## 5) نشر التعديلات
 الموقع منشور على GitHub Pages: https://mahmoudaisync-bot.github.io/discover-website/ (المستودع: https://github.com/mahmoudaisync-bot/discover-website). بعد أي تعديل:

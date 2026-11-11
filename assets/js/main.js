@@ -59,13 +59,15 @@
   var WA_SVG = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.5 9.5 0 0 1-4.84-1.33l-.35-.2-3.6.94.96-3.5-.23-.36a9.45 9.45 0 0 1-1.45-5.04c0-5.24 4.27-9.5 9.52-9.5 2.54 0 4.93.99 6.72 2.79a9.43 9.43 0 0 1 2.78 6.72c0 5.24-4.27 9.5-9.5 9.5m8.1-17.6A11.37 11.37 0 0 0 12.04.5C5.73.5.6 5.63.6 11.94c0 2.02.53 3.99 1.53 5.72L.5 23.5l5.98-1.57a11.4 11.4 0 0 0 5.46 1.39h.01c6.3 0 11.44-5.13 11.44-11.44 0-3.06-1.19-5.93-3.35-8.09"/></svg>';
 
   function logoMark() {
-    // شعار مؤقت: نجمة ثمانية (هندسة إسلامية + بوصلة "ديسكفر")
-    return '<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="var(--c-primary)"/><g fill="none" stroke="var(--c-accent)" stroke-width="2.4" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22"/><rect x="13" y="13" width="22" height="22" transform="rotate(45 24 24)"/></g><circle cx="24" cy="24" r="3.4" fill="var(--c-accent)"/></svg>';
+    // رمز العدسة المكبرة المأخوذ من لوجو ديسكفر
+    return '<svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#fff"/><circle cx="21" cy="20" r="10.5" fill="none" stroke="var(--c-primary)" stroke-width="3.6"/><path d="M15.6 19.4a6 6 0 0 1 3.4-4.6" fill="none" stroke="var(--c-primary)" stroke-width="2.2" stroke-linecap="round"/><circle cx="21.6" cy="14.2" r="1.3" fill="var(--c-primary)"/><path d="m29.2 28.6 1.6 1.6M32.6 32 39 38.6" stroke="var(--c-primary)" stroke-width="4" stroke-linecap="round"/></svg>';
   }
   function logo(extraCls) {
     var href = link("index.html");
-    if (CFG.logoImage) {
-      return '<a class="logo ' + (extraCls || "") + '" href="' + href + '"><img src="' + base + CFG.logoImage + '" alt="' + esc(C.brand.full) + '" class="logo-img"></a>';
+    var light = extraCls === "logo-light";
+    var src = light ? (CFG.logoImageLight || CFG.logoImage) : CFG.logoImage;
+    if (src) {
+      return '<a class="logo has-img ' + (extraCls || "") + '" href="' + href + '"><img src="' + base + src + '" alt="' + esc(C.brand.full) + '" class="logo-img" width="900" height="303"></a>';
     }
     return '<a class="logo ' + (extraCls || "") + '" href="' + href + '" aria-label="' + esc(C.brand.full) + '">' + logoMark() +
       '<span class="logo-text"><span class="logo-name">' + esc(C.brand.name) + '</span><span class="logo-sub">' + esc(C.brand.sub) + "</span></span></a>";
