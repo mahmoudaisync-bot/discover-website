@@ -1080,3 +1080,14 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
   .adv-band .sector-media { order: 2; position: relative; }
   .adv-band .sector-main { position: absolute; inset: 0; min-height: 0; }
 }
+
+/* فاصل رمادي غامق رفيع، وصورة الاستشارات في نفس جهة صورة المقاولات، وارتفاع أقل */
+.adv-band { border-top: 6px solid var(--c-ink); }
+@media (min-width: 900px) {
+  .adv-band .sector-grid { grid-template-columns: 1.05fr 1fr; }
+  .adv-band .sector-media { order: 0; }
+  .adv-band .sector-copy { padding-block: clamp(32px, 4vw, 52px); }
+  .adv-band .section-head { margin-bottom: 14px; }
+  .adv-band .checks { margin: 10px 0 16px; }
+  .adv-band .checks li { padding-block: 6px; }
+}
