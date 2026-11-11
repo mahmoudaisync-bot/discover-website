@@ -315,9 +315,25 @@
   }
 
   function ctaBand() {
-    return '<section class="cta-band"><div class="container cta-inner"><div><h2>' + esc(C.cta.title) + "</h2><p>" + esc(C.cta.text) + "</p></div>" +
+    var media = PH.cta ? '<figure class="cta-media">' + img(PH.cta, C.cta.title) + "</figure>" : "";
+    return '<section class="cta-band"><div class="container"><div class="cta-inner' + (media ? " has-media" : "") + '"><div class="cta-copy"><h2>' + esc(C.cta.title) + "</h2><p>" + esc(C.cta.text) + "</p>" +
       '<div class="cta-actions"><a class="btn btn-wa btn-lg" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a>" +
-      '<a class="btn btn-ghost-light btn-lg" href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + "<span>" + esc(C.common.call) + "</span></a></div></div></section>";
+      '<a class="btn btn-ghost-light btn-lg" href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + "<span>" + esc(C.common.call) + "</span></a></div></div>" + media + "</div></div></section>";
+  }
+
+  // مربعات استكشاف بصور كبيرة (بأسلوب BCG)
+  function bento() {
+    if (!PH.bentoMain) return "";
+    function tile(cls, photoName, href, kicker, title, cta) {
+      return '<a class="tile ' + cls + '" href="' + href + '">' + img(photoName, "", "tile-img") + '<span class="tile-shade" aria-hidden="true"></span>' +
+        '<span class="tile-copy"><span class="tile-kicker">' + esc(kicker) + "</span><span class=\"tile-title\">" + esc(title) + "</span>" +
+        '<span class="pill">' + esc(cta) + icon("arrow", "flip") + "</span></span></a>";
+    }
+    return '<section class="section bento-sec"><div class="container"><div class="bento">' +
+      tile("tile-main", PH.bentoMain, link("services.html"), C.services.kicker, C.services.title, C.common.allServices) +
+      tile("", PH.bentoSector, link("services.html") + "#classification", C.sector.kicker, C.sector.title, C.common.details) +
+      tile("", PH.bentoContact, link("contact.html") + "#request", C.common.contactUs, C.cta.title, C.common.contactUs) +
+      "</div></div></section>";
   }
 
   // شريط عريض لصورة اللوجو على الجدار
@@ -340,7 +356,7 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + statement() + about() + servicesSection() + sector() + process() + why() + brandBand() + faq() + contactSection(false);
+    body = hero() + statement() + about() + servicesSection() + sector() + process() + why() + bento() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +

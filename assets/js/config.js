@@ -25,13 +25,17 @@ window.SITE_CONFIG = {
   // صور الأقسام (داخل assets/img/photos). لتغيير صورة: ضع الصورة الجديدة في نفس الفولدر واكتب اسمها هنا
   // صور السلايدر في content.js (slides)، وصور الخدمات في content.js داخل كل خدمة (img)
   photos: {
-    about: "about-team.jpg",                 // قسم من نحن
-    sector: "sector-engineers-site.jpg",     // قسم المقاولات والاستشارات الهندسية
-    process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
-    why: "why-etihad.jpg",                   // قسم لماذا ديسكفر
+    about: "about-consultants.jpg",          // قسم من نحن
+    sector: "sector-site-aerial.jpg",        // قسم المقاولات والاستشارات الهندسية
+    process: "process-skyline-bw.jpg",       // خلفية قسم كيف نعمل
+    why: "why-abudhabi-aerial.jpg",         // قسم لماذا ديسكفر
     brand: "brand-wall.jpg",                 // شريط اللوجو العريض (بين الأقسام)
-    pageServices: "page-services-boardroom.jpg", // رأس صفحة الخدمات
-    pageContact: "page-contact.jpg"          // رأس صفحة التواصل
+    pageServices: "page-services-meeting.jpg", // رأس صفحة الخدمات
+    pageContact: "page-contact-consult.jpg",  // رأس صفحة التواصل
+    bentoMain: "bento-team.jpg",             // مربعات الاستكشاف: الكبير
+    bentoSector: "bento-building.jpg",       // مربعات الاستكشاف: المقاولات
+    bentoContact: "bento-documents.jpg",     // مربعات الاستكشاف: التواصل
+    cta: "cta-analysis.jpg"                  // صورة شريط "جاهز لبدء معاملتك؟"
   },
 
   // السلايدر: مدة عرض كل شريحة بالملي ثانية

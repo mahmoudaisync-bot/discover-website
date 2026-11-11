@@ -580,3 +580,70 @@ html[lang="en"] .section-head h2 { font-weight: 300; letter-spacing: -.01em; }
 
 /* شريط "جاهز لبدء معاملتك؟": أزرق داكن هادئ بدل التدرج للأزرق الفاتح */
 .cta-inner { background: linear-gradient(135deg, var(--c-primary-700) 0%, var(--c-primary) 55%, var(--c-primary-600) 100%); border-top: 2px solid var(--c-accent); }
+
+/* =========================================================
+   الإنجليزي: أحجام أهدأ، وعنوان السلايدر في سطر واحد
+   ========================================================= */
+html[lang="en"] body { font-size: .9375rem; }
+html[lang="en"] .slide-title { font-size: clamp(1.45rem, 5.2vw, 2rem); font-weight: 600; line-height: 1.25; letter-spacing: -.015em; }
+html[lang="en"] .slide-text { font-size: clamp(.95rem, 1.6vw, 1.05rem); max-width: 46em; }
+html[lang="en"] .slide-copy { max-width: 940px; }
+@media (min-width: 900px) { html[lang="en"] .slide-title { white-space: nowrap; font-size: min(2rem, 2.45vw); } }
+html[lang="en"] .section-head h2 { font-size: clamp(1.4rem, 3.2vw, 1.95rem); }
+html[lang="en"] .page-hero h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); }
+html[lang="en"] .cta-inner h2 { font-size: clamp(1.25rem, 3.2vw, 1.7rem); }
+html[lang="en"] .svc-card h3, html[lang="en"] .why-item h3, html[lang="en"] .step h3, html[lang="en"] .value h3 { font-size: 1.02rem; }
+html[lang="en"] .svc-card p, html[lang="en"] .why-item p, html[lang="en"] .step p, html[lang="en"] .value p, html[lang="en"] .checks li, html[lang="en"] .faq-a, html[lang="en"] .prose { font-size: .93rem; }
+html[lang="en"] .main-nav li a { font-size: .9rem; }
+html[lang="en"] .btn { font-size: .92rem; }
+
+/* =========================================================
+   لمسات بأسلوب BCG
+   ========================================================= */
+/* أزرار كبسولة */
+.btn { border-radius: 999px; padding-inline: 1.5em; }
+.pill { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 9px 18px; border-radius: 999px; background: var(--c-accent); color: var(--c-primary); font-size: .82rem; font-weight: 700; transition: background .2s, gap .2s; }
+.pill .ico { width: 16px; height: 16px; }
+
+/* بطاقات الخدمات في الرئيسية: صورة كاملة ولوح زجاجي فوقها */
+@media (min-width: 640px) {
+  #services .svc-card.has-media { position: relative; min-height: 420px; border: 0; border-radius: 20px; background: var(--c-primary); }
+  #services .svc-card.has-media .svc-media { position: absolute; inset: 0; aspect-ratio: auto; }
+  #services .svc-card.has-media .svc-media::after { background: linear-gradient(0deg, rgba(5,28,44,.55), rgba(5,28,44,0) 60%); }
+  #services .svc-card.has-media .svc-body { position: relative; z-index: 1; flex: 0 0 auto; margin: auto 14px 14px; padding: 18px 18px 16px; border-radius: 16px;
+    background: rgba(255,255,255,.82); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); box-shadow: 0 10px 30px -18px rgba(0,0,0,.5); }
+  #services .svc-card.has-media .svc-ico { display: none; }
+  #services .svc-card.has-media h3 { margin-top: 0; }
+  #services .svc-card.has-media p { color: #3b4656; margin-bottom: 6px; }
+  #services .svc-card.has-media:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -30px rgba(5,28,44,.8); }
+}
+
+/* مربعات الاستكشاف */
+.bento-sec { padding-block: clamp(40px, 6vw, 80px); }
+.bento { display: grid; gap: 16px; }
+.tile { position: relative; display: flex; min-height: 300px; border-radius: 20px; overflow: hidden; color: #fff; background: var(--c-primary); isolation: isolate; }
+.tile-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .7s ease; }
+.tile-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(5,28,44,.95) 0%, rgba(5,28,44,.7) 45%, rgba(5,28,44,.25) 100%); }
+.tile-copy { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding: 26px; }
+.tile-kicker { font-size: .78rem; font-weight: 600; letter-spacing: .06em; color: var(--c-accent); }
+html[lang="en"] .tile-kicker { text-transform: uppercase; letter-spacing: .14em; }
+.tile-title { font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; line-height: 1.45; }
+html[lang="en"] .tile-title { font-weight: 400; line-height: 1.3; }
+.tile:hover .tile-img { transform: scale(1.05); }
+.tile:hover .pill { gap: 12px; }
+@media (min-width: 900px) {
+  .bento { grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; min-height: 560px; }
+  .tile-main { grid-row: span 2; }
+  .tile-main .tile-title { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+}
+
+/* شريط "جاهز لبدء معاملتك؟" مع صورة */
+.cta-inner.has-media { overflow: hidden; padding: 0; gap: 0; }
+.cta-copy { padding: 30px 22px; display: grid; gap: 14px; align-content: center; }
+.cta-media { margin: 0; min-height: 220px; }
+.cta-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (min-width: 900px) {
+  .cta-inner.has-media { grid-template-columns: 1.25fr 1fr; align-items: stretch; padding: 0; }
+  .cta-copy { padding: 48px; }
+  .cta-media { min-height: 300px; }
+}

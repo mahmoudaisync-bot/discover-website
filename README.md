@@ -119,3 +119,13 @@ python -m http.server 8000
 | brand-wall.jpg | صورة الشركة (مقدمة من ديسكفر) |
 | why-etihad.jpg | unsplash.com (photo-1734009775179-07f428483783) |
 | page-contact.jpg | unsplash.com (photo-1624317937315-0ced8736c9e9) |
+
+### تحديث الصور (نوفمبر 2026)
+- الصور الأصلية الكبيرة في `assets/img/photos/Discover website` (مصادرها Unsplash وPexels، استخدام تجاري مجاني). هذا الفولدر مستبعد من الرفع عبر `.gitignore`.
+- النسخ المضغوطة المستخدمة في الموقع:
+  - السلايدر: `s1-abudhabi-skyline.jpg` إلى `s5-advisory-team.jpg` (1920×1080)
+  - بطاقات الخدمات: `c-formation.jpg` و`c-classification.jpg` و`c-government-stamp.jpg` و`c-representation.jpg` (900×600)، مع `card-licensing.jpg` و`card-documents.jpg`
+  - الأقسام: `about-consultants.jpg` و`sector-site-aerial.jpg` و`process-skyline-bw.jpg` و`why-abudhabi-aerial.jpg`
+  - رؤوس الصفحات: `page-services-meeting.jpg` و`page-contact-consult.jpg`
+  - مربعات الاستكشاف: `bento-team.jpg` و`bento-building.jpg` و`bento-documents.jpg`، وصورة شريط التواصل `cta-analysis.jpg`
+- أسماء صور الأقسام في `config.js` (photos)، وصور السلايدر والخدمات في `content.js`.

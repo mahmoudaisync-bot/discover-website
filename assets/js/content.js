@@ -35,11 +35,11 @@ window.SITE_CONTENT = {
     statement: { kicker: "ديسكفر لحلول الأعمال", text: "شريك إداري في أبوظبي يتولى تأسيس شركتك وتراخيصها ومعاملاتها الحكومية والمصرفية، لتتفرغ أنت لتنمية أعمالك." },
     // شرائح الواجهة الرئيسية (السلايدر): img اسم الصورة في assets/img/photos، و service رقم الخدمة لزر التفاصيل
     slides: [
-      { img: "slide-1-abudhabi.jpg", eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي", title: "ندير عنك، لتتفرغ لنموك", text: "ديسكفر لحلول الأعمال شريكك الإداري في أبوظبي. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.", more: "استعرض خدماتنا" },
-      { img: "slide-2-formation.jpg", eyebrow: "تأسيس الشركات", title: "أسس شركتك في أبوظبي بخطوات واضحة", text: "نتولى تأسيس الشركات المحلية وفروع الشركات الأجنبية والخليجية، من تجهيز المستندات حتى إصدار الرخصة.", service: "formation", more: "تفاصيل الخدمة" },
-      { img: "slide-3-classification.jpg", eyebrow: "تصنيف المقاولات والاستشارات الهندسية", title: "ملفات التصنيف بجميع الفئات", text: "نجهز ملف التصنيف ونتابعه لدى الجهة المختصة، لتتفرغ فرقكم الفنية لمشاريعها.", service: "classification", more: "تفاصيل الخدمة" },
-      { img: "slide-4-government.jpg", eyebrow: "المعاملات الحكومية والبنوك", title: "معاملاتك الحكومية والمصرفية بين أيد أمينة", text: "ننجز معاملات شركتك لدى الجهات الحكومية ونتعامل مع البنوك نيابة عنك، ونطلعك على سير كل معاملة.", service: "government", more: "تفاصيل الخدمة" },
-      { img: "slide-5-representation.jpg", eyebrow: "تمثيل الشركات والعقود", title: "شريكك الإداري عند الحاجة", text: "نمثل شركتك إداريا، ونعد المراسلات والعقود، ونقدم الاستشارات الإدارية.", service: "representation", more: "تفاصيل الخدمة" }
+      { img: "s1-abudhabi-skyline.jpg", eyebrow: "خدمات إدارية وحكومية للشركات في أبوظبي", title: "ندير عنك، لتتفرغ لنموك", text: "ديسكفر لحلول الأعمال شريكك الإداري في أبوظبي. نتولى تأسيس شركتك واستخراج تراخيصها وإنجاز معاملاتها الحكومية والمصرفية، لتركز أنت على تنمية أعمالك.", more: "استعرض خدماتنا" },
+      { img: "s2-handshake.jpg", eyebrow: "تأسيس الشركات", title: "أسس شركتك في أبوظبي بخطوات واضحة", text: "نتولى تأسيس الشركات المحلية وفروع الشركات الأجنبية والخليجية، من تجهيز المستندات حتى إصدار الرخصة.", service: "formation", more: "تفاصيل الخدمة" },
+      { img: "s3-cranes.jpg", eyebrow: "تصنيف المقاولات والاستشارات الهندسية", title: "ملفات التصنيف بجميع الفئات", text: "نجهز ملف التصنيف ونتابعه لدى الجهة المختصة، لتتفرغ فرقكم الفنية لمشاريعها.", service: "classification", more: "تفاصيل الخدمة" },
+      { img: "s4-executive-meeting.jpg", eyebrow: "المعاملات الحكومية والبنوك", title: "معاملاتك الحكومية والمصرفية بين أيد أمينة", text: "ننجز معاملات شركتك لدى الجهات الحكومية ونتعامل مع البنوك نيابة عنك، ونطلعك على سير كل معاملة.", service: "government", more: "تفاصيل الخدمة" },
+      { img: "s5-advisory-team.jpg", eyebrow: "تمثيل الشركات والعقود", title: "شريكك الإداري عند الحاجة", text: "نمثل شركتك إداريا، ونعد المراسلات والعقود، ونقدم الاستشارات الإدارية.", service: "representation", more: "تفاصيل الخدمة" }
     ],
     sliderLabels: { prev: "الشريحة السابقة", next: "الشريحة التالية", goto: "انتقل إلى الشريحة", label: "خدمات ديسكفر" },
     about: {
@@ -63,7 +63,7 @@ window.SITE_CONTENT = {
       pageIntro: "ست خدمات رئيسية تغطي احتياجات شركتك الإدارية، من التأسيس والترخيص حتى المراسلات والتمثيل.",
       items: [
         {
-          id: "formation", icon: "building", img: "card-formation.jpg",
+          id: "formation", icon: "building", img: "c-formation.jpg",
           title: "تأسيس الشركات",
           summary: "تأسيس الشركات بجميع أنواعها: الشركات المحلية، وفروع الشركات الأجنبية والخليجية.",
           points: [
@@ -85,7 +85,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "classification", icon: "blueprint", img: "card-classification.jpg",
+          id: "classification", icon: "blueprint", img: "c-classification.jpg",
           title: "تصنيف المقاولات والاستشارات الهندسية",
           summary: "تصنيف شركات المقاولات والاستشارات الهندسية بجميع الفئات.",
           points: [
@@ -96,7 +96,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "card-government.jpg",
+          id: "government", icon: "bank", img: "c-government-stamp.jpg",
           title: "المعاملات الحكومية والبنوك",
           summary: "إنجاز المعاملات الحكومية والتعامل مع البنوك نيابة عن شركتك.",
           points: [
@@ -107,7 +107,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "representation", icon: "handshake", img: "card-representation.jpg",
+          id: "representation", icon: "handshake", img: "c-representation.jpg",
           title: "تمثيل الشركات والعمل الإداري",
           summary: "تمثيل الشركات وأداء العمل الإداري نيابة عنها عند الحاجة.",
           points: [
@@ -236,11 +236,11 @@ window.SITE_CONTENT = {
     },
     statement: { kicker: "Discover Business Solutions", text: "An administrative partner in Abu Dhabi handling your company formation, licensing, and government and banking transactions, so you can focus on growing your business." },
     slides: [
-      { img: "slide-1-abudhabi.jpg", eyebrow: "Corporate administrative and government services in Abu Dhabi", title: "We handle it, you focus on growth", text: "Discover Business Solutions is your administrative partner in Abu Dhabi. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.", more: "Explore our services" },
-      { img: "slide-2-formation.jpg", eyebrow: "Company Formation", title: "Set up your company in Abu Dhabi with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },
-      { img: "slide-3-classification.jpg", eyebrow: "Contracting & Engineering Classification", title: "Classification files across all grades", text: "We prepare your classification file and follow it up with the relevant authority, so your technical teams can stay focused on their projects.", service: "classification", more: "Service details" },
-      { img: "slide-4-government.jpg", eyebrow: "Government & Banking Transactions", title: "Your government and banking transactions in safe hands", text: "We complete your company's transactions with government entities and deal with banks on your behalf, keeping you updated on each one.", service: "government", more: "Service details" },
-      { img: "slide-5-representation.jpg", eyebrow: "Representation & Contracts", title: "Your administrative partner when you need one", text: "We represent your company administratively, prepare correspondence and contracts, and provide administrative consulting.", service: "representation", more: "Service details" }
+      { img: "s1-abudhabi-skyline.jpg", eyebrow: "Corporate administrative and government services in Abu Dhabi", title: "We handle it, you focus on growth", text: "Discover Business Solutions is your administrative partner in Abu Dhabi. We take care of company formation, licensing, and government and banking transactions, so you can focus on growing your business.", more: "Explore our services" },
+      { img: "s2-handshake.jpg", eyebrow: "Company Formation", title: "Set up your company in Abu Dhabi with clear steps", text: "We handle the formation of local companies and branches of foreign and GCC companies, from preparing documents to issuing the licence.", service: "formation", more: "Service details" },
+      { img: "s3-cranes.jpg", eyebrow: "Contracting & Engineering Classification", title: "Classification files across all grades", text: "We prepare your classification file and follow it up with the relevant authority, so your technical teams can stay focused on their projects.", service: "classification", more: "Service details" },
+      { img: "s4-executive-meeting.jpg", eyebrow: "Government & Banking Transactions", title: "Your government and banking transactions in safe hands", text: "We complete your company's transactions with government entities and deal with banks on your behalf, keeping you updated on each one.", service: "government", more: "Service details" },
+      { img: "s5-advisory-team.jpg", eyebrow: "Representation & Contracts", title: "Your administrative partner when you need one", text: "We represent your company administratively, prepare correspondence and contracts, and provide administrative consulting.", service: "representation", more: "Service details" }
     ],
     sliderLabels: { prev: "Previous slide", next: "Next slide", goto: "Go to slide", label: "Discover services" },
     about: {
@@ -264,7 +264,7 @@ window.SITE_CONTENT = {
       pageIntro: "Six core services covering your company's administrative needs, from formation and licensing to correspondence and representation.",
       items: [
         {
-          id: "formation", icon: "building", img: "card-formation.jpg",
+          id: "formation", icon: "building", img: "c-formation.jpg",
           title: "Company Formation",
           summary: "Formation of all company types: local companies, and branches of foreign and GCC companies.",
           points: [
@@ -286,7 +286,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "classification", icon: "blueprint", img: "card-classification.jpg",
+          id: "classification", icon: "blueprint", img: "c-classification.jpg",
           title: "Contracting & Engineering Classification",
           summary: "Classification of contracting and engineering consultancy firms across all grades.",
           points: [
@@ -297,7 +297,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "government", icon: "bank", img: "card-government.jpg",
+          id: "government", icon: "bank", img: "c-government-stamp.jpg",
           title: "Government & Banking Transactions",
           summary: "Completing government transactions and dealing with banks on your company's behalf.",
           points: [
@@ -308,7 +308,7 @@ window.SITE_CONTENT = {
           ]
         },
         {
-          id: "representation", icon: "handshake", img: "card-representation.jpg",
+          id: "representation", icon: "handshake", img: "c-representation.jpg",
           title: "Company Representation & Admin Work",
           summary: "Representing companies and handling administrative work on their behalf when needed.",
           points: [
