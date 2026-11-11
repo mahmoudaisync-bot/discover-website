@@ -323,6 +323,13 @@
       '<a class="btn btn-ghost-light btn-lg" href="tel:' + CFG.phones[0].tel + '">' + icon("phone") + "<span>" + esc(C.common.call) + "</span></a></div></div></section>";
   }
 
+  // شريط عريض لصورة اللوجو على الجدار
+  function brandBand() {
+    if (!PH.brand) return "";
+    return '<section class="brand-band" aria-label="' + esc(C.brand.full) + '"><figure class="brand-band-media">' +
+      img(PH.brand, C.brand.full + " - " + C.tagline, "brand-band-img") + "</figure></section>";
+  }
+
   function pageHero(title, intro, bg) {
     return '<section class="page-hero' + (bg ? " has-photo" : "") + '" id="top"' + bgStyle(bg) + '><div class="container"><h1>' + esc(title) + "</h1><p>" + esc(intro) + "</p></div></section>";
   }
@@ -330,12 +337,12 @@
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
-    body = hero() + about() + servicesSection() + sector() + process() + why() + faq() + contactSection(false);
+    body = hero() + about() + servicesSection() + sector() + process() + why() + brandBand() + faq() + contactSection(false);
   } else if (page === "services") {
     body = pageHero(C.services.pageTitle, C.services.pageIntro, PH.pageServices) +
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
       C.services.items.map(function (s) { return serviceCard(s, true); }).join("") + "</div></div></section>" +
-      sector() + process() + ctaBand();
+      sector() + process() + brandBand() + ctaBand();
   } else if (page === "contact") {
     body = pageHero(C.contact.pageTitle, C.contact.pageIntro, PH.pageContact) + contactSection(true);
   } else {

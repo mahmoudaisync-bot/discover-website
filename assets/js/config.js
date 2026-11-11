@@ -29,6 +29,7 @@ window.SITE_CONFIG = {
     sector: "sector-engineers-site.jpg",     // قسم المقاولات والاستشارات الهندسية
     process: "process-site-aerial.jpg",      // خلفية قسم كيف نعمل
     why: "why-etihad.jpg",                   // قسم لماذا ديسكفر
+    brand: "brand-wall.jpg",                 // شريط اللوجو العريض (بين الأقسام)
     pageServices: "page-services-boardroom.jpg", // رأس صفحة الخدمات
     pageContact: "page-contact.jpg"          // رأس صفحة التواصل
   },

@@ -115,5 +115,6 @@ python -m http.server 8000
 | sector-engineers-site.jpg | pexels.com/photo/8961065 |
 | process-site-aerial.jpg | pexels.com/photo/4170184 |
 | page-services-boardroom.jpg | pexels.com/photo/6949865 |
+| brand-wall.jpg | صورة الشركة (مقدمة من ديسكفر) |
 | why-etihad.jpg | unsplash.com (photo-1734009775179-07f428483783) |
 | page-contact.jpg | unsplash.com (photo-1624317937315-0ced8736c9e9) |
