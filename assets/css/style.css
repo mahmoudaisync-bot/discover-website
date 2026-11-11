@@ -801,3 +801,7 @@ html[lang="en"] .hero-title { font-weight: 600; line-height: 1.25; letter-spacin
   #services .svc-card.has-media .svc-body { background: rgba(255,255,255,.92); }
   .site-header { background: rgba(240,240,240,.97); }
 }
+
+/* صور "من نحن" و"الاستشارات" بدون برواز ذهبي */
+.about-frame { display: none; }
+.advisory-media::after { display: none; }

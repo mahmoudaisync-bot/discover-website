@@ -253,7 +253,7 @@
     var vals = C.about.values.map(function (v) {
       return '<div class="value"><span class="value-ico">' + icon(v.icon) + "</span><div><h3>" + esc(v.title) + "</h3><p>" + esc(v.text) + "</p></div></div>";
     }).join("");
-    var media = PH.about ? '<figure class="about-media">' + img(PH.about, C.about.title, "about-img") + '<span class="about-frame" aria-hidden="true"></span></figure>' : "";
+    var media = PH.about ? '<figure class="about-media">' + img(PH.about, C.about.title, "about-img") + '</figure>' : "";
     return '<section class="section" id="about"><div class="container about-grid">' + media + "<div>" +
       sectionHead(C.about.kicker, C.about.title) +
       C.about.text.map(function (p) { return '<p class="prose">' + rich(p) + "</p>"; }).join("") +
