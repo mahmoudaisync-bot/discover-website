@@ -395,7 +395,7 @@
     var items = C.why.items.map(function (w) {
       return '<div class="mini-why"><span class="why-ico">' + icon(w.icon) + "</span><div><h3>" + esc(w.title) + "</h3><p>" + esc(w.text) + "</p></div></div>";
     }).join("");
-    var wCard = '<article class="pair-card pair-adv why-wide" id="why">' + (PH.why ? '<figure class="pair-media">' + img(PH.why, C.common.location) + "</figure>" : "") +
+    var wCard = '<article class="pair-card pair-adv why-wide" id="why">' +
       '<div class="pair-body"><span class="kicker">' + esc(C.why.kicker) + "</span><h2>" + esc(C.why.title) + '</h2><div class="mini-why-grid">' + items + "</div></div></article>";
     return '<section class="section process-why"><div class="container">' + wCard + "</div></section>";
   }

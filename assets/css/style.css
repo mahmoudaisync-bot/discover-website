@@ -1065,3 +1065,10 @@ html[lang="en"] .pair-body h2 { font-weight: 400; }
   .why-wide .pair-media { position: relative; height: auto; }
   .why-wide .pair-media img { position: absolute; inset: 0; }
 }
+
+/* لماذا ديسكفر: نص فقط بدون صورة، والمميزات في 3 أعمدة */
+.why-wide { display: block; }
+.why-wide .pair-body { max-width: 1200px; margin-inline: auto; padding: clamp(36px, 5vw, 60px) 20px; }
+.why-wide .pair-body > * { max-width: none; }
+.why-wide h2 { margin-bottom: 22px; }
+@media (min-width: 900px) { .why-wide .mini-why-grid { grid-template-columns: repeat(3, 1fr); } }
