@@ -19,14 +19,14 @@ foreach ($p in $pages) {
   Start-Process -FilePath $edge -ArgumentList "--headless=new", "--disable-gpu", "--user-data-dir=$tmp\profile", "--virtual-time-budget=5000", "--dump-dom", "http://localhost:$port/$p" -RedirectStandardOutput $out -RedirectStandardError "$out.err" -Wait -NoNewWindow
   $dom = [System.IO.File]::ReadAllText($out, [System.Text.Encoding]::UTF8)
 
-  $m = [regex]::Match($dom, '(?s)<div id="app">.*?</div>(?=\s*<script src="[^"]*config\.js")')
+  $m = [regex]::Match($dom, '(?s)<div id="app">.*?</div>(?=\s*<script src="[^"]*config.js[^"]*")')
   if (-not $m.Success) { Write-Warning "لم يتم العثور على المحتوى في $p"; continue }
   $rendered = $m.Value
   if ($rendered.Length -lt 5000) { Write-Warning "المحتوى قصير بشكل غير متوقع في $p"; continue }
 
   $file = Join-Path $root $p
   $src = [System.IO.File]::ReadAllText($file, [System.Text.Encoding]::UTF8)
-  $sm = [regex]::Match($src, '(?s)<div id="app">.*?</div>(?=\s*<script src="[^"]*config\.js")')
+  $sm = [regex]::Match($src, '(?s)<div id="app">.*?</div>(?=\s*<script src="[^"]*config.js[^"]*")')
   if (-not $sm.Success) { Write-Warning "لم يتم العثور على #app في الملف $p"; continue }
   $new = $src.Substring(0, $sm.Index) + $rendered + $src.Substring($sm.Index + $sm.Length)
   [System.IO.File]::WriteAllText($file, $new, $utf8)
