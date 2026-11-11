@@ -105,7 +105,7 @@
       : otherBase + pageFile[page];
     return '<header class="site-header" id="siteHeader"><div class="container header-inner">' + logo() +
       '<nav class="main-nav" id="mainNav" aria-label="' + esc(C.nav.menu) + '"><ul>' + nav + "</ul>" +
-      '<a class="btn btn-wa nav-wa" href="' + waLink() + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a></nav>" +
+      '<a class="btn nav-wa nav-consult" href="' + waLink(C.common.freeConsultWa) + '" target="_blank" rel="noopener"><span>' + esc(C.common.freeConsult) + "</span></a></nav>" +
       '<div class="header-actions"><a class="lang-switch" href="' + other + '" hreflang="' + (lang === "ar" ? "en" : "ar") + '" lang="' + (lang === "ar" ? "en" : "ar") + '">' + icon("globe") + "<span>" + esc(C.nav.lang) + "</span></a>" +
       '<button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="' + esc(C.nav.menu) + '">' + icon("menu", "i-open") + icon("close", "i-close") + "</button></div>" +
       "</div></header>";
