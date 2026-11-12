@@ -7,6 +7,9 @@
 $root = Split-Path -Parent $PSScriptRoot
 $port = 8765
 $pages = @("index.html", "services.html", "contact.html", "404.html", "en/index.html", "en/services.html", "en/contact.html")
+# صفحات الخدمات التفصيلية (service-*.html) بالعربي والإنجليزي
+$pages += (Get-ChildItem (Join-Path $root "service-*.html") | ForEach-Object { $_.Name })
+$pages += (Get-ChildItem (Join-Path $root "en\service-*.html") | ForEach-Object { "en/" + $_.Name })
 
 $edge = (Get-Command msedge -ErrorAction SilentlyContinue).Source
 if (-not $edge) { $edge = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" }

@@ -31,6 +31,10 @@
   // only the 404 page (served from any URL depth) needs the absolute base
   function link(p) { return page === "notfound" ? base + p : p; }
   var pageFile = { home: "index.html", services: "services.html", contact: "contact.html", notfound: "index.html" };
+  var SUB = window.SITE_SUB ? window.SITE_SUB[lang] : null;
+  var subSlug = document.body.getAttribute("data-sub") || "";
+  if (subSlug) pageFile.sub = "service-" + subSlug + ".html";
+  function subsOf(parent) { return SUB ? SUB.items.filter(function (x) { return x.parent === parent; }) : []; }
 
   /* ---------- icons (inline SVG, stroke = currentColor) ---------- */
   var P = {
@@ -97,7 +101,7 @@
       [link("contact.html"), C.nav.contact, "contact"]
     ];
     var nav = items.map(function (it) {
-      var cur = it[2] && it[2] === page ? ' aria-current="page"' : "";
+      var cur = it[2] && (it[2] === page || (page === "sub" && it[2] === "services")) ? ' aria-current="page"' : "";
       return '<li><a href="' + it[0] + '"' + cur + ">" + esc(it[1]) + "</a></li>";
     }).join("");
     var other = page === "notfound"
@@ -281,7 +285,7 @@
     var media = s.img ? '<div class="svc-media">' + img(s.img, s.title) + "</div>" : "";
     return '<article class="svc-card' + (detailed ? " detailed" : "") + (s.img ? " has-media" : "") + '"' + (detailed ? ' id="' + s.id + '"' : "") + ">" + media +
       '<div class="svc-body"><span class="svc-ico">' + icon(s.icon) + "</span>" +
-      "<h3>" + esc(s.title) + "</h3><p>" + esc(s.summary) + "</p>" + pts + '<div class="svc-act">' + act + "</div></div></article>";
+      "<h3>" + esc(s.title) + "</h3><p>" + esc(s.summary) + "</p>" + pts + (detailed ? subLinks(s.id) : "") + '<div class="svc-act">' + act + "</div></div></article>";
   }
 
   function sector() {
@@ -447,6 +451,37 @@
     return '<section class="page-hero' + (bg ? " has-photo" : "") + '" id="top"' + bgStyle(bg) + '><div class="container"><h1>' + esc(title) + "</h1><p>" + esc(intro) + "</p></div></section>";
   }
 
+  // روابط الخدمات التفصيلية تحت الخدمة الرئيسية في صفحة الخدمات
+  function subLinks(parent) {
+    var list = subsOf(parent);
+    if (!list.length) return "";
+    return '<div class="sub-links"><span class="sub-links-title">' + esc(SUB.labels.includes) + "</span><ul>" +
+      list.map(function (x) { return '<li><a href="service-' + x.slug + '.html"><span>' + esc(x.title) + "</span>" + icon("arrow", "flip") + "</a></li>"; }).join("") + "</ul></div>";
+  }
+
+  // صفحة خدمة تفصيلية مستقلة (service-<slug>.html)
+  function subPage() {
+    var x = SUB && SUB.items.filter(function (i) { return i.slug === subSlug; })[0];
+    if (!x) return "";
+    var L = SUB.labels;
+    var parent = C.services.items.filter(function (i) { return i.id === x.parent; })[0] || {};
+    var wa = waLink(L.waPrefix + x.title);
+    var crumbs = '<nav class="crumbs" aria-label="breadcrumb"><a href="index.html">' + esc(C.nav.home) + '</a><span>/</span><a href="services.html">' + esc(L.services) + '</a><span>/</span><a href="services.html#' + parent.id + '">' + esc(parent.title || "") + "</a></nav>";
+    var hero = '<section class="page-hero has-photo sub-hero" id="top"' + bgStyle(parent.img) + '><div class="container">' + crumbs + "<h1>" + esc(x.title) + "</h1><p>" + esc(x.summary) + "</p>" +
+      '<a class="btn btn-accent btn-lg" href="' + wa + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(L.request) + "</span></a></div></section>";
+    var what = '<section class="section"><div class="container sub-what"><div><span class="kicker">' + esc(parent.title || "") + "</span><h2>" + esc(L.what) + '</h2><p class="prose">' + rich(x.what) + "</p></div>" +
+      '<aside class="sub-ask"><h3>' + esc(L.request) + "</h3><p>" + esc(L.requestText) + '</p><a class="btn btn-wa btn-block" href="' + wa + '" target="_blank" rel="noopener">' + WA_SVG + "<span>" + esc(C.common.whatsapp) + "</span></a>" +
+      '<a class="btn btn-outline btn-block" href="contact.html?service=' + x.parent + '#request">' + esc(C.common.contactUs) + "</a></aside></div></section>";
+    var handle = '<section class="section section-alt"><div class="container">' + sectionHead(x.title, L.handle) + '<ol class="sub-steps">' +
+      x.handle.map(function (h, i) { return '<li><span class="sub-num">' + String(i + 1).padStart(2, "0") + "</span><h3>" + esc(h[0]) + "</h3><p>" + esc(h[1]) + "</p></li>"; }).join("") + "</ol></div></section>";
+    var docs = '<section class="section"><div class="container sub-docs"><div>' + sectionHead(x.title, L.docs) + '<p class="sub-note">' + esc(L.docsNote) + "</p></div>" +
+      '<ul class="checks sub-checks">' + x.docs.map(function (d) { return "<li>" + icon("check") + "<span>" + esc(d) + "</span></li>"; }).join("") + "</ul></div></section>";
+    var rel = SUB.items.filter(function (i) { return i.slug !== x.slug; }).sort(function (a, b) { return (b.parent === x.parent) - (a.parent === x.parent); }).slice(0, 6);
+    var related = '<section class="section section-alt"><div class="container">' + sectionHead(L.services, L.related) + '<div class="sub-related">' +
+      rel.map(function (r) { return '<a href="service-' + r.slug + '.html"><strong>' + esc(r.title) + "</strong><span>" + esc(r.summary) + "</span>" + icon("arrow", "flip") + "</a>"; }).join("") + "</div></div></section>";
+    return hero + what + handle + docs + related + ctaBand();
+  }
+
   /* ---------- page assembly ---------- */
   var body = "";
   if (page === "home") {
@@ -456,6 +491,8 @@
       '<section class="section"><div class="container"><div class="svc-grid detailed-grid">' +
       C.services.items.map(function (s) { return serviceCard(s, true); }).join("") + "</div></div></section>" +
       advisory() + sector() + process() + ctaBand();
+  } else if (page === "sub") {
+    body = subPage();
   } else if (page === "contact") {
     body = pageHero(C.contact.pageTitle, C.contact.pageIntro, PH.pageContact) + contactSection(true);
   } else {
