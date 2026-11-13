@@ -1255,3 +1255,10 @@ html[lang="en"] .ft-connect h2 { font-size: clamp(1rem, 1.7vw, 1.25rem); }
 .sub-related a:hover { border-color: var(--c-accent); transform: translateY(-2px); }
 @media (min-width: 640px) { .sub-related { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1000px) { .sub-related { grid-template-columns: repeat(3, 1fr); } }
+
+/* أيقونات التواصل الاجتماعي في الفوتر (بأسلوب ماكنزي: دوائر داكنة وأيقونة بيضاء) */
+.ft-icons { list-style: none; margin: 0; padding: 24px 0 4px; display: flex; flex-wrap: wrap; gap: 12px; }
+.ft-icons a { width: 40px; height: 40px; border-radius: 50%; background: #051c2c; color: #fff; display: grid; place-items: center; transition: background .2s, transform .2s; }
+.ft-icons a:hover { background: var(--c-accent); color: #051c2c; transform: translateY(-2px); }
+.ft-icons .ico { width: 20px; height: 20px; }
+.ft-icons + .ft-bottom { padding-top: 14px; }

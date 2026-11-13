@@ -46,6 +46,7 @@
     pen: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
     eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
     route: '<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h8.5a3.5 3.5 0 0 0 0-7h-9a3.5 3.5 0 0 1 0-7H16"/>',
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>',
     lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
     layers: '<path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/>',
     pin: '<path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/>',
@@ -143,6 +144,7 @@
         '<div class="ft-grid"><div class="ft-brand">' + logo() + '<p class="ft-tag">' + esc(C.tagline) + "</p></div>" +
           '<ul class="ft-links">' + links + "</ul>" +
           "</div>" +
+        ((CFG.socials || []).length ? '<ul class="ft-icons">' + CFG.socials.map(function (so) { return '<li><a href="' + so.url + '" target="_blank" rel="noopener" aria-label="' + esc(so.name) + '" title="' + esc(so.name) + '">' + icon(so.icon) + "</a></li>"; }).join("") + "</ul>" : "") +
         '<div class="ft-bottom"><span>' + icon("pin") + esc(C.common.location) + "</span><span>© <span id=\"yr\"></span> " + esc(C.brand.full) + ". " + esc(C.common.rights) + ".</span></div>" +
       "</div></div></footer>" +
       '<a class="wa-float" href="' + waLink() + '" target="_blank" rel="noopener" aria-label="' + esc(C.common.floatingWa) + '">' + WA_SVG + '<span class="wa-float-label">' + esc(C.common.floatingWa) + "</span></a>";

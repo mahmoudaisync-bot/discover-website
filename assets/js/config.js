@@ -13,6 +13,10 @@ window.SITE_CONFIG = {
   ],
 
   email: "info.discoveruae@gmail.com",
+  // حسابات التواصل الاجتماعي (تظهر أيقوناتها في الفوتر)
+  socials: [
+    { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/discoverbusinessuae/" }
+  ],
 
   // شكل اللوجو في الهيدر والفوتر:
   //   "compact" = أيقونة دائرية + اسم DISCOVER (الشكل الحالي)
